@@ -190,6 +190,27 @@ CGRect CGRectMoveToCenter(CGRect rect, CGPoint center)
 	self.frame = newframe;	
 }
 
+- (CGFloat)centerX;
+{
+    return [self center].x;
+}
+
+- (void)setCenterX:(CGFloat)centerX;
+{
+    [self setCenter:CGPointMake(centerX, self.center.y)];
+}
+
+- (CGFloat)centerY;
+{
+    return [self center].y;
+}
+
+- (void)setCenterY:(CGFloat)centerY;
+{
+    [self setCenter:CGPointMake(self.center.x, centerY)];
+}
+
+
 // UILabel
 + (UILabel *)labelWithframe:(CGRect)frame text:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment textColor:(NSString *)color
 {

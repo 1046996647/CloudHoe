@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B97B6111CF6ED860C4E2C821 /* libPods-CloudHoe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EA8A0CD00EFF6E571D4D3C /* libPods-CloudHoe.a */; };
+		F70EC9801FFB6F8300821D01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70EC97F1FFB6F8300821D01 /* Images.xcassets */; };
 		F77252A61FFB4B810016B363 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252A51FFB4B810016B363 /* AppDelegate.m */; };
-		F77252A91FFB4B810016B363 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252A81FFB4B810016B363 /* ViewController.m */; };
 		F77252AC1FFB4B810016B363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77252AA1FFB4B810016B363 /* Main.storyboard */; };
-		F77252AE1FFB4B810016B363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77252AD1FFB4B810016B363 /* Assets.xcassets */; };
 		F77252B11FFB4B810016B363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77252AF1FFB4B810016B363 /* LaunchScreen.storyboard */; };
 		F77252B41FFB4B810016B363 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252B31FFB4B810016B363 /* main.m */; };
 		F77252BE1FFB4B810016B363 /* CloudHoeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252BD1FFB4B810016B363 /* CloudHoeTests.m */; };
@@ -29,6 +28,18 @@
 		F77253181FFB509A0016B363 /* UIViewController+UIViewControllerExt.m in Sources */ = {isa = PBXBuildFile; fileRef = F77253081FFB509A0016B363 /* UIViewController+UIViewControllerExt.m */; };
 		F77253191FFB509A0016B363 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = F772530A1FFB509A0016B363 /* UIViewExt.m */; };
 		F772531A1FFB509A0016B363 /* ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = F772530D1FFB509A0016B363 /* ZXPUnicode.m */; };
+		F772531F1FFB52230016B363 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F772531E1FFB52230016B363 /* HomeVC.m */; };
+		F77253221FFB52420016B363 /* GardenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F77253211FFB52420016B363 /* GardenVC.m */; };
+		F77253251FFB52640016B363 /* DynamicStateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F77253241FFB52640016B363 /* DynamicStateVC.m */; };
+		F77253281FFB52840016B363 /* HoeFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F77253271FFB52840016B363 /* HoeFriendVC.m */; };
+		F772532B1FFB52960016B363 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F772532A1FFB52950016B363 /* TabBarController.m */; };
+		F77253321FFB529F0016B363 /* BasePresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F772532C1FFB529D0016B363 /* BasePresentViewController.m */; };
+		F77253331FFB529F0016B363 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F772532F1FFB529E0016B363 /* NavigationController.m */; };
+		F77253341FFB529F0016B363 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F77253301FFB529E0016B363 /* BaseViewController.m */; };
+		F77253381FFB52D90016B363 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F77253371FFB52D90016B363 /* LoginVC.m */; };
+		F772533E1FFB532D0016B363 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F772533D1FFB532D0016B363 /* PersonModel.m */; };
+		F77253451FFB57800016B363 /* CDTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F77253441FFB57800016B363 /* CDTabBar.m */; };
+		F772534B1FFB5F540016B363 /* PhoneLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F772534A1FFB5F540016B363 /* PhoneLoginVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,13 +63,11 @@
 		4FAFAF84528161A6261C39C9 /* Pods-CloudHoe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudHoe.release.xcconfig"; path = "Pods/Target Support Files/Pods-CloudHoe/Pods-CloudHoe.release.xcconfig"; sourceTree = "<group>"; };
 		E9DFCAA820FE34DB4AAD88FF /* Pods-CloudHoe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudHoe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CloudHoe/Pods-CloudHoe.debug.xcconfig"; sourceTree = "<group>"; };
 		F1EA8A0CD00EFF6E571D4D3C /* libPods-CloudHoe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CloudHoe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F70EC97F1FFB6F8300821D01 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F77252A11FFB4B810016B363 /* CloudHoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudHoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77252A41FFB4B810016B363 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F77252A51FFB4B810016B363 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F77252A71FFB4B810016B363 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F77252A81FFB4B810016B363 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F77252AB1FFB4B810016B363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F77252AD1FFB4B810016B363 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F77252B01FFB4B810016B363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F77252B21FFB4B810016B363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F77252B31FFB4B810016B363 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +105,31 @@
 		F772530D1FFB509A0016B363 /* ZXPUnicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPUnicode.m; sourceTree = "<group>"; };
 		F772531B1FFB50E90016B363 /* CloudHoe.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudHoe.pch; sourceTree = "<group>"; };
 		F772531C1FFB50E90016B363 /* DefineFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineFile.h; sourceTree = "<group>"; };
+		F772531D1FFB52230016B363 /* HomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		F772531E1FFB52230016B363 /* HomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		F77253201FFB52420016B363 /* GardenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GardenVC.h; sourceTree = "<group>"; };
+		F77253211FFB52420016B363 /* GardenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GardenVC.m; sourceTree = "<group>"; };
+		F77253231FFB52640016B363 /* DynamicStateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicStateVC.h; sourceTree = "<group>"; };
+		F77253241FFB52640016B363 /* DynamicStateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicStateVC.m; sourceTree = "<group>"; };
+		F77253261FFB52840016B363 /* HoeFriendVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoeFriendVC.h; sourceTree = "<group>"; };
+		F77253271FFB52840016B363 /* HoeFriendVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoeFriendVC.m; sourceTree = "<group>"; };
+		F77253291FFB52950016B363 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		F772532A1FFB52950016B363 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		F772532C1FFB529D0016B363 /* BasePresentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePresentViewController.m; sourceTree = "<group>"; };
+		F772532D1FFB529D0016B363 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		F772532E1FFB529E0016B363 /* BasePresentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePresentViewController.h; sourceTree = "<group>"; };
+		F772532F1FFB529E0016B363 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		F77253301FFB529E0016B363 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		F77253311FFB529F0016B363 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		F77253351FFB52C10016B363 /* UrlFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlFile.h; sourceTree = "<group>"; };
+		F77253361FFB52D90016B363 /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		F77253371FFB52D90016B363 /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		F772533C1FFB532D0016B363 /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
+		F772533D1FFB532D0016B363 /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
+		F77253431FFB57800016B363 /* CDTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDTabBar.h; sourceTree = "<group>"; };
+		F77253441FFB57800016B363 /* CDTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTabBar.m; sourceTree = "<group>"; };
+		F77253491FFB5F540016B363 /* PhoneLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneLoginVC.h; sourceTree = "<group>"; };
+		F772534A1FFB5F540016B363 /* PhoneLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,11 +200,19 @@
 		F77252A31FFB4B810016B363 /* CloudHoe */ = {
 			isa = PBXGroup;
 			children = (
+				F772533F1FFB553E0016B363 /* CustomClass */,
 				F77252EB1FFB509A0016B363 /* Thirdparty */,
 				F77252A41FFB4B810016B363 /* AppDelegate.h */,
 				F77252A51FFB4B810016B363 /* AppDelegate.m */,
-				F77252A71FFB4B810016B363 /* ViewController.h */,
-				F77252A81FFB4B810016B363 /* ViewController.m */,
+				F77253311FFB529F0016B363 /* BaseViewController.h */,
+				F77253301FFB529E0016B363 /* BaseViewController.m */,
+				F772532E1FFB529E0016B363 /* BasePresentViewController.h */,
+				F772532C1FFB529D0016B363 /* BasePresentViewController.m */,
+				F772532D1FFB529D0016B363 /* NavigationController.h */,
+				F772532F1FFB529E0016B363 /* NavigationController.m */,
+				F77253291FFB52950016B363 /* TabBarController.h */,
+				F772532A1FFB52950016B363 /* TabBarController.m */,
+				F77253351FFB52C10016B363 /* UrlFile.h */,
 				F77252EA1FFB4D090016B363 /* 登录注册 */,
 				F77252DA1FFB4C9E0016B363 /* 拍摄 */,
 				F77252D91FFB4C830016B363 /* 首页 */,
@@ -178,12 +220,12 @@
 				F77252D71FFB4C7E0016B363 /* 动态 */,
 				F77252D61FFB4C7C0016B363 /* 锄友 */,
 				F77252AA1FFB4B810016B363 /* Main.storyboard */,
-				F77252AD1FFB4B810016B363 /* Assets.xcassets */,
 				F77252AF1FFB4B810016B363 /* LaunchScreen.storyboard */,
 				F77252B21FFB4B810016B363 /* Info.plist */,
 				F772531C1FFB50E90016B363 /* DefineFile.h */,
 				F772531B1FFB50E90016B363 /* CloudHoe.pch */,
 				F77252B31FFB4B810016B363 /* main.m */,
+				F70EC97F1FFB6F8300821D01 /* Images.xcassets */,
 			);
 			path = CloudHoe;
 			sourceTree = "<group>";
@@ -273,6 +315,8 @@
 		F77252DD1FFB4CD70016B363 /* ControllView */ = {
 			isa = PBXGroup;
 			children = (
+				F772531D1FFB52230016B363 /* HomeVC.h */,
+				F772531E1FFB52230016B363 /* HomeVC.m */,
 			);
 			path = ControllView;
 			sourceTree = "<group>";
@@ -294,6 +338,8 @@
 		F77252E01FFB4CDB0016B363 /* ControllView */ = {
 			isa = PBXGroup;
 			children = (
+				F77253201FFB52420016B363 /* GardenVC.h */,
+				F77253211FFB52420016B363 /* GardenVC.m */,
 			);
 			path = ControllView;
 			sourceTree = "<group>";
@@ -315,6 +361,8 @@
 		F77252E31FFB4CE00016B363 /* ControllView */ = {
 			isa = PBXGroup;
 			children = (
+				F77253231FFB52640016B363 /* DynamicStateVC.h */,
+				F77253241FFB52640016B363 /* DynamicStateVC.m */,
 			);
 			path = ControllView;
 			sourceTree = "<group>";
@@ -336,6 +384,8 @@
 		F77252E61FFB4CE30016B363 /* ControllView */ = {
 			isa = PBXGroup;
 			children = (
+				F77253261FFB52840016B363 /* HoeFriendVC.h */,
+				F77253271FFB52840016B363 /* HoeFriendVC.m */,
 			);
 			path = ControllView;
 			sourceTree = "<group>";
@@ -364,6 +414,12 @@
 		F77252EA1FFB4D090016B363 /* 登录注册 */ = {
 			isa = PBXGroup;
 			children = (
+				F77253361FFB52D90016B363 /* LoginVC.h */,
+				F77253371FFB52D90016B363 /* LoginVC.m */,
+				F77253491FFB5F540016B363 /* PhoneLoginVC.h */,
+				F772534A1FFB5F540016B363 /* PhoneLoginVC.m */,
+				F772533C1FFB532D0016B363 /* PersonModel.h */,
+				F772533D1FFB532D0016B363 /* PersonModel.m */,
 			);
 			path = "登录注册";
 			sourceTree = "<group>";
@@ -463,6 +519,15 @@
 				F772530D1FFB509A0016B363 /* ZXPUnicode.m */,
 			);
 			path = ZXPUnicode;
+			sourceTree = "<group>";
+		};
+		F772533F1FFB553E0016B363 /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				F77253431FFB57800016B363 /* CDTabBar.h */,
+				F77253441FFB57800016B363 /* CDTabBar.m */,
+			);
+			path = CustomClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -574,8 +639,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70EC9801FFB6F8300821D01 /* Images.xcassets in Resources */,
 				F77252B11FFB4B810016B363 /* LaunchScreen.storyboard in Resources */,
-				F77252AE1FFB4B810016B363 /* Assets.xcassets in Resources */,
 				F77252AC1FFB4B810016B363 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,22 +723,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F772532B1FFB52960016B363 /* TabBarController.m in Sources */,
+				F77253341FFB529F0016B363 /* BaseViewController.m in Sources */,
 				F772531A1FFB509A0016B363 /* ZXPUnicode.m in Sources */,
+				F77253281FFB52840016B363 /* HoeFriendVC.m in Sources */,
 				F772530F1FFB509A0016B363 /* InfoCache.m in Sources */,
 				F77253171FFB509A0016B363 /* UILabel+WLAttributedString.m in Sources */,
+				F772533E1FFB532D0016B363 /* PersonModel.m in Sources */,
 				F77253101FFB509A0016B363 /* NSStringExt.m in Sources */,
 				F77253131FFB509A0016B363 /* UITableView+EmptyData.m in Sources */,
-				F77252A91FFB4B810016B363 /* ViewController.m in Sources */,
+				F77253331FFB529F0016B363 /* NavigationController.m in Sources */,
 				F77253111FFB509A0016B363 /* CountDownServer.m in Sources */,
 				F77253161FFB509A0016B363 /* UIImage+UIImageExt.m in Sources */,
 				F77253191FFB509A0016B363 /* UIViewExt.m in Sources */,
+				F772534B1FFB5F540016B363 /* PhoneLoginVC.m in Sources */,
+				F77253321FFB529F0016B363 /* BasePresentViewController.m in Sources */,
 				F77253151FFB509A0016B363 /* UIColor+Expend.m in Sources */,
 				F77252B41FFB4B810016B363 /* main.m in Sources */,
 				F772530E1FFB509A0016B363 /* AFNetworking_RequestData.m in Sources */,
 				F77252A61FFB4B810016B363 /* AppDelegate.m in Sources */,
+				F77253451FFB57800016B363 /* CDTabBar.m in Sources */,
+				F772531F1FFB52230016B363 /* HomeVC.m in Sources */,
 				F77253181FFB509A0016B363 /* UIViewController+UIViewControllerExt.m in Sources */,
+				F77253251FFB52640016B363 /* DynamicStateVC.m in Sources */,
 				F77253141FFB509A0016B363 /* UIView+Toast.m in Sources */,
+				F77253381FFB52D90016B363 /* LoginVC.m in Sources */,
 				F77253121FFB509A0016B363 /* RegexTool.m in Sources */,
+				F77253221FFB52420016B363 /* GardenVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,7 +912,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E9DFCAA820FE34DB4AAD88FF /* Pods-CloudHoe.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D59VU3JG9L;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CloudHoe/CloudHoe.pch";
@@ -853,7 +929,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4FAFAF84528161A6261C39C9 /* Pods-CloudHoe.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D59VU3JG9L;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CloudHoe/CloudHoe.pch";

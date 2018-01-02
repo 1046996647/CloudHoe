@@ -11,7 +11,6 @@
 #import "LoginVC.h"
 #import "NavigationController.h"
 #import "AppDelegate.h"
-#import "ViewController.h"
 
 @implementation AFNetworking_RequestData
 
@@ -126,13 +125,13 @@ static const NSUInteger kDefaultTimeoutInterval = 20;
                     
                     [[UIApplication sharedApplication].keyWindow makeToast:@"账号异常，请重新登陆!"];
                     
-                    AppDelegate *delegate = [AppDelegate share];
-                    ViewController *vc = (ViewController *)delegate.window.rootViewController;
-                    
-                    NavigationController *navVC = (NavigationController *)vc.mainNav;
+//                    AppDelegate *delegate = [AppDelegate share];
+//                    ViewController *vc = (ViewController *)delegate.window.rootViewController;
+//
+//                    NavigationController *navVC = (NavigationController *)vc.mainNav;
 
-                    LoginVC *loginVC = [[LoginVC alloc] init];
-                    [navVC pushViewController:loginVC animated:YES];
+//                    LoginVC *loginVC = [[LoginVC alloc] init];
+//                    [navVC pushViewController:loginVC animated:YES];
 
                     
                     return ;
