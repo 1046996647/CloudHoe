@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B97B6111CF6ED860C4E2C821 /* libPods-CloudHoe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EA8A0CD00EFF6E571D4D3C /* libPods-CloudHoe.a */; };
 		F77252A61FFB4B810016B363 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252A51FFB4B810016B363 /* AppDelegate.m */; };
 		F77252A91FFB4B810016B363 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252A81FFB4B810016B363 /* ViewController.m */; };
 		F77252AC1FFB4B810016B363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77252AA1FFB4B810016B363 /* Main.storyboard */; };
@@ -15,6 +16,19 @@
 		F77252B41FFB4B810016B363 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252B31FFB4B810016B363 /* main.m */; };
 		F77252BE1FFB4B810016B363 /* CloudHoeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252BD1FFB4B810016B363 /* CloudHoeTests.m */; };
 		F77252C91FFB4B810016B363 /* CloudHoeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252C81FFB4B810016B363 /* CloudHoeUITests.m */; };
+		F772530E1FFB509A0016B363 /* AFNetworking_RequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252EE1FFB509A0016B363 /* AFNetworking_RequestData.m */; };
+		F772530F1FFB509A0016B363 /* InfoCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252F21FFB509A0016B363 /* InfoCache.m */; };
+		F77253101FFB509A0016B363 /* NSStringExt.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252F41FFB509A0016B363 /* NSStringExt.m */; };
+		F77253111FFB509A0016B363 /* CountDownServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252F71FFB509A0016B363 /* CountDownServer.m */; };
+		F77253121FFB509A0016B363 /* RegexTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252F91FFB509A0016B363 /* RegexTool.m */; };
+		F77253131FFB509A0016B363 /* UITableView+EmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252FC1FFB509A0016B363 /* UITableView+EmptyData.m */; };
+		F77253141FFB509A0016B363 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252FF1FFB509A0016B363 /* UIView+Toast.m */; };
+		F77253151FFB509A0016B363 /* UIColor+Expend.m in Sources */ = {isa = PBXBuildFile; fileRef = F77253021FFB509A0016B363 /* UIColor+Expend.m */; };
+		F77253161FFB509A0016B363 /* UIImage+UIImageExt.m in Sources */ = {isa = PBXBuildFile; fileRef = F77253041FFB509A0016B363 /* UIImage+UIImageExt.m */; };
+		F77253171FFB509A0016B363 /* UILabel+WLAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = F77253061FFB509A0016B363 /* UILabel+WLAttributedString.m */; };
+		F77253181FFB509A0016B363 /* UIViewController+UIViewControllerExt.m in Sources */ = {isa = PBXBuildFile; fileRef = F77253081FFB509A0016B363 /* UIViewController+UIViewControllerExt.m */; };
+		F77253191FFB509A0016B363 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = F772530A1FFB509A0016B363 /* UIViewExt.m */; };
+		F772531A1FFB509A0016B363 /* ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = F772530D1FFB509A0016B363 /* ZXPUnicode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4FAFAF84528161A6261C39C9 /* Pods-CloudHoe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudHoe.release.xcconfig"; path = "Pods/Target Support Files/Pods-CloudHoe/Pods-CloudHoe.release.xcconfig"; sourceTree = "<group>"; };
+		E9DFCAA820FE34DB4AAD88FF /* Pods-CloudHoe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudHoe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CloudHoe/Pods-CloudHoe.debug.xcconfig"; sourceTree = "<group>"; };
+		F1EA8A0CD00EFF6E571D4D3C /* libPods-CloudHoe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CloudHoe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77252A11FFB4B810016B363 /* CloudHoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudHoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77252A41FFB4B810016B363 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F77252A51FFB4B810016B363 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +68,34 @@
 		F77252C41FFB4B810016B363 /* CloudHoeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudHoeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77252C81FFB4B810016B363 /* CloudHoeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CloudHoeUITests.m; sourceTree = "<group>"; };
 		F77252CA1FFB4B810016B363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77252ED1FFB509A0016B363 /* AFNetworking_RequestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking_RequestData.h; sourceTree = "<group>"; };
+		F77252EE1FFB509A0016B363 /* AFNetworking_RequestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworking_RequestData.m; sourceTree = "<group>"; };
+		F77252F11FFB509A0016B363 /* InfoCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCache.h; sourceTree = "<group>"; };
+		F77252F21FFB509A0016B363 /* InfoCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCache.m; sourceTree = "<group>"; };
+		F77252F31FFB509A0016B363 /* NSStringExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringExt.h; sourceTree = "<group>"; };
+		F77252F41FFB509A0016B363 /* NSStringExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringExt.m; sourceTree = "<group>"; };
+		F77252F61FFB509A0016B363 /* CountDownServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownServer.h; sourceTree = "<group>"; };
+		F77252F71FFB509A0016B363 /* CountDownServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownServer.m; sourceTree = "<group>"; };
+		F77252F81FFB509A0016B363 /* RegexTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexTool.h; sourceTree = "<group>"; };
+		F77252F91FFB509A0016B363 /* RegexTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexTool.m; sourceTree = "<group>"; };
+		F77252FB1FFB509A0016B363 /* UITableView+EmptyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EmptyData.h"; sourceTree = "<group>"; };
+		F77252FC1FFB509A0016B363 /* UITableView+EmptyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EmptyData.m"; sourceTree = "<group>"; };
+		F77252FE1FFB509A0016B363 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		F77252FF1FFB509A0016B363 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		F77253011FFB509A0016B363 /* UIColor+Expend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Expend.h"; sourceTree = "<group>"; };
+		F77253021FFB509A0016B363 /* UIColor+Expend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Expend.m"; sourceTree = "<group>"; };
+		F77253031FFB509A0016B363 /* UIImage+UIImageExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageExt.h"; sourceTree = "<group>"; };
+		F77253041FFB509A0016B363 /* UIImage+UIImageExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageExt.m"; sourceTree = "<group>"; };
+		F77253051FFB509A0016B363 /* UILabel+WLAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+WLAttributedString.h"; sourceTree = "<group>"; };
+		F77253061FFB509A0016B363 /* UILabel+WLAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WLAttributedString.m"; sourceTree = "<group>"; };
+		F77253071FFB509A0016B363 /* UIViewController+UIViewControllerExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UIViewControllerExt.h"; sourceTree = "<group>"; };
+		F77253081FFB509A0016B363 /* UIViewController+UIViewControllerExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UIViewControllerExt.m"; sourceTree = "<group>"; };
+		F77253091FFB509A0016B363 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		F772530A1FFB509A0016B363 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		F772530C1FFB509A0016B363 /* ZXPUnicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPUnicode.h; sourceTree = "<group>"; };
+		F772530D1FFB509A0016B363 /* ZXPUnicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPUnicode.m; sourceTree = "<group>"; };
+		F772531B1FFB50E90016B363 /* CloudHoe.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudHoe.pch; sourceTree = "<group>"; };
+		F772531C1FFB50E90016B363 /* DefineFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineFile.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B97B6111CF6ED860C4E2C821 /* libPods-CloudHoe.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +124,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E145509A3AB19E7D64FE150 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9DFCAA820FE34DB4AAD88FF /* Pods-CloudHoe.debug.xcconfig */,
+				4FAFAF84528161A6261C39C9 /* Pods-CloudHoe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4E572237BF86C51D13B735A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1EA8A0CD00EFF6E571D4D3C /* libPods-CloudHoe.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F77252981FFB4B810016B363 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +148,8 @@
 				F77252BC1FFB4B810016B363 /* CloudHoeTests */,
 				F77252C71FFB4B810016B363 /* CloudHoeUITests */,
 				F77252A21FFB4B810016B363 /* Products */,
+				0E145509A3AB19E7D64FE150 /* Pods */,
+				4E572237BF86C51D13B735A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +166,7 @@
 		F77252A31FFB4B810016B363 /* CloudHoe */ = {
 			isa = PBXGroup;
 			children = (
+				F77252EB1FFB509A0016B363 /* Thirdparty */,
 				F77252A41FFB4B810016B363 /* AppDelegate.h */,
 				F77252A51FFB4B810016B363 /* AppDelegate.m */,
 				F77252A71FFB4B810016B363 /* ViewController.h */,
@@ -115,6 +181,8 @@
 				F77252AD1FFB4B810016B363 /* Assets.xcassets */,
 				F77252AF1FFB4B810016B363 /* LaunchScreen.storyboard */,
 				F77252B21FFB4B810016B363 /* Info.plist */,
+				F772531C1FFB50E90016B363 /* DefineFile.h */,
+				F772531B1FFB50E90016B363 /* CloudHoe.pch */,
 				F77252B31FFB4B810016B363 /* main.m */,
 			);
 			path = CloudHoe;
@@ -300,6 +368,103 @@
 			path = "登录注册";
 			sourceTree = "<group>";
 		};
+		F77252EB1FFB509A0016B363 /* Thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				F77252EC1FFB509A0016B363 /* AFNetworking_RequestData */,
+				F77252EF1FFB509A0016B363 /* Tools */,
+				F772530B1FFB509A0016B363 /* ZXPUnicode */,
+			);
+			path = Thirdparty;
+			sourceTree = "<group>";
+		};
+		F77252EC1FFB509A0016B363 /* AFNetworking_RequestData */ = {
+			isa = PBXGroup;
+			children = (
+				F77252ED1FFB509A0016B363 /* AFNetworking_RequestData.h */,
+				F77252EE1FFB509A0016B363 /* AFNetworking_RequestData.m */,
+			);
+			path = AFNetworking_RequestData;
+			sourceTree = "<group>";
+		};
+		F77252EF1FFB509A0016B363 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				F77252F01FFB509A0016B363 /* InfoCache */,
+				F77252F31FFB509A0016B363 /* NSStringExt.h */,
+				F77252F41FFB509A0016B363 /* NSStringExt.m */,
+				F77252F51FFB509A0016B363 /* RegexTool */,
+				F77252FA1FFB509A0016B363 /* TableView+Gategory */,
+				F77252FD1FFB509A0016B363 /* Toast */,
+				F77253001FFB509A0016B363 /* UIColorEx */,
+				F77253031FFB509A0016B363 /* UIImage+UIImageExt.h */,
+				F77253041FFB509A0016B363 /* UIImage+UIImageExt.m */,
+				F77253051FFB509A0016B363 /* UILabel+WLAttributedString.h */,
+				F77253061FFB509A0016B363 /* UILabel+WLAttributedString.m */,
+				F77253071FFB509A0016B363 /* UIViewController+UIViewControllerExt.h */,
+				F77253081FFB509A0016B363 /* UIViewController+UIViewControllerExt.m */,
+				F77253091FFB509A0016B363 /* UIViewExt.h */,
+				F772530A1FFB509A0016B363 /* UIViewExt.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		F77252F01FFB509A0016B363 /* InfoCache */ = {
+			isa = PBXGroup;
+			children = (
+				F77252F11FFB509A0016B363 /* InfoCache.h */,
+				F77252F21FFB509A0016B363 /* InfoCache.m */,
+			);
+			path = InfoCache;
+			sourceTree = "<group>";
+		};
+		F77252F51FFB509A0016B363 /* RegexTool */ = {
+			isa = PBXGroup;
+			children = (
+				F77252F61FFB509A0016B363 /* CountDownServer.h */,
+				F77252F71FFB509A0016B363 /* CountDownServer.m */,
+				F77252F81FFB509A0016B363 /* RegexTool.h */,
+				F77252F91FFB509A0016B363 /* RegexTool.m */,
+			);
+			path = RegexTool;
+			sourceTree = "<group>";
+		};
+		F77252FA1FFB509A0016B363 /* TableView+Gategory */ = {
+			isa = PBXGroup;
+			children = (
+				F77252FB1FFB509A0016B363 /* UITableView+EmptyData.h */,
+				F77252FC1FFB509A0016B363 /* UITableView+EmptyData.m */,
+			);
+			path = "TableView+Gategory";
+			sourceTree = "<group>";
+		};
+		F77252FD1FFB509A0016B363 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				F77252FE1FFB509A0016B363 /* UIView+Toast.h */,
+				F77252FF1FFB509A0016B363 /* UIView+Toast.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		F77253001FFB509A0016B363 /* UIColorEx */ = {
+			isa = PBXGroup;
+			children = (
+				F77253011FFB509A0016B363 /* UIColor+Expend.h */,
+				F77253021FFB509A0016B363 /* UIColor+Expend.m */,
+			);
+			path = UIColorEx;
+			sourceTree = "<group>";
+		};
+		F772530B1FFB509A0016B363 /* ZXPUnicode */ = {
+			isa = PBXGroup;
+			children = (
+				F772530C1FFB509A0016B363 /* ZXPUnicode.h */,
+				F772530D1FFB509A0016B363 /* ZXPUnicode.m */,
+			);
+			path = ZXPUnicode;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,9 +472,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F77252CD1FFB4B810016B363 /* Build configuration list for PBXNativeTarget "CloudHoe" */;
 			buildPhases = (
+				FCAB38AA60A3DD143A1FCCB5 /* [CP] Check Pods Manifest.lock */,
 				F772529D1FFB4B810016B363 /* Sources */,
 				F772529E1FFB4B810016B363 /* Frameworks */,
 				F772529F1FFB4B810016B363 /* Resources */,
+				4F1AB66358B01F58315E9213 /* [CP] Embed Pods Frameworks */,
+				4F15B03574C6C8B09D398EB2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -428,14 +596,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4F15B03574C6C8B09D398EB2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CloudHoe/Pods-CloudHoe-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CloudHoe/Pods-CloudHoe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F1AB66358B01F58315E9213 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CloudHoe/Pods-CloudHoe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCAB38AA60A3DD143A1FCCB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CloudHoe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F772529D1FFB4B810016B363 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F772531A1FFB509A0016B363 /* ZXPUnicode.m in Sources */,
+				F772530F1FFB509A0016B363 /* InfoCache.m in Sources */,
+				F77253171FFB509A0016B363 /* UILabel+WLAttributedString.m in Sources */,
+				F77253101FFB509A0016B363 /* NSStringExt.m in Sources */,
+				F77253131FFB509A0016B363 /* UITableView+EmptyData.m in Sources */,
 				F77252A91FFB4B810016B363 /* ViewController.m in Sources */,
+				F77253111FFB509A0016B363 /* CountDownServer.m in Sources */,
+				F77253161FFB509A0016B363 /* UIImage+UIImageExt.m in Sources */,
+				F77253191FFB509A0016B363 /* UIViewExt.m in Sources */,
+				F77253151FFB509A0016B363 /* UIColor+Expend.m in Sources */,
 				F77252B41FFB4B810016B363 /* main.m in Sources */,
+				F772530E1FFB509A0016B363 /* AFNetworking_RequestData.m in Sources */,
 				F77252A61FFB4B810016B363 /* AppDelegate.m in Sources */,
+				F77253181FFB509A0016B363 /* UIViewController+UIViewControllerExt.m in Sources */,
+				F77253141FFB509A0016B363 /* UIView+Toast.m in Sources */,
+				F77253121FFB509A0016B363 /* RegexTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,11 +834,14 @@
 		};
 		F77252CE1FFB4B810016B363 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9DFCAA820FE34DB4AAD88FF /* Pods-CloudHoe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D59VU3JG9L;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CloudHoe/CloudHoe.pch";
 				INFOPLIST_FILE = CloudHoe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HongHu.Rice.CloudHoe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -610,11 +851,14 @@
 		};
 		F77252CF1FFB4B810016B363 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FAFAF84528161A6261C39C9 /* Pods-CloudHoe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D59VU3JG9L;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CloudHoe/CloudHoe.pch";
 				INFOPLIST_FILE = CloudHoe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HongHu.Rice.CloudHoe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
