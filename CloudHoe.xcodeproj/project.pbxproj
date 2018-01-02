@@ -1,0 +1,725 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F77252A61FFB4B810016B363 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252A51FFB4B810016B363 /* AppDelegate.m */; };
+		F77252A91FFB4B810016B363 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252A81FFB4B810016B363 /* ViewController.m */; };
+		F77252AC1FFB4B810016B363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77252AA1FFB4B810016B363 /* Main.storyboard */; };
+		F77252AE1FFB4B810016B363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77252AD1FFB4B810016B363 /* Assets.xcassets */; };
+		F77252B11FFB4B810016B363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77252AF1FFB4B810016B363 /* LaunchScreen.storyboard */; };
+		F77252B41FFB4B810016B363 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252B31FFB4B810016B363 /* main.m */; };
+		F77252BE1FFB4B810016B363 /* CloudHoeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252BD1FFB4B810016B363 /* CloudHoeTests.m */; };
+		F77252C91FFB4B810016B363 /* CloudHoeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252C81FFB4B810016B363 /* CloudHoeUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F77252BA1FFB4B810016B363 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F77252991FFB4B810016B363 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F77252A01FFB4B810016B363;
+			remoteInfo = CloudHoe;
+		};
+		F77252C51FFB4B810016B363 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F77252991FFB4B810016B363 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F77252A01FFB4B810016B363;
+			remoteInfo = CloudHoe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F77252A11FFB4B810016B363 /* CloudHoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudHoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77252A41FFB4B810016B363 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F77252A51FFB4B810016B363 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F77252A71FFB4B810016B363 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F77252A81FFB4B810016B363 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F77252AB1FFB4B810016B363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F77252AD1FFB4B810016B363 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F77252B01FFB4B810016B363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F77252B21FFB4B810016B363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77252B31FFB4B810016B363 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F77252B91FFB4B810016B363 /* CloudHoeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudHoeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77252BD1FFB4B810016B363 /* CloudHoeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CloudHoeTests.m; sourceTree = "<group>"; };
+		F77252BF1FFB4B810016B363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77252C41FFB4B810016B363 /* CloudHoeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudHoeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77252C81FFB4B810016B363 /* CloudHoeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CloudHoeUITests.m; sourceTree = "<group>"; };
+		F77252CA1FFB4B810016B363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F772529E1FFB4B810016B363 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77252B61FFB4B810016B363 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77252C11FFB4B810016B363 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F77252981FFB4B810016B363 = {
+			isa = PBXGroup;
+			children = (
+				F77252A31FFB4B810016B363 /* CloudHoe */,
+				F77252BC1FFB4B810016B363 /* CloudHoeTests */,
+				F77252C71FFB4B810016B363 /* CloudHoeUITests */,
+				F77252A21FFB4B810016B363 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F77252A21FFB4B810016B363 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F77252A11FFB4B810016B363 /* CloudHoe.app */,
+				F77252B91FFB4B810016B363 /* CloudHoeTests.xctest */,
+				F77252C41FFB4B810016B363 /* CloudHoeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F77252A31FFB4B810016B363 /* CloudHoe */ = {
+			isa = PBXGroup;
+			children = (
+				F77252A41FFB4B810016B363 /* AppDelegate.h */,
+				F77252A51FFB4B810016B363 /* AppDelegate.m */,
+				F77252A71FFB4B810016B363 /* ViewController.h */,
+				F77252A81FFB4B810016B363 /* ViewController.m */,
+				F77252EA1FFB4D090016B363 /* 登录注册 */,
+				F77252DA1FFB4C9E0016B363 /* 拍摄 */,
+				F77252D91FFB4C830016B363 /* 首页 */,
+				F77252D81FFB4C800016B363 /* 花园 */,
+				F77252D71FFB4C7E0016B363 /* 动态 */,
+				F77252D61FFB4C7C0016B363 /* 锄友 */,
+				F77252AA1FFB4B810016B363 /* Main.storyboard */,
+				F77252AD1FFB4B810016B363 /* Assets.xcassets */,
+				F77252AF1FFB4B810016B363 /* LaunchScreen.storyboard */,
+				F77252B21FFB4B810016B363 /* Info.plist */,
+				F77252B31FFB4B810016B363 /* main.m */,
+			);
+			path = CloudHoe;
+			sourceTree = "<group>";
+		};
+		F77252BC1FFB4B810016B363 /* CloudHoeTests */ = {
+			isa = PBXGroup;
+			children = (
+				F77252BD1FFB4B810016B363 /* CloudHoeTests.m */,
+				F77252BF1FFB4B810016B363 /* Info.plist */,
+			);
+			path = CloudHoeTests;
+			sourceTree = "<group>";
+		};
+		F77252C71FFB4B810016B363 /* CloudHoeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F77252C81FFB4B810016B363 /* CloudHoeUITests.m */,
+				F77252CA1FFB4B810016B363 /* Info.plist */,
+			);
+			path = CloudHoeUITests;
+			sourceTree = "<group>";
+		};
+		F77252D61FFB4C7C0016B363 /* 锄友 */ = {
+			isa = PBXGroup;
+			children = (
+				F77252E61FFB4CE30016B363 /* ControllView */,
+				F77252E41FFB4CE30016B363 /* Model */,
+				F77252E51FFB4CE30016B363 /* View */,
+			);
+			path = "锄友";
+			sourceTree = "<group>";
+		};
+		F77252D71FFB4C7E0016B363 /* 动态 */ = {
+			isa = PBXGroup;
+			children = (
+				F77252E31FFB4CE00016B363 /* ControllView */,
+				F77252E11FFB4CDF0016B363 /* Model */,
+				F77252E21FFB4CDF0016B363 /* View */,
+			);
+			path = "动态";
+			sourceTree = "<group>";
+		};
+		F77252D81FFB4C800016B363 /* 花园 */ = {
+			isa = PBXGroup;
+			children = (
+				F77252E01FFB4CDB0016B363 /* ControllView */,
+				F77252DE1FFB4CDB0016B363 /* Model */,
+				F77252DF1FFB4CDB0016B363 /* View */,
+			);
+			path = "花园";
+			sourceTree = "<group>";
+		};
+		F77252D91FFB4C830016B363 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				F77252DD1FFB4CD70016B363 /* ControllView */,
+				F77252DB1FFB4CD70016B363 /* Model */,
+				F77252DC1FFB4CD70016B363 /* View */,
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		F77252DA1FFB4C9E0016B363 /* 拍摄 */ = {
+			isa = PBXGroup;
+			children = (
+				F77252E91FFB4CEA0016B363 /* ControllView */,
+				F77252E71FFB4CEA0016B363 /* Model */,
+				F77252E81FFB4CEA0016B363 /* View */,
+			);
+			path = "拍摄";
+			sourceTree = "<group>";
+		};
+		F77252DB1FFB4CD70016B363 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F77252DC1FFB4CD70016B363 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F77252DD1FFB4CD70016B363 /* ControllView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ControllView;
+			sourceTree = "<group>";
+		};
+		F77252DE1FFB4CDB0016B363 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F77252DF1FFB4CDB0016B363 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F77252E01FFB4CDB0016B363 /* ControllView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ControllView;
+			sourceTree = "<group>";
+		};
+		F77252E11FFB4CDF0016B363 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F77252E21FFB4CDF0016B363 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F77252E31FFB4CE00016B363 /* ControllView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ControllView;
+			sourceTree = "<group>";
+		};
+		F77252E41FFB4CE30016B363 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F77252E51FFB4CE30016B363 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F77252E61FFB4CE30016B363 /* ControllView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ControllView;
+			sourceTree = "<group>";
+		};
+		F77252E71FFB4CEA0016B363 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F77252E81FFB4CEA0016B363 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F77252E91FFB4CEA0016B363 /* ControllView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ControllView;
+			sourceTree = "<group>";
+		};
+		F77252EA1FFB4D090016B363 /* 登录注册 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "登录注册";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F77252A01FFB4B810016B363 /* CloudHoe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F77252CD1FFB4B810016B363 /* Build configuration list for PBXNativeTarget "CloudHoe" */;
+			buildPhases = (
+				F772529D1FFB4B810016B363 /* Sources */,
+				F772529E1FFB4B810016B363 /* Frameworks */,
+				F772529F1FFB4B810016B363 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CloudHoe;
+			productName = CloudHoe;
+			productReference = F77252A11FFB4B810016B363 /* CloudHoe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F77252B81FFB4B810016B363 /* CloudHoeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F77252D01FFB4B810016B363 /* Build configuration list for PBXNativeTarget "CloudHoeTests" */;
+			buildPhases = (
+				F77252B51FFB4B810016B363 /* Sources */,
+				F77252B61FFB4B810016B363 /* Frameworks */,
+				F77252B71FFB4B810016B363 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F77252BB1FFB4B810016B363 /* PBXTargetDependency */,
+			);
+			name = CloudHoeTests;
+			productName = CloudHoeTests;
+			productReference = F77252B91FFB4B810016B363 /* CloudHoeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F77252C31FFB4B810016B363 /* CloudHoeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F77252D31FFB4B810016B363 /* Build configuration list for PBXNativeTarget "CloudHoeUITests" */;
+			buildPhases = (
+				F77252C01FFB4B810016B363 /* Sources */,
+				F77252C11FFB4B810016B363 /* Frameworks */,
+				F77252C21FFB4B810016B363 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F77252C61FFB4B810016B363 /* PBXTargetDependency */,
+			);
+			name = CloudHoeUITests;
+			productName = CloudHoeUITests;
+			productReference = F77252C41FFB4B810016B363 /* CloudHoeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F77252991FFB4B810016B363 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = ZhangWeiLiang;
+				TargetAttributes = {
+					F77252A01FFB4B810016B363 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					F77252B81FFB4B810016B363 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F77252A01FFB4B810016B363;
+					};
+					F77252C31FFB4B810016B363 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F77252A01FFB4B810016B363;
+					};
+				};
+			};
+			buildConfigurationList = F772529C1FFB4B810016B363 /* Build configuration list for PBXProject "CloudHoe" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F77252981FFB4B810016B363;
+			productRefGroup = F77252A21FFB4B810016B363 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F77252A01FFB4B810016B363 /* CloudHoe */,
+				F77252B81FFB4B810016B363 /* CloudHoeTests */,
+				F77252C31FFB4B810016B363 /* CloudHoeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F772529F1FFB4B810016B363 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77252B11FFB4B810016B363 /* LaunchScreen.storyboard in Resources */,
+				F77252AE1FFB4B810016B363 /* Assets.xcassets in Resources */,
+				F77252AC1FFB4B810016B363 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77252B71FFB4B810016B363 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77252C21FFB4B810016B363 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F772529D1FFB4B810016B363 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77252A91FFB4B810016B363 /* ViewController.m in Sources */,
+				F77252B41FFB4B810016B363 /* main.m in Sources */,
+				F77252A61FFB4B810016B363 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77252B51FFB4B810016B363 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77252BE1FFB4B810016B363 /* CloudHoeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77252C01FFB4B810016B363 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77252C91FFB4B810016B363 /* CloudHoeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F77252BB1FFB4B810016B363 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F77252A01FFB4B810016B363 /* CloudHoe */;
+			targetProxy = F77252BA1FFB4B810016B363 /* PBXContainerItemProxy */;
+		};
+		F77252C61FFB4B810016B363 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F77252A01FFB4B810016B363 /* CloudHoe */;
+			targetProxy = F77252C51FFB4B810016B363 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F77252AA1FFB4B810016B363 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F77252AB1FFB4B810016B363 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F77252AF1FFB4B810016B363 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F77252B01FFB4B810016B363 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F77252CB1FFB4B810016B363 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F77252CC1FFB4B810016B363 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F77252CE1FFB4B810016B363 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D59VU3JG9L;
+				INFOPLIST_FILE = CloudHoe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HongHu.Rice.CloudHoe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F77252CF1FFB4B810016B363 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D59VU3JG9L;
+				INFOPLIST_FILE = CloudHoe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HongHu.Rice.CloudHoe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F77252D11FFB4B810016B363 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D59VU3JG9L;
+				INFOPLIST_FILE = CloudHoeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HongHu.Rice.CloudHoeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloudHoe.app/CloudHoe";
+			};
+			name = Debug;
+		};
+		F77252D21FFB4B810016B363 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D59VU3JG9L;
+				INFOPLIST_FILE = CloudHoeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HongHu.Rice.CloudHoeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloudHoe.app/CloudHoe";
+			};
+			name = Release;
+		};
+		F77252D41FFB4B810016B363 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D59VU3JG9L;
+				INFOPLIST_FILE = CloudHoeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HongHu.Rice.CloudHoeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CloudHoe;
+			};
+			name = Debug;
+		};
+		F77252D51FFB4B810016B363 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D59VU3JG9L;
+				INFOPLIST_FILE = CloudHoeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HongHu.Rice.CloudHoeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CloudHoe;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F772529C1FFB4B810016B363 /* Build configuration list for PBXProject "CloudHoe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77252CB1FFB4B810016B363 /* Debug */,
+				F77252CC1FFB4B810016B363 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F77252CD1FFB4B810016B363 /* Build configuration list for PBXNativeTarget "CloudHoe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77252CE1FFB4B810016B363 /* Debug */,
+				F77252CF1FFB4B810016B363 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F77252D01FFB4B810016B363 /* Build configuration list for PBXNativeTarget "CloudHoeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77252D11FFB4B810016B363 /* Debug */,
+				F77252D21FFB4B810016B363 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F77252D31FFB4B810016B363 /* Build configuration list for PBXNativeTarget "CloudHoeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77252D41FFB4B810016B363 /* Debug */,
+				F77252D51FFB4B810016B363 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F77252991FFB4B810016B363 /* Project object */;
+}
