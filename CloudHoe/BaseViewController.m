@@ -28,11 +28,11 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setImage:[UIImage imageNamed:@"Back "] forState:UIControlStateNormal];
         CGRect frame = button.frame;
-        frame.size = CGSizeMake(46, 30);
+        frame.size = CGSizeMake(50, 30);
         button.frame = frame;
 //        button.backgroundColor = [UIColor greenColor]
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        button.imageEdgeInsets = UIEdgeInsetsMake(0, 6, 0, 0);
+        button.titleEdgeInsets = UIEdgeInsetsMake(0, 6, 0, 0);
         [button setTitle:@"返回" forState:UIControlStateNormal];
         [button setTitleColor:[UIColor colorWithHexString:@"#FFFFFF"] forState:UIControlStateNormal];
         button.titleLabel.font = SystemFont(15);

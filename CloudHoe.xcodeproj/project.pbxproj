@@ -9,6 +9,25 @@
 /* Begin PBXBuildFile section */
 		B97B6111CF6ED860C4E2C821 /* libPods-CloudHoe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EA8A0CD00EFF6E571D4D3C /* libPods-CloudHoe.a */; };
 		F70EC9801FFB6F8300821D01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70EC97F1FFB6F8300821D01 /* Images.xcassets */; };
+		F70EC9881FFB84A400821D01 /* DynamicStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F70EC9871FFB84A400821D01 /* DynamicStateCell.m */; };
+		F70EC98B1FFB898800821D01 /* DynamicStateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F70EC98A1FFB898800821D01 /* DynamicStateModel.m */; };
+		F761F5791FFDD540008B3D6A /* DynamicDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F761F5781FFDD540008B3D6A /* DynamicDetailVC.m */; };
+		F761F57C1FFDD5EF008B3D6A /* DynamicDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F761F57B1FFDD5EF008B3D6A /* DynamicDetailCell.m */; };
+		F761F57F1FFDD754008B3D6A /* EvaluateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F761F57E1FFDD754008B3D6A /* EvaluateModel.m */; };
+		F761F5821FFDF143008B3D6A /* RelateBotanyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F761F5811FFDF143008B3D6A /* RelateBotanyVC.m */; };
+		F761F5851FFDF41F008B3D6A /* RelateBotanyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F761F5841FFDF41F008B3D6A /* RelateBotanyCell.m */; };
+		F761F5881FFDF562008B3D6A /* GardenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F761F5871FFDF562008B3D6A /* GardenModel.m */; };
+		F761F58B1FFDFFF9008B3D6A /* PersonDynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F761F58A1FFDFFF9008B3D6A /* PersonDynamicCell.m */; };
+		F761F58E1FFE12FC008B3D6A /* RelateBotanyCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = F761F58D1FFE12FC008B3D6A /* RelateBotanyCell1.m */; };
+		F7646EAA1FFF22510067D29A /* PersonDynamicCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = F7646EA91FFF22510067D29A /* PersonDynamicCell1.m */; };
+		F7646EAD1FFF29380067D29A /* PersonDynamicCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = F7646EAC1FFF29380067D29A /* PersonDynamicCell2.m */; };
+		F7646EB01FFF2AD80067D29A /* PersonDynamicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7646EAF1FFF2AD80067D29A /* PersonDynamicVC.m */; };
+		F7646EB31FFF436E0067D29A /* PersonBotanyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7646EB21FFF436E0067D29A /* PersonBotanyVC.m */; };
+		F7646EB61FFF48900067D29A /* animation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7646EB51FFF48900067D29A /* animation.m */; };
+		F7646EBF1FFF67690067D29A /* TiaoGungView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7646EBE1FFF67690067D29A /* TiaoGungView.m */; };
+		F7646EC71FFF6DCF0067D29A /* ColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7646EC21FFF6DCF0067D29A /* ColorPickerImageView.m */; };
+		F7646EC81FFF6DCF0067D29A /* PaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7646EC41FFF6DCF0067D29A /* PaletteView.m */; };
+		F7646EC91FFF6DCF0067D29A /* UIImage+base.m in Sources */ = {isa = PBXBuildFile; fileRef = F7646EC61FFF6DCF0067D29A /* UIImage+base.m */; };
 		F77252A61FFB4B810016B363 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F77252A51FFB4B810016B363 /* AppDelegate.m */; };
 		F77252AC1FFB4B810016B363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77252AA1FFB4B810016B363 /* Main.storyboard */; };
 		F77252B11FFB4B810016B363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77252AF1FFB4B810016B363 /* LaunchScreen.storyboard */; };
@@ -40,6 +59,16 @@
 		F772533E1FFB532D0016B363 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F772533D1FFB532D0016B363 /* PersonModel.m */; };
 		F77253451FFB57800016B363 /* CDTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F77253441FFB57800016B363 /* CDTabBar.m */; };
 		F772534B1FFB5F540016B363 /* PhoneLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F772534A1FFB5F540016B363 /* PhoneLoginVC.m */; };
+		F77C411E1FFC73E10061179C /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F77C41111FFC73E10061179C /* TAAbstractDotView.m */; };
+		F77C411F1FFC73E10061179C /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F77C41131FFC73E10061179C /* TAAnimatedDotView.m */; };
+		F77C41201FFC73E10061179C /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F77C41151FFC73E10061179C /* TADotView.m */; };
+		F77C41211FFC73E10061179C /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F77C41171FFC73E10061179C /* TAPageControl.m */; };
+		F77C41221FFC73E10061179C /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F77C41191FFC73E10061179C /* SDCollectionViewCell.m */; };
+		F77C41231FFC73E10061179C /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F77C411B1FFC73E10061179C /* SDCycleScrollView.m */; };
+		F77C41241FFC73E10061179C /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F77C411D1FFC73E10061179C /* UIView+SDExtension.m */; };
+		F77C41271FFC74310061179C /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F77C41261FFC74310061179C /* HeaderView.m */; };
+		F77C412A1FFC7AE40061179C /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F77C41291FFC7AE40061179C /* UserCell.m */; };
+		F77C412D1FFC84800061179C /* ReleaseDynamicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F77C412C1FFC84800061179C /* ReleaseDynamicVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +93,44 @@
 		E9DFCAA820FE34DB4AAD88FF /* Pods-CloudHoe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudHoe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CloudHoe/Pods-CloudHoe.debug.xcconfig"; sourceTree = "<group>"; };
 		F1EA8A0CD00EFF6E571D4D3C /* libPods-CloudHoe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CloudHoe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70EC97F1FFB6F8300821D01 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F70EC9861FFB84A400821D01 /* DynamicStateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicStateCell.h; sourceTree = "<group>"; };
+		F70EC9871FFB84A400821D01 /* DynamicStateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicStateCell.m; sourceTree = "<group>"; };
+		F70EC9891FFB898800821D01 /* DynamicStateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicStateModel.h; sourceTree = "<group>"; };
+		F70EC98A1FFB898800821D01 /* DynamicStateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicStateModel.m; sourceTree = "<group>"; };
+		F761F5771FFDD540008B3D6A /* DynamicDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicDetailVC.h; sourceTree = "<group>"; };
+		F761F5781FFDD540008B3D6A /* DynamicDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicDetailVC.m; sourceTree = "<group>"; };
+		F761F57A1FFDD5EF008B3D6A /* DynamicDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicDetailCell.h; sourceTree = "<group>"; };
+		F761F57B1FFDD5EF008B3D6A /* DynamicDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicDetailCell.m; sourceTree = "<group>"; };
+		F761F57D1FFDD754008B3D6A /* EvaluateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EvaluateModel.h; sourceTree = "<group>"; };
+		F761F57E1FFDD754008B3D6A /* EvaluateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EvaluateModel.m; sourceTree = "<group>"; };
+		F761F5801FFDF143008B3D6A /* RelateBotanyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RelateBotanyVC.h; sourceTree = "<group>"; };
+		F761F5811FFDF143008B3D6A /* RelateBotanyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RelateBotanyVC.m; sourceTree = "<group>"; };
+		F761F5831FFDF41F008B3D6A /* RelateBotanyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RelateBotanyCell.h; sourceTree = "<group>"; };
+		F761F5841FFDF41F008B3D6A /* RelateBotanyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RelateBotanyCell.m; sourceTree = "<group>"; };
+		F761F5861FFDF562008B3D6A /* GardenModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GardenModel.h; sourceTree = "<group>"; };
+		F761F5871FFDF562008B3D6A /* GardenModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GardenModel.m; sourceTree = "<group>"; };
+		F761F5891FFDFFF9008B3D6A /* PersonDynamicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDynamicCell.h; sourceTree = "<group>"; };
+		F761F58A1FFDFFF9008B3D6A /* PersonDynamicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDynamicCell.m; sourceTree = "<group>"; };
+		F761F58C1FFE12FC008B3D6A /* RelateBotanyCell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RelateBotanyCell1.h; sourceTree = "<group>"; };
+		F761F58D1FFE12FC008B3D6A /* RelateBotanyCell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RelateBotanyCell1.m; sourceTree = "<group>"; };
+		F7646EA81FFF22510067D29A /* PersonDynamicCell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDynamicCell1.h; sourceTree = "<group>"; };
+		F7646EA91FFF22510067D29A /* PersonDynamicCell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDynamicCell1.m; sourceTree = "<group>"; };
+		F7646EAB1FFF29380067D29A /* PersonDynamicCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDynamicCell2.h; sourceTree = "<group>"; };
+		F7646EAC1FFF29380067D29A /* PersonDynamicCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDynamicCell2.m; sourceTree = "<group>"; };
+		F7646EAE1FFF2AD80067D29A /* PersonDynamicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDynamicVC.h; sourceTree = "<group>"; };
+		F7646EAF1FFF2AD80067D29A /* PersonDynamicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDynamicVC.m; sourceTree = "<group>"; };
+		F7646EB11FFF436E0067D29A /* PersonBotanyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonBotanyVC.h; sourceTree = "<group>"; };
+		F7646EB21FFF436E0067D29A /* PersonBotanyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonBotanyVC.m; sourceTree = "<group>"; };
+		F7646EB41FFF48900067D29A /* animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = animation.h; sourceTree = "<group>"; };
+		F7646EB51FFF48900067D29A /* animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = animation.m; sourceTree = "<group>"; };
+		F7646EBD1FFF67690067D29A /* TiaoGungView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TiaoGungView.h; sourceTree = "<group>"; };
+		F7646EBE1FFF67690067D29A /* TiaoGungView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TiaoGungView.m; sourceTree = "<group>"; };
+		F7646EC11FFF6DCF0067D29A /* ColorPickerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerImageView.h; sourceTree = "<group>"; };
+		F7646EC21FFF6DCF0067D29A /* ColorPickerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerImageView.m; sourceTree = "<group>"; };
+		F7646EC31FFF6DCF0067D29A /* PaletteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteView.h; sourceTree = "<group>"; };
+		F7646EC41FFF6DCF0067D29A /* PaletteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteView.m; sourceTree = "<group>"; };
+		F7646EC51FFF6DCF0067D29A /* UIImage+base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+base.h"; sourceTree = "<group>"; };
+		F7646EC61FFF6DCF0067D29A /* UIImage+base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+base.m"; sourceTree = "<group>"; };
 		F77252A11FFB4B810016B363 /* CloudHoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudHoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77252A41FFB4B810016B363 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F77252A51FFB4B810016B363 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -130,6 +197,26 @@
 		F77253441FFB57800016B363 /* CDTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTabBar.m; sourceTree = "<group>"; };
 		F77253491FFB5F540016B363 /* PhoneLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneLoginVC.h; sourceTree = "<group>"; };
 		F772534A1FFB5F540016B363 /* PhoneLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginVC.m; sourceTree = "<group>"; };
+		F77C41101FFC73E10061179C /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		F77C41111FFC73E10061179C /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		F77C41121FFC73E10061179C /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		F77C41131FFC73E10061179C /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		F77C41141FFC73E10061179C /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		F77C41151FFC73E10061179C /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		F77C41161FFC73E10061179C /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		F77C41171FFC73E10061179C /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		F77C41181FFC73E10061179C /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
+		F77C41191FFC73E10061179C /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
+		F77C411A1FFC73E10061179C /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
+		F77C411B1FFC73E10061179C /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
+		F77C411C1FFC73E10061179C /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		F77C411D1FFC73E10061179C /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		F77C41251FFC74310061179C /* HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		F77C41261FFC74310061179C /* HeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
+		F77C41281FFC7AE40061179C /* UserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
+		F77C41291FFC7AE40061179C /* UserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
+		F77C412B1FFC84800061179C /* ReleaseDynamicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseDynamicVC.h; sourceTree = "<group>"; };
+		F77C412C1FFC84800061179C /* ReleaseDynamicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseDynamicVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +260,19 @@
 				F1EA8A0CD00EFF6E571D4D3C /* libPods-CloudHoe.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7646EC01FFF6DCF0067D29A /* palette */ = {
+			isa = PBXGroup;
+			children = (
+				F7646EC11FFF6DCF0067D29A /* ColorPickerImageView.h */,
+				F7646EC21FFF6DCF0067D29A /* ColorPickerImageView.m */,
+				F7646EC31FFF6DCF0067D29A /* PaletteView.h */,
+				F7646EC41FFF6DCF0067D29A /* PaletteView.m */,
+				F7646EC51FFF6DCF0067D29A /* UIImage+base.h */,
+				F7646EC61FFF6DCF0067D29A /* UIImage+base.m */,
+			);
+			path = palette;
 			sourceTree = "<group>";
 		};
 		F77252981FFB4B810016B363 = {
@@ -308,6 +408,8 @@
 		F77252DC1FFB4CD70016B363 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F77C41251FFC74310061179C /* HeaderView.h */,
+				F77C41261FFC74310061179C /* HeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +426,8 @@
 		F77252DE1FFB4CDB0016B363 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F761F5861FFDF562008B3D6A /* GardenModel.h */,
+				F761F5871FFDF562008B3D6A /* GardenModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,6 +435,14 @@
 		F77252DF1FFB4CDB0016B363 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F7646EB41FFF48900067D29A /* animation.h */,
+				F7646EB51FFF48900067D29A /* animation.m */,
+				F761F5831FFDF41F008B3D6A /* RelateBotanyCell.h */,
+				F761F5841FFDF41F008B3D6A /* RelateBotanyCell.m */,
+				F761F58C1FFE12FC008B3D6A /* RelateBotanyCell1.h */,
+				F761F58D1FFE12FC008B3D6A /* RelateBotanyCell1.m */,
+				F7646EBD1FFF67690067D29A /* TiaoGungView.h */,
+				F7646EBE1FFF67690067D29A /* TiaoGungView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -340,6 +452,10 @@
 			children = (
 				F77253201FFB52420016B363 /* GardenVC.h */,
 				F77253211FFB52420016B363 /* GardenVC.m */,
+				F761F5801FFDF143008B3D6A /* RelateBotanyVC.h */,
+				F761F5811FFDF143008B3D6A /* RelateBotanyVC.m */,
+				F7646EB11FFF436E0067D29A /* PersonBotanyVC.h */,
+				F7646EB21FFF436E0067D29A /* PersonBotanyVC.m */,
 			);
 			path = ControllView;
 			sourceTree = "<group>";
@@ -347,6 +463,10 @@
 		F77252E11FFB4CDF0016B363 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F70EC9891FFB898800821D01 /* DynamicStateModel.h */,
+				F70EC98A1FFB898800821D01 /* DynamicStateModel.m */,
+				F761F57D1FFDD754008B3D6A /* EvaluateModel.h */,
+				F761F57E1FFDD754008B3D6A /* EvaluateModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,6 +474,18 @@
 		F77252E21FFB4CDF0016B363 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F70EC9861FFB84A400821D01 /* DynamicStateCell.h */,
+				F70EC9871FFB84A400821D01 /* DynamicStateCell.m */,
+				F77C41281FFC7AE40061179C /* UserCell.h */,
+				F77C41291FFC7AE40061179C /* UserCell.m */,
+				F761F57A1FFDD5EF008B3D6A /* DynamicDetailCell.h */,
+				F761F57B1FFDD5EF008B3D6A /* DynamicDetailCell.m */,
+				F761F5891FFDFFF9008B3D6A /* PersonDynamicCell.h */,
+				F761F58A1FFDFFF9008B3D6A /* PersonDynamicCell.m */,
+				F7646EA81FFF22510067D29A /* PersonDynamicCell1.h */,
+				F7646EA91FFF22510067D29A /* PersonDynamicCell1.m */,
+				F7646EAB1FFF29380067D29A /* PersonDynamicCell2.h */,
+				F7646EAC1FFF29380067D29A /* PersonDynamicCell2.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -363,6 +495,12 @@
 			children = (
 				F77253231FFB52640016B363 /* DynamicStateVC.h */,
 				F77253241FFB52640016B363 /* DynamicStateVC.m */,
+				F77C412B1FFC84800061179C /* ReleaseDynamicVC.h */,
+				F77C412C1FFC84800061179C /* ReleaseDynamicVC.m */,
+				F761F5771FFDD540008B3D6A /* DynamicDetailVC.h */,
+				F761F5781FFDD540008B3D6A /* DynamicDetailVC.m */,
+				F7646EAE1FFF2AD80067D29A /* PersonDynamicVC.h */,
+				F7646EAF1FFF2AD80067D29A /* PersonDynamicVC.m */,
 			);
 			path = ControllView;
 			sourceTree = "<group>";
@@ -524,10 +662,41 @@
 		F772533F1FFB553E0016B363 /* CustomClass */ = {
 			isa = PBXGroup;
 			children = (
+				F7646EC01FFF6DCF0067D29A /* palette */,
+				F77C410E1FFC73E10061179C /* SDCycleScrollView */,
 				F77253431FFB57800016B363 /* CDTabBar.h */,
 				F77253441FFB57800016B363 /* CDTabBar.m */,
 			);
 			path = CustomClass;
+			sourceTree = "<group>";
+		};
+		F77C410E1FFC73E10061179C /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				F77C410F1FFC73E10061179C /* PageControl */,
+				F77C41181FFC73E10061179C /* SDCollectionViewCell.h */,
+				F77C41191FFC73E10061179C /* SDCollectionViewCell.m */,
+				F77C411A1FFC73E10061179C /* SDCycleScrollView.h */,
+				F77C411B1FFC73E10061179C /* SDCycleScrollView.m */,
+				F77C411C1FFC73E10061179C /* UIView+SDExtension.h */,
+				F77C411D1FFC73E10061179C /* UIView+SDExtension.m */,
+			);
+			path = SDCycleScrollView;
+			sourceTree = "<group>";
+		};
+		F77C410F1FFC73E10061179C /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				F77C41101FFC73E10061179C /* TAAbstractDotView.h */,
+				F77C41111FFC73E10061179C /* TAAbstractDotView.m */,
+				F77C41121FFC73E10061179C /* TAAnimatedDotView.h */,
+				F77C41131FFC73E10061179C /* TAAnimatedDotView.m */,
+				F77C41141FFC73E10061179C /* TADotView.h */,
+				F77C41151FFC73E10061179C /* TADotView.m */,
+				F77C41161FFC73E10061179C /* TAPageControl.h */,
+				F77C41171FFC73E10061179C /* TAPageControl.m */,
+			);
+			path = PageControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -723,32 +892,61 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F77C41271FFC74310061179C /* HeaderView.m in Sources */,
 				F772532B1FFB52960016B363 /* TabBarController.m in Sources */,
+				F77C411E1FFC73E10061179C /* TAAbstractDotView.m in Sources */,
 				F77253341FFB529F0016B363 /* BaseViewController.m in Sources */,
 				F772531A1FFB509A0016B363 /* ZXPUnicode.m in Sources */,
 				F77253281FFB52840016B363 /* HoeFriendVC.m in Sources */,
 				F772530F1FFB509A0016B363 /* InfoCache.m in Sources */,
+				F761F58E1FFE12FC008B3D6A /* RelateBotanyCell1.m in Sources */,
 				F77253171FFB509A0016B363 /* UILabel+WLAttributedString.m in Sources */,
 				F772533E1FFB532D0016B363 /* PersonModel.m in Sources */,
 				F77253101FFB509A0016B363 /* NSStringExt.m in Sources */,
+				F77C412D1FFC84800061179C /* ReleaseDynamicVC.m in Sources */,
+				F7646EC71FFF6DCF0067D29A /* ColorPickerImageView.m in Sources */,
 				F77253131FFB509A0016B363 /* UITableView+EmptyData.m in Sources */,
+				F7646EB31FFF436E0067D29A /* PersonBotanyVC.m in Sources */,
+				F7646EB61FFF48900067D29A /* animation.m in Sources */,
+				F7646EC91FFF6DCF0067D29A /* UIImage+base.m in Sources */,
 				F77253331FFB529F0016B363 /* NavigationController.m in Sources */,
+				F7646EBF1FFF67690067D29A /* TiaoGungView.m in Sources */,
+				F761F5791FFDD540008B3D6A /* DynamicDetailVC.m in Sources */,
 				F77253111FFB509A0016B363 /* CountDownServer.m in Sources */,
 				F77253161FFB509A0016B363 /* UIImage+UIImageExt.m in Sources */,
+				F761F57C1FFDD5EF008B3D6A /* DynamicDetailCell.m in Sources */,
 				F77253191FFB509A0016B363 /* UIViewExt.m in Sources */,
 				F772534B1FFB5F540016B363 /* PhoneLoginVC.m in Sources */,
 				F77253321FFB529F0016B363 /* BasePresentViewController.m in Sources */,
 				F77253151FFB509A0016B363 /* UIColor+Expend.m in Sources */,
+				F7646EC81FFF6DCF0067D29A /* PaletteView.m in Sources */,
+				F77C41211FFC73E10061179C /* TAPageControl.m in Sources */,
 				F77252B41FFB4B810016B363 /* main.m in Sources */,
+				F761F5851FFDF41F008B3D6A /* RelateBotanyCell.m in Sources */,
+				F77C412A1FFC7AE40061179C /* UserCell.m in Sources */,
+				F77C41221FFC73E10061179C /* SDCollectionViewCell.m in Sources */,
+				F77C411F1FFC73E10061179C /* TAAnimatedDotView.m in Sources */,
+				F761F57F1FFDD754008B3D6A /* EvaluateModel.m in Sources */,
 				F772530E1FFB509A0016B363 /* AFNetworking_RequestData.m in Sources */,
 				F77252A61FFB4B810016B363 /* AppDelegate.m in Sources */,
+				F761F5881FFDF562008B3D6A /* GardenModel.m in Sources */,
+				F70EC9881FFB84A400821D01 /* DynamicStateCell.m in Sources */,
 				F77253451FFB57800016B363 /* CDTabBar.m in Sources */,
 				F772531F1FFB52230016B363 /* HomeVC.m in Sources */,
 				F77253181FFB509A0016B363 /* UIViewController+UIViewControllerExt.m in Sources */,
 				F77253251FFB52640016B363 /* DynamicStateVC.m in Sources */,
 				F77253141FFB509A0016B363 /* UIView+Toast.m in Sources */,
+				F77C41231FFC73E10061179C /* SDCycleScrollView.m in Sources */,
+				F7646EB01FFF2AD80067D29A /* PersonDynamicVC.m in Sources */,
 				F77253381FFB52D90016B363 /* LoginVC.m in Sources */,
+				F77C41241FFC73E10061179C /* UIView+SDExtension.m in Sources */,
+				F7646EAD1FFF29380067D29A /* PersonDynamicCell2.m in Sources */,
+				F761F58B1FFDFFF9008B3D6A /* PersonDynamicCell.m in Sources */,
+				F70EC98B1FFB898800821D01 /* DynamicStateModel.m in Sources */,
+				F77C41201FFC73E10061179C /* TADotView.m in Sources */,
+				F7646EAA1FFF22510067D29A /* PersonDynamicCell1.m in Sources */,
 				F77253121FFB509A0016B363 /* RegexTool.m in Sources */,
+				F761F5821FFDF143008B3D6A /* RelateBotanyVC.m in Sources */,
 				F77253221FFB52420016B363 /* GardenVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
