@@ -12,6 +12,7 @@
 #import "ReleaseDynamicVC.h"
 #import "DynamicDetailVC.h"
 
+
 @interface HomeVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property(nonatomic,strong) HeaderView *headView;
@@ -41,6 +42,39 @@
     UIButton *viewBtn = [UIButton buttonWithframe:CGRectMake(0, 0, 32, 32) text:@"发布" font:SystemFont(14) textColor:@"#ffffff" backgroundColor:nil normal:nil selected:nil];
     [viewBtn addTarget:self action:@selector(releaseAction) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:viewBtn];
+    
+    [self getHotblog];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [_tableView reloadData];
+}
+
+- (void)getHotblog
+{
+    
+    NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
+    
+//    [paramDic  setValue:@8 forKey:@"userId"];
+//    [paramDic  setValue:@"7db9e4b81a16ef15e195599fc4de0eae" forKey:@"Token"];
+//    [paramDic  setValue:@"test" forKey:@"test"];// 测试
+
+    [AFNetworking_RequestData requestMethodPOSTUrl:GetHotblog dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
+        
+        NSMutableArray *arrM = [NSMutableArray array];
+        for (NSDictionary *dic in responseObject[@"data"]) {
+            DynamicStateModel *model = [DynamicStateModel yy_modelWithJSON:dic];
+            [arrM addObject:model];
+        }
+        self.dataArr = arrM;
+        [_tableView reloadData];
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)releaseAction
@@ -51,14 +85,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return _dataArr.count;
-        return 3;
+    return _dataArr.count;
+//        return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 322+10;
-    //    return 44;
+    DynamicStateModel *model = self.dataArr[indexPath.row];
+
+    return model.cellHeight;
+//    return 322+10;
     
 }
 
@@ -74,7 +110,7 @@
         
     }
     
-    cell.model = nil;
+    cell.model = self.dataArr[indexPath.row];
 
     
     return cell;
@@ -84,8 +120,11 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    DynamicStateModel *model = self.dataArr[indexPath.row];
+
     DynamicDetailVC *vc = [[DynamicDetailVC alloc] init];
     vc.title = @"详情";
+    vc.model1 = model;
     [self.navigationController pushViewController:vc animated:YES];
     
 }

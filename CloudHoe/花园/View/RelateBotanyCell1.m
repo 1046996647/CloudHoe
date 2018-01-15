@@ -33,9 +33,16 @@
         _deviceLab = [UILabel labelWithframe:CGRectZero text:@"未绑定设备" font:[UIFont systemFontOfSize:14] textAlignment:NSTextAlignmentLeft textColor:@"#999999"];
         [self.contentView addSubview:_deviceLab];
 
-//        _line = [[UIView alloc] initWithFrame:CGRectZero];
-//        [self.contentView addSubview:_line];
-//        _line.backgroundColor = [UIColor colorWithHexString:@"#E0E0E0"];
+        _line = [[UIView alloc] initWithFrame:CGRectZero];
+        [self.contentView addSubview:_line];
+        _line.backgroundColor = [UIColor colorWithHexString:@"#E0E0E0"];
+        
+        _deviceBtn = [UIButton buttonWithframe:CGRectZero text:@"绑定设备" font:[UIFont systemFontOfSize:14] textColor:@"#4A90E2" backgroundColor:@"" normal:@"" selected:nil];
+        [self.contentView addSubview:_deviceBtn];
+        _deviceBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        //        _xiaDanBtn.tag = 0;
+        //        [_stateBtn addTarget:self action:@selector(xiaDanAction) forControlEvents:UIControlEventTouchUpInside];
+        _deviceBtn.hidden = YES;
         
     }
     return self;
@@ -56,7 +63,14 @@
     _nameLab.frame = CGRectMake(_imgView1.right+10, _timeLab.centerY-9, _timeLab.left-(_imgView1.right+10)-10, 18);
     
     _deviceLab.frame = CGRectMake(_nameLab.left, _nameLab.bottom+14, kScreenWidth-_nameLab.left-10, 18);
-//    _line.frame = CGRectMake(15, _imgView1.bottom+10, kScreenWidth-30, .5);
+    
+    _deviceBtn.frame = CGRectMake(kScreenWidth-15-60, _deviceLab.centerY-7, 60, 15);
+    
+    _line.frame = CGRectMake(15, 81-0.5, kScreenWidth-15, 0.5);
+
+    
+    [_imgView1 sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"img"]];
+
 
 }
 

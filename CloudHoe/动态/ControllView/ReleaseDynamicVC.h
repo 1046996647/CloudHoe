@@ -6,8 +6,10 @@
 //  Copyright © 2018年 ZhangWeiLiang. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BasePresentViewController.h"
 
-@interface ReleaseDynamicVC : BaseViewController
+@interface ReleaseDynamicVC : BasePresentViewController
+
+@property(nonatomic,strong) UIImage *img;
 
 @end

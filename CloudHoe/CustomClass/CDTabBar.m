@@ -18,12 +18,17 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    
+    if (self.middleBtn) {
+        [self.middleBtn removeFromSuperview];
+    }
+    
     CGFloat w = self.bounds.size.width/5.0;
     
     UIButton *sendBtn = [[UIButton alloc] init];
     [sendBtn setImage:[UIImage imageNamed:@"拍摄"] forState:UIControlStateNormal];
     sendBtn.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
-    [sendBtn setTitle:@"拍摄" forState:UIControlStateNormal];
+//    [sendBtn setTitle:@"" forState:UIControlStateNormal];
     sendBtn.titleLabel.font = [UIFont systemFontOfSize:11];
     [sendBtn addTarget:self action:@selector(didClickPublishBtn:) forControlEvents:UIControlEventTouchUpInside];
     sendBtn.size = CGSizeMake(w, 80);

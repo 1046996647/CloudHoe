@@ -7,7 +7,12 @@
 //
 
 #import "BaseViewController.h"
+#import "DynamicStateModel.h"
+
 
 @interface DynamicDetailVC : BaseViewController
+
+@property(nonatomic,strong) DynamicStateModel *model1;
+
 
 @end

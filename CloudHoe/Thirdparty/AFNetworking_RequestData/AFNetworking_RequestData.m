@@ -79,26 +79,25 @@ static const NSUInteger kDefaultTimeoutInterval = 20;
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain", @"text/json", @"text/javascript",@"text/html", nil];
     
     // 用户信息不包含token
-    PersonModel *person = [InfoCache unarchiveObjectWithFile:Person];
-//    NSString *token = [InfoCache unarchiveObjectWithFile:@"token"];
-//    NSString *userid = [InfoCache unarchiveObjectWithFile:@"userid"];
-//    NSString *siteId = [InfoCache unarchiveObjectWithFile:@"siteId"];
+//    PersonModel *person = [InfoCache unarchiveObjectWithFile:Person];
+    NSString *token = [InfoCache unarchiveObjectWithFile:@"Token"];
+    NSString *userid = [InfoCache unarchiveObjectWithFile:@"userId"];
 
     //======POST=====
     if ([Method isEqualToString:@"POST"]) {
 
-        if (person) {
-            [dic  setValue:person.Token forKey:@"Token"];
-            [dic  setValue:person.userId forKey:@"userId"];
+//        if (person) {
+//            [dic  setValue:person.Token forKey:@"Token"];
+//            [dic  setValue:person.userId forKey:@"userId"];
+//
+//        }
+        
+        if (token) {
+            [dic  setValue:token forKey:@"Token"];
+            [dic  setValue:userid forKey:@"userId"];
             
         }
 
-//        if (token) {
-//            [dic  setValue:token forKey:@"token"];
-//            [dic  setValue:userid forKey:@"userid"];
-//            [dic  setValue:siteId forKey:@"siteId"];
-//
-//        }
         
         NSLog(@"paramDic:%@",dic);
 
@@ -233,11 +232,11 @@ static const NSUInteger kDefaultTimeoutInterval = 20;
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain", @"text/json", @"text/javascript",@"text/html", nil];
     
     //    PersonModel *person = [InfoCache unarchiveObjectWithFile:Person];
-    NSString *token = [InfoCache unarchiveObjectWithFile:@"token"];
-    NSString *userid = [InfoCache unarchiveObjectWithFile:@"userid"];
+    NSString *token = [InfoCache unarchiveObjectWithFile:@"Token"];
+    NSString *userid = [InfoCache unarchiveObjectWithFile:@"userId"];
     
-    [dic  setValue:userid forKey:@"userid"];
-    [dic  setValue:token forKey:@"token"];
+    [dic  setValue:userid forKey:@"userId"];
+    [dic  setValue:token forKey:@"Token"];
     
     //formData: 专门用于拼接需要上传的数据,在此位置生成一个要上传的数据体
     [manager POST:url parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
@@ -252,7 +251,7 @@ static const NSUInteger kDefaultTimeoutInterval = 20;
         NSString *str = [formatter stringFromDate:[NSDate date]];
         NSString *fileName = [NSString stringWithFormat:@"%@.png", str];
         
-        [formData appendPartWithFileData:data name:@"image" fileName:fileName mimeType:@"image/png"];
+        [formData appendPartWithFileData:data name:@"headimg" fileName:fileName mimeType:@"image/png"];
         
         NSLog(@"------%@",formData);
         

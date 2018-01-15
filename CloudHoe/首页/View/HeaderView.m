@@ -54,8 +54,9 @@
     _imgView1.frame = CGRectMake(15, 15, 40, 40);
     _imgView1.layer.cornerRadius = _imgView1.height/2;
     _imgView1.layer.masksToBounds = YES;
-    _imgView1.backgroundColor = [UIColor redColor];
-    
+//    _imgView1.backgroundColor = [UIColor redColor];
+    [_imgView1 sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"mrtx"]];
+
     _nameLab = [UILabel labelWithframe:CGRectZero text:@"MAX好友来浇水" font:[UIFont systemFontOfSize:16] textAlignment:NSTextAlignmentLeft textColor:@"#313131"];
     [inBtn addSubview:_nameLab];
     _nameLab.frame = CGRectMake(_imgView1.right+10, _imgView1.centerY-9, 120, 18);
@@ -91,7 +92,7 @@
     [self addSubview:view];
 
     
-    UILabel *label = [UILabel labelWithframe:CGRectZero text:@"最新动态" font:[UIFont systemFontOfSize:16] textAlignment:NSTextAlignmentCenter textColor:@"#313131"];
+    UILabel *label = [UILabel labelWithframe:CGRectZero text:@"热门动态" font:[UIFont systemFontOfSize:16] textAlignment:NSTextAlignmentCenter textColor:@"#313131"];
     label.frame = CGRectMake(15, 16, 70, 17);
     [view addSubview:label];
 

@@ -8,6 +8,17 @@
 
 #import "DynamicStateModel.h"
 
+
+@implementation Zanuser
+
+@end
+
 @implementation DynamicStateModel
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"zanuser": [Zanuser class]
+             };
+}
 
 @end

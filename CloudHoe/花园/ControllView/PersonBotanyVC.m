@@ -8,6 +8,7 @@
 
 #import "PersonBotanyVC.h"
 #import "RelateBotanyCell1.h"
+#import "AddBotanyVC.h"
 
 @interface PersonBotanyVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -40,14 +41,21 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
-    //    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     // 右上角按钮
     UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 32, 22)];
     UIButton *viewBtn = [UIButton buttonWithframe:rightView.bounds text:@"添加" font:SystemFont(14) textColor:@"#ffffff" backgroundColor:nil normal:nil selected:nil];
     [rightView addSubview:viewBtn];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
-    //    [viewBtn addTarget:self action:@selector(alumbBtnEvent) forControlEvents:UIControlEventTouchUpInside];
+    [viewBtn addTarget:self action:@selector(addAction) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)addAction
+{
+    AddBotanyVC *vc = [[AddBotanyVC alloc] init];
+    vc.title = @"添加植物";
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,11 +71,33 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 86;
+    return 81;
     //    return 44;
     
 }
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.type == 1) {
+        return UITableViewCellEditingStyleDelete;
+    };
+    return UITableViewCellEditingStyleNone;
+
+}
+
+//修改左滑的按钮的字
+-(NSString*)tableView:(UITableView*)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexpath {
+    
+    return @"删除";
+    
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    [self cellctionAction:self.dataArr[indexPath.row]];
+//    [self.dataArr removeObjectAtIndex:indexPath.row];
+//    [_tableView reloadData];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cell_id = @"cell";
@@ -80,7 +110,9 @@
     }
     
     cell.model = nil;
-    
+    if (self.type == 1) {
+        cell.deviceBtn.hidden = NO;
+    };
     
     return cell;
 }

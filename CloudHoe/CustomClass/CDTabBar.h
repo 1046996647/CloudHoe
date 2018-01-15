@@ -10,5 +10,5 @@
 
 @interface CDTabBar : UITabBar
 
-@property (nonatomic,copy) void(^didMiddBtn)();
+@property (nonatomic,copy) void(^didMiddBtn)(void);
 @end

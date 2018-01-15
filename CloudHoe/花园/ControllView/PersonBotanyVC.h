@@ -10,4 +10,7 @@
 
 @interface PersonBotanyVC : BaseViewController
 
+@property(nonatomic,assign) NSInteger type;
+
+
 @end

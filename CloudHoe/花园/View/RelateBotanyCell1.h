@@ -17,6 +17,7 @@
 @property(nonatomic,strong) UILabel *timeLab;
 @property(nonatomic,strong) UILabel *deviceLab;
 @property(nonatomic,strong) UIView *line;
+@property(nonatomic,strong) UIButton *deviceBtn;
 
 @property(nonatomic,strong) GardenModel *model;
 

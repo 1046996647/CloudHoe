@@ -24,12 +24,12 @@
         _imgView1 = [UIImageView imgViewWithframe:CGRectZero icon:@""];
         _imgView1.contentMode = UIViewContentModeScaleAspectFill;
         [_bgView addSubview:_imgView1];
-        _imgView1.backgroundColor = [UIColor redColor];
+//        _imgView1.backgroundColor = [UIColor redColor];
         
         _imgView2 = [UIImageView imgViewWithframe:CGRectZero icon:@""];
         _imgView2.contentMode = UIViewContentModeScaleAspectFill;
         [_bgView addSubview:_imgView2];
-        _imgView2.backgroundColor = [UIColor redColor];
+//        _imgView2.backgroundColor = [UIColor redColor];
         
         
 //        _nameLab = [UILabel labelWithframe:CGRectZero text:@"MHYTFY(多肉盆栽1)" font:[UIFont systemFontOfSize:16] textAlignment:NSTextAlignmentLeft textColor:@"#313131"];
@@ -91,6 +91,10 @@
     _line.frame = CGRectMake(0, _bgView.bottom, kScreenWidth, 5);
 
     _model.cellHeight = _line.bottom;
+    
+    _imgView1.image = [UIImage imageNamed:@"pz"];
+    [_imgView2 sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"img"]];
+
 }
 
 - (void)xiaDanAction

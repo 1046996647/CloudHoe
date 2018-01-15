@@ -8,6 +8,7 @@
 
 #import "PhoneLoginVC.h"
 #import "RegexTool.h"
+#import "AppDelegate.h"
 
 #define kCountDownForVerifyCode @"CountDownForVerifyCode"
 
@@ -91,8 +92,42 @@
 
 - (void)loginAction
 {
+    [self.view endEditing:YES];
     
+    if (self.phone.text.length == 0||
+        self.password.text.length == 0) {
+        [self.view makeToast:@"您还有内容未填写完整"];
+        return;
+    }
+    
+    NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
+    
+    [paramDic  setValue:self.phone.text forKey:@"phone"];
+    [paramDic  setValue:self.password.text forKey:@"verificationCode"];
+    [paramDic  setValue:@"Mail" forKey:@"LoginMode"];
+    
+    
+    [AFNetworking_RequestData requestMethodPOSTUrl:Login dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
+        
+        
+        [InfoCache archiveObject:self.phone.text toFile:@"phone"];
+        
+        [InfoCache archiveObject:responseObject[@"data"][@"Token"] toFile:@"Token"];
+        [InfoCache archiveObject:responseObject[@"data"][@"userId"] toFile:@"userId"];
+        
+        [InfoCache saveValue:@1 forKey:@"LoginedState"];
+        
+        AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        TabBarController *tabVC = [[TabBarController alloc] init];
+        delegate.tabVC = tabVC;
+        delegate.window.rootViewController = tabVC;
+        
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
+
 
 - (void)getCodeAction
 {
@@ -109,20 +144,20 @@
     NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
     [paramDic  setValue:self.phone.text forKey:@"phone"];
     
-//    [AFNetworking_RequestData requestMethodPOSTUrl:SendMail dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
-//
-//        NSNumber *code = [responseObject objectForKey:@"status"];
-//        if (1 == [code integerValue]) {
-//
-//            NSString *message = [responseObject objectForKey:@"message"];
-//            [self.navigationController.view makeToast:message];
-//
-//        }
-//
-//
-//    } failure:^(NSError *error) {
-//
-//    }];
+    [AFNetworking_RequestData requestMethodPOSTUrl:GetCode dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
+
+        NSNumber *code = [responseObject objectForKey:@"status"];
+        if (1 == [code integerValue]) {
+
+            NSString *message = [responseObject objectForKey:@"验证码发送成功"];
+            [self.navigationController.view makeToast:message];
+
+        }
+
+
+    } failure:^(NSError *error) {
+
+    }];
 }
 
 #pragma mark-验证码通知方法
@@ -147,7 +182,7 @@
     } else {
         [self.countDownButton setTitle:[NSString stringWithFormat:@"已发送(%@)",num] forState:UIControlStateNormal];
         self.countDownButton.userInteractionEnabled = NO;
-        [self.countDownButton setTitleColor:[UIColor colorWithHexString:@"#DDBA7F"] forState:UIControlStateNormal];
+        [self.countDownButton setTitleColor:[UIColor colorWithHexString:@"#50DBD1"] forState:UIControlStateNormal];
     }
 }
 @end

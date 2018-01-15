@@ -1,0 +1,83 @@
+//
+//  AddBotanyVC.m
+//  CloudHoe
+//
+//  Created by ZhangWeiLiang on 2018/1/8.
+//  Copyright © 2018年 ZhangWeiLiang. All rights reserved.
+//
+
+#import "AddBotanyVC.h"
+
+@interface AddBotanyVC ()<UITextViewDelegate>
+
+@property(nonatomic,strong) UITextView *tv;
+@property(nonatomic,strong) UITextField *tf;
+@property(nonatomic,strong) UILabel *remind;
+
+@end
+
+@implementation AddBotanyVC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 10, kScreenWidth, 124+44)];
+    view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:view];
+    
+    _tf = [UITextField textFieldWithframe:CGRectMake(22, 0, kScreenWidth-20-20, 44) placeholder:@"植物名称" font:[UIFont systemFontOfSize:16] leftView:nil backgroundColor:@"#FFFFFF"];
+    [_tf setValue:[UIFont systemFontOfSize:16] forKeyPath:@"_placeholderLabel.font"];// 设置这里时searchTF.font也要设置不然会偏上
+    [_tf setValue:[UIColor colorWithHexString:@"#999999"] forKeyPath:@"_placeholderLabel.textColor"];
+//    _password.keyboardType = UIKeyboardTypeNumberPad;
+    [view addSubview:_tf];
+    
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, _tf.bottom, kScreenWidth, .5)];
+    line.backgroundColor = [UIColor colorWithHexString:@"#efefef"];
+    [view addSubview:line];
+
+    
+    _tv = [[UITextView alloc] initWithFrame:CGRectMake(20, line.bottom, kScreenWidth-40, 124-28)];
+    _tv.font = [UIFont systemFontOfSize:16];
+    [view addSubview:_tv];
+    _tv.delegate = self;
+    //    _tv.backgroundColor = [UIColor redColor];
+    
+    _remind = [UILabel labelWithframe:CGRectMake(3, 10, 200, 17) text:@"请输入内容" font:[UIFont systemFontOfSize:16] textAlignment:NSTextAlignmentLeft textColor:@"#999999"];
+    [_tv addSubview:_remind];
+    
+    UIButton *addBtn = [UIButton buttonWithframe:CGRectMake(20, view.bottom+20, 78, 78) text:@"" font:[UIFont systemFontOfSize:14] textColor:@"#999999" backgroundColor:nil normal:@"Group" selected:nil];
+    [self.view addSubview:addBtn];
+    //    [addBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *loginBtn = [UIButton buttonWithframe:CGRectMake(20, addBtn.bottom+20, kScreenWidth-40, 44) text:@"保存" font:[UIFont systemFontOfSize:16] textColor:@"#FFFFFF" backgroundColor:@"#50DBD1" normal:nil selected:nil];
+    loginBtn.layer.cornerRadius = loginBtn.height/2;
+    loginBtn.layer.masksToBounds = YES;
+    [self.view addSubview:loginBtn];
+    //    [loginBtn addTarget:self action:@selector(okAction) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/**
+ 内容发生改变编辑 自定义文本框placeholder
+ 有时候我们要控件自适应输入的文本的内容的高度，只要在textViewDidChange的代理方法中加入调整控件大小的代理即可
+ @param textView textView
+ */
+- (void)textViewDidChange:(UITextView *)textView
+{
+    
+    if (textView.text.length < 1) {
+        self.remind.hidden = NO;
+    }
+    else {
+        self.remind.hidden = YES;
+        
+    }
+    
+}
+
+@end

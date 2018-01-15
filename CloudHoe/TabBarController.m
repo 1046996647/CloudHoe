@@ -15,6 +15,10 @@
 #import "DynamicStateVC.h"
 #import "HoeFriendVC.h"
 
+#import "LGPhoto.h"
+#import "ReleaseDynamicVC.h"
+
+
 @interface TabBarController ()<UITabBarControllerDelegate,UINavigationControllerDelegate>
 
 
@@ -62,9 +66,34 @@
     CDTabBar *tabBar = [[CDTabBar alloc] init];
     [self setValue:tabBar forKey:@"tabBar"];
     [tabBar setDidMiddBtn:^{
-//        CDMiddleVC *vc = [[CDMiddleVC alloc] init];
-//        CDNavigationVC *nav = [[CDNavigationVC alloc] initWithRootViewController:vc];
-//        [self presentViewController:nav animated:YES completion:nil];
+        
+        ZLCameraViewController *cameraVC = [[ZLCameraViewController alloc] init];
+        // 拍照最多个数
+        cameraVC.maxCount = 1;
+        // 单拍
+        cameraVC.cameraType = ZLCameraSingle;
+        cameraVC.callback = ^(NSArray *cameras){
+            
+            if (cameras.count > 0) {
+                
+                //在这里得到拍照结果
+                //数组元素是ZLCamera对象
+                ZLCamera *canamerPhoto = cameras[0];
+                UIImage *image = canamerPhoto.photoImage;
+                
+                ReleaseDynamicVC *vc = [[ReleaseDynamicVC alloc] init];
+                vc.title = @"发布";
+                vc.img = image;
+                
+                NavigationController *nav = [[NavigationController alloc]initWithRootViewController:vc];
+                
+                [self presentViewController:nav animated:YES completion:nil];
+                
+            }
+
+        };
+        [cameraVC showPickerVc:self];
+
     }];
     
     

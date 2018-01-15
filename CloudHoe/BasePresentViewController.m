@@ -17,17 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithHexString:@"#FAE5E8"];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#efefef"];
     
     // 设置了UIRectEdgeNone之后，你嵌在UIViewController里面的UITableView和UIScrollView就不会穿过UINavigationBar了，同时UIView的控件也回复到了iOS6时代。
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     //        [button setTitle:@"返回" forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"icon_back_normal"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"Back "] forState:UIControlStateNormal];
     //        [button setImage:[UIImage imageNamed:@"navigationReturnClick"] forState:UIControlStateHighlighted];
     CGRect frame = button.frame;
-    frame.size = CGSizeMake(30, 30);
+    frame.size = CGSizeMake(50, 30);
     button.frame = frame;
     
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;

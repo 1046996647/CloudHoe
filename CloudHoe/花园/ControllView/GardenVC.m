@@ -13,6 +13,8 @@
 #import "PersonBotanyVC.h"
 #import "animation.h"
 #import "TiaoGungView.h"
+#import "GuanZhuView.h"
+#import "ProfileVC.h"
 
 @interface GardenVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -42,11 +44,20 @@
 @property(nonatomic,strong) UIButton *gunZhuBtn;
 
 @property(nonatomic,strong) TiaoGungView *tiaoGungView;
+@property(nonatomic,strong) GuanZhuView *guanZhuView;
 
 
 @end
 
 @implementation GardenVC
+
+- (GuanZhuView *)guanZhuView
+{
+    if (!_guanZhuView) {
+        _guanZhuView = [[GuanZhuView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    }
+    return _guanZhuView;
+}
 
 - (TiaoGungView *)tiaoGungView
 {
@@ -75,7 +86,7 @@
     _headBtn.layer.masksToBounds = YES;
     [_bgView addSubview:_headBtn];
     //        _xiaDanBtn.tag = 0;
-//    [_headBtn addTarget:self action:@selector(stateAction) forControlEvents:UIControlEventTouchUpInside];
+    [_headBtn addTarget:self action:@selector(headAction) forControlEvents:UIControlEventTouchUpInside];
     
 
     _headView = [UIImageView imgViewWithframe:CGRectMake(2, 2, 40, 40) icon:@""];
@@ -83,9 +94,10 @@
     _headView.layer.masksToBounds = YES;
     //    _imgView1.contentMode = UIViewContentModeScaleAspectFill;
     [_headBtn addSubview:_headView];
-    _headView.backgroundColor = [UIColor redColor];
+//    _headView.backgroundColor = [UIColor redColor];
     
-    _nameLab = [UILabel labelWithframe:CGRectMake(_headView.right+7, _headView.centerY-11, 52, 22) text:@"赵诗怡" font:[UIFont boldSystemFontOfSize:16] textAlignment:NSTextAlignmentLeft textColor:@"#313131"];
+    // 赵诗怡
+    _nameLab = [UILabel labelWithframe:CGRectMake(_headView.right+7, _headView.centerY-11, 52, 22) text:@"" font:[UIFont boldSystemFontOfSize:16] textAlignment:NSTextAlignmentLeft textColor:@"#313131"];
     [_headBtn addSubview:_nameLab];
 
     
@@ -104,7 +116,9 @@
     _zhiWuView.layer.borderColor = [UIColor colorWithHexString:@"#ffffff"].CGColor;
     //    _imgView1.contentMode = UIViewContentModeScaleAspectFill;
     [_bgView addSubview:_zhiWuView];
-    _zhiWuView.backgroundColor = [UIColor redColor];
+//    _zhiWuView.backgroundColor = [UIColor redColor];
+    [_zhiWuView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"img"]];
+
     
     _yinYingView = [UIImageView imgViewWithframe:CGRectMake((kScreenWidth-150)/2, _zhiWuView.bottom+12, 150, 12) icon:@"Oval 14"];
     [_bgView addSubview:_yinYingView];
@@ -143,8 +157,8 @@
     
     _gunZhuBtn = [UIButton buttonWithframe:CGRectMake(24, _jiaoShuiBtn.centerY-30, 55, 60) text:@"" font:[UIFont systemFontOfSize:14] textColor:@"#999999" backgroundColor:nil normal:@"Group 7" selected:nil];
     [_bgView addSubview:_gunZhuBtn];
-    //    _evaBtn.userInteractionEnabled = NO;
-    
+    [_gunZhuBtn addTarget:self action:@selector(gunZhuAction) forControlEvents:UIControlEventTouchUpInside];
+
     // 最新动态
     UILabel *label = [UILabel labelWithframe:CGRectMake(15, _imgView.height-12-17, kScreenWidth-15, 17) text:@"最新动态" font:[UIFont boldSystemFontOfSize:16] textAlignment:NSTextAlignmentLeft textColor:@"#313131"];
     [_imgView addSubview:label];
@@ -163,7 +177,63 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.tableHeaderView = _bgView;
     
+    [self getUserInfo];
+    
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    PersonModel *model = [InfoCache unarchiveObjectWithFile:Person];
+    
+    [_headView sd_setImageWithURL:[NSURL URLWithString:model.headimg] placeholderImage:[UIImage imageNamed:@"mrtx"]];
+    
+    if (model.nikename.length == 0) {
+        _nameLab.text = @"未设置";
+
+    }
+    else {
+        _nameLab.text = model.nikename;
+        
+        CGSize size = [NSString textLength:model.nikename font:_nameLab.font];
+        _nameLab.width = size.width;
+        _headBtn.width = _nameLab.right+15;
+
+    }
+}
+
+// 获取用户信息
+- (void)getUserInfo
+{
+    
+    NSMutableDictionary *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
+    
+    [AFNetworking_RequestData requestMethodPOSTUrl:GetUserInfo dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
+        
+        PersonModel *model = [PersonModel yy_modelWithJSON:responseObject[@"data"]];
+        [InfoCache archiveObject:model toFile:Person];
+        
+        [_headView sd_setImageWithURL:[NSURL URLWithString:model.headimg] placeholderImage:[UIImage imageNamed:@"mrtx"]];
+        
+        if (model.nikename.length == 0) {
+            _nameLab.text = @"未设置";
+            
+        }
+        else {
+            _nameLab.text = model.nikename;
+            
+            CGSize size = [NSString textLength:model.nikename font:_nameLab.font];
+            _nameLab.width = size.width;
+            _headBtn.width = _nameLab.right+15;
+            
+        }
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
 
 -(void)clickAnimation{
     
@@ -184,10 +254,23 @@
     
 }
 
+- (void)gunZhuAction
+{
+    [[UIApplication sharedApplication].keyWindow addSubview:self.guanZhuView];
+
+}
+
 - (void)liangGuangAction
 {
 
     [[UIApplication sharedApplication].keyWindow addSubview:self.tiaoGungView];
+}
+
+- (void)headAction
+{
+    ProfileVC *vc = [[ProfileVC alloc] init];
+    vc.title = @"我的";
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)moreAction:(UIButton *)btn

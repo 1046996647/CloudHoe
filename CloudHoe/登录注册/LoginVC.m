@@ -9,8 +9,14 @@
 #import "LoginVC.h"
 #import "PhoneLoginVC.h"
 #import "AppDelegate.h"
+#import <UMSocialCore/UMSocialCore.h>
+
 
 @interface LoginVC ()
+
+@property(nonatomic,strong) NSString *nickname;
+
+
 
 @end
 
@@ -75,21 +81,66 @@
     }
     else {
         
-        AppDelegate *delegate = [AppDelegate share];
-        TabBarController *tabVC = [[TabBarController alloc] init];
-        delegate.tabVC = tabVC;
-        delegate.window.rootViewController = tabVC;
+//        AppDelegate *delegate = [AppDelegate share];
+//        TabBarController *tabVC = [[TabBarController alloc] init];
+//        delegate.tabVC = tabVC;
+//        delegate.window.rootViewController = tabVC;
+        
+        [self getUserInfoForPlatform:UMSocialPlatformType_WechatSession];
     }
 }
 
-/*
-#pragma mark - Navigation
+- (void)getUserInfoForPlatform:(UMSocialPlatformType)platformType
+{
+    [[UMSocialManager defaultManager] getUserInfoWithPlatform:platformType currentViewController:self completion:^(id result, NSError *error) {
+        
+        UMSocialUserInfoResponse *resp = result;
+        
+        // 第三方登录数据(为空表示平台未提供)
+        // 授权数据
+        NSLog(@" uid: %@", resp.uid);
+        NSLog(@" openid: %@", resp.openid);
+        NSLog(@" accessToken: %@", resp.accessToken);
+        NSLog(@" refreshToken: %@", resp.refreshToken);
+        NSLog(@" expiration: %@", resp.expiration);
+        
+        // 用户数据
+        NSLog(@" name: %@", resp.name);
+        NSLog(@" iconurl: %@", resp.iconurl);
+        NSLog(@" gender: %@", resp.unionGender);
+        
+        // 第三方平台SDK原始数据
+        NSLog(@" originalResponse: %@", resp.originalResponse);
+        self.nickname = resp.originalResponse[@"nickname"];
+        
+        NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
+        
+        [paramDic  setValue:resp.uid forKey:@"wechat"];
+        [paramDic  setValue:@"WeChat" forKey:@"LoginMode"];
+        [paramDic  setValue:self.nickname forKey:@"nikename"];
+//        [paramDic  setValue:[InfoCache unarchiveObjectWithFile:@"pushToken"] forKey:@"deviceToken"];
+//        [paramDic  setValue:@"ios" forKey:@"deviceType"];
+        
+        
+        [AFNetworking_RequestData requestMethodPOSTUrl:Login dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
+            
+            [InfoCache saveValue:@1 forKey:@"LoginedState"];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+            [InfoCache archiveObject:responseObject[@"data"][@"Token"] toFile:@"Token"];
+            [InfoCache archiveObject:responseObject[@"data"][@"userId"] toFile:@"userId"];
+
+            AppDelegate *delegate = [AppDelegate share];
+            TabBarController *tabVC = [[TabBarController alloc] init];
+            delegate.tabVC = tabVC;
+            delegate.window.rootViewController = tabVC;
+            
+            
+        } failure:^(NSError *error) {
+            
+        }];
+    }];
 }
-*/
+
+
 
 @end

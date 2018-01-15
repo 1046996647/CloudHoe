@@ -10,9 +10,11 @@
 
 @interface PersonModel : NSObject<NSCoding>
 
-@property(nonatomic,strong) NSString *Token;
-@property(nonatomic,strong) NSString *userId;
-
-@property(nonatomic,assign) NSInteger cellHeight;
+@property(nonatomic,strong) NSString *nikename;
+@property(nonatomic,strong) NSString *headimg;
+@property(nonatomic,strong) NSString *sex;
+@property(nonatomic,strong) NSString *birthday;
+@property(nonatomic,strong) NSString *tab;
+@property(nonatomic,strong) NSString *introduce;
 
 @end

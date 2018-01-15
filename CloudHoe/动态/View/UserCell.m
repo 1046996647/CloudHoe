@@ -17,12 +17,13 @@
         
         _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 15, 55, 55)];
         //        _imgView.image = [UIImage imageNamed:@"food"];
-        _imgView.backgroundColor = [UIColor redColor];
+//        _imgView.backgroundColor = [UIColor redColor];
         _imgView.layer.cornerRadius = _imgView.height/2;
         _imgView.layer.masksToBounds = YES;
         _imgView.contentMode = UIViewContentModeScaleAspectFill;
         [self.contentView addSubview:_imgView];
-        
+        [_imgView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"mrtx"]];
+
 //        _imgView1 = [[UIImageView alloc] initWithFrame:CGRectMake(_imgView.width-16, _imgView.height-16, 16, 16)];
 //        //        _imgView.image = [UIImage imageNamed:@"food"];
 //        _imgView1.backgroundColor = [UIColor redColor];
