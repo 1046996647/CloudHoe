@@ -69,8 +69,19 @@
     self.chatKeyBoard.allowFace = NO;
     self.chatKeyBoard.allowMore = NO;
     
+    if (self.mark == 1) {
+        UIButton *viewBtn = [UIButton buttonWithframe:CGRectMake(0, 0, 32, 32) text:@"删除" font:SystemFont(14) textColor:@"#ffffff" backgroundColor:nil normal:nil selected:nil];
+        [viewBtn addTarget:self action:@selector(delAction) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:viewBtn];
+    }
+    
     [self getComment];
 
+}
+
+- (void)delAction
+{
+    
 }
 
 // 日志点赞
@@ -127,12 +138,16 @@
     [AFNetworking_RequestData requestMethodPOSTUrl:Comment dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
         
         NSMutableArray *arrM = [NSMutableArray array];
-        for (NSDictionary *dic in responseObject[@"data"]) {
-            EvaluateModel *model = [EvaluateModel yy_modelWithJSON:dic];
-            [arrM addObject:model];
+        id obj = responseObject[@"data"];
+        if ([obj isKindOfClass:[NSArray class]]) {
+            
+            for (NSDictionary *dic in obj) {
+                EvaluateModel *model = [EvaluateModel yy_modelWithJSON:dic];
+                [arrM addObject:model];
+            }
+            self.dataArr = arrM;
+            [_tableView reloadData];
         }
-        self.dataArr = arrM;
-        [_tableView reloadData];
         
     } failure:^(NSError *error) {
         
@@ -204,9 +219,18 @@
     
     _nameLab.frame = CGRectMake(_imgView1.right+10, _imgView1.centerY-9, kScreenWidth-(_imgView1.right+10)-10, 18);
     _contentLab.frame = CGRectMake(_imgView1.left, _imgView1.bottom+10, kScreenWidth-_imgView1.left*2, 18);
-    _imgView2.frame = CGRectMake(_imgView1.left, _contentLab.bottom+15, kScreenWidth-_imgView1.left*2, 170);
-    _timeLab.frame = CGRectMake(_imgView1.left, _imgView2.bottom+22, 120, 15);
-    _likeBtn.frame = CGRectMake(kScreenWidth-15-50, _imgView2.bottom+20, 50, 20);
+    
+    if (self.model1.logimg.length > 0) {
+        _imgView2.frame = CGRectMake(_imgView1.left, _contentLab.bottom+15, kScreenWidth-_imgView1.left*2, 170);
+        _timeLab.frame = CGRectMake(_imgView1.left, _imgView2.bottom+22, 120, 15);
+
+
+    }
+    else {
+        _timeLab.frame = CGRectMake(_imgView1.left, _contentLab.bottom+22, 120, 15);
+
+    }
+    _likeBtn.frame = CGRectMake(kScreenWidth-15-50, _timeLab.centerY-10, 50, 20);
     _evaBtn.frame = CGRectMake(_likeBtn.left-10-_likeBtn.width, _likeBtn.top, _likeBtn.width, _likeBtn.height);
     
     [_imgView1 sd_setImageWithURL:[NSURL URLWithString:self.model1.headimg] placeholderImage:[UIImage imageNamed:@"mrtx"]];

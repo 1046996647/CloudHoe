@@ -146,11 +146,11 @@
     
     [AFNetworking_RequestData requestMethodPOSTUrl:GetCode dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
 
-        NSNumber *code = [responseObject objectForKey:@"status"];
-        if (1 == [code integerValue]) {
+        NSNumber *code = [responseObject objectForKey:@"httpcode"];
+        if (200 == [code integerValue]) {
 
-            NSString *message = [responseObject objectForKey:@"验证码发送成功"];
-            [self.navigationController.view makeToast:message];
+//            NSString *message = [responseObject objectForKey:@"message"];
+            [self.view makeToast:@"验证码发送成功"];
 
         }
 

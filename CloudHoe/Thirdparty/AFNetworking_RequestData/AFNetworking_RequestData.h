@@ -40,6 +40,7 @@ typedef void(^Failure)(NSError *error);
 +(void)uploadImageUrl:(NSString*)url
                   dic:(NSMutableDictionary*)dic
                  data:(NSData*)data
+                 name:(NSString*)name
                Succed:(Success)succed
               failure:(Failure)failure;
 @end

@@ -213,10 +213,11 @@ static const NSUInteger kDefaultTimeoutInterval = 20;
 +(void)uploadImageUrl:(NSString*)url
                   dic:(NSMutableDictionary*)dic
                  data:(NSData *)data
+                 name:(NSString*)name
                Succed:(Success)succed
               failure:(Failure)failure
 {
-    [AFNetworking_RequestData Manager:url dic:dic data:data requestSucced:^(id responseObject) {
+    [AFNetworking_RequestData Manager:url dic:dic data:data name:name requestSucced:^(id responseObject) {
         succed(responseObject);
 
     } requestfailure:^(NSError *error) {
@@ -225,7 +226,7 @@ static const NSUInteger kDefaultTimeoutInterval = 20;
 
 }
 
-+(void)Manager:(NSString*)url  dic:(NSMutableDictionary*)dic data:(NSData *)data  requestSucced:(Success)Succed requestfailure:(Failure)failure
++(void)Manager:(NSString*)url  dic:(NSMutableDictionary*)dic data:(NSData *)data name:(NSString*)name requestSucced:(Success)Succed requestfailure:(Failure)failure
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
@@ -251,7 +252,7 @@ static const NSUInteger kDefaultTimeoutInterval = 20;
         NSString *str = [formatter stringFromDate:[NSDate date]];
         NSString *fileName = [NSString stringWithFormat:@"%@.png", str];
         
-        [formData appendPartWithFileData:data name:@"headimg" fileName:fileName mimeType:@"image/png"];
+        [formData appendPartWithFileData:data name:name fileName:fileName mimeType:@"image/png"];
         
         NSLog(@"------%@",formData);
         

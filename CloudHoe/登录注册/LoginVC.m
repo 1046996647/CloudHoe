@@ -116,8 +116,11 @@
         NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
         
         [paramDic  setValue:resp.uid forKey:@"wechat"];
+//        [paramDic  setValue:@"oq3F80qV4U9jzbAlCo0PyJBTJQ_9" forKey:@"wechat"];
         [paramDic  setValue:@"WeChat" forKey:@"LoginMode"];
+//        [paramDic  setValue:@"测试账户1" forKey:@"nikename"];
         [paramDic  setValue:self.nickname forKey:@"nikename"];
+        
 //        [paramDic  setValue:[InfoCache unarchiveObjectWithFile:@"pushToken"] forKey:@"deviceToken"];
 //        [paramDic  setValue:@"ios" forKey:@"deviceType"];
         

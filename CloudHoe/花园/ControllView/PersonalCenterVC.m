@@ -342,7 +342,7 @@
     NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
     NSData *data = [UIImage imageOrientation:img];
     
-    [AFNetworking_RequestData uploadImageUrl:HeadImg dic:paramDic data:data Succed:^(id responseObject) {
+    [AFNetworking_RequestData uploadImageUrl:HeadImg dic:paramDic data:data name:@"headimg" Succed:^(id responseObject) {
         
         self.person.headimg = responseObject[@"data"][@"headimg"];
         [InfoCache archiveObject:self.person toFile:Person];

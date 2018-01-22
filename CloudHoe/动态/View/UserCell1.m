@@ -32,9 +32,14 @@
         [self.contentView addSubview:_label];
         
         
-//        _guanZhuBtn = [UIButton buttonWithframe:CGRectMake(kScreenWidth-55, 0, 55, 60) text:@"" font:[UIFont systemFontOfSize:14] textColor:@"#999999" backgroundColor:nil normal:@"" selected:nil];
-//        [self.contentView addSubview:_guanZhuBtn];
-//        [_guanZhuBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+        _guanZhuBtn = [UIButton buttonWithframe:CGRectMake(kScreenWidth-55-15, (60-20)/2, 55, 20) text:@"关注" font:[UIFont systemFontOfSize:14] textColor:@"#50DBD1" backgroundColor:nil normal:@"" selected:nil];
+        [self.contentView addSubview:_guanZhuBtn];
+        _guanZhuBtn.layer.cornerRadius = _guanZhuBtn.height/2;
+        _guanZhuBtn.layer.masksToBounds = YES;
+        _guanZhuBtn.layer.borderWidth = .5;
+        _guanZhuBtn.layer.borderColor = [UIColor colorWithHexString:@"#50DBD1"].CGColor;
+
+        [_guanZhuBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
         
         
     }
@@ -45,24 +50,15 @@
 {
     _model = model;
 
-//    if (model.type == 1) {
-//
-//        _guanZhuBtn.frame = CGRectMake(kScreenWidth-55-15, 23, 55, 20);
-//
-//        [_guanZhuBtn setTitle:@"关注他" forState:UIControlStateNormal];
-//        _guanZhuBtn.titleLabel.textColor = [UIColor colorWithHexString:@"#999999"];
-//        _guanZhuBtn.layer.cornerRadius = _guanZhuBtn.height/2;
-//        _guanZhuBtn.layer.masksToBounds = YES;
-//        _guanZhuBtn.layer.borderWidth = .5;
-//        _guanZhuBtn.layer.borderColor = [UIColor colorWithHexString:@"#999999"].CGColor;
-//
-//    }
-//    else {
-//
-//        _guanZhuBtn.frame = CGRectMake(kScreenWidth-55, 0, 55, 60);
-//        [_guanZhuBtn setImage:[UIImage imageNamed:@"他关注了"] forState:UIControlStateNormal];
-//
-//    }
+    if (model.type == 1) {
+
+        _guanZhuBtn.hidden = NO;
+    }
+    else {
+
+        _guanZhuBtn.hidden = YES;
+
+    }
     
     [_imgView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"mrtx"]];
 

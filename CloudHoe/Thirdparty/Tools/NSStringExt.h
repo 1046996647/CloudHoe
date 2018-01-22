@@ -47,4 +47,7 @@
 
 + (NSString *)getIPAddress:(BOOL)preferIPv4;
 
+// 推送deviceToken
++ (NSString *)stringDevicetoken:(NSData *)deviceToken;
+
 @end

@@ -10,10 +10,10 @@
 #define UrlFile_h
 
 // 服务器
-//#define BaseUrl  @"http://106.14.218.31:3322/index.php"
+#define BaseUrl  @"http://106.14.218.31:3322/index.php"
 
 // 本地
-#define BaseUrl  @"http://192.168.2.114/index.php"
+//#define BaseUrl  @"http://192.168.2.114/index.php"
 
 // 登录
 #define Login  [NSString stringWithFormat:@"%@/api/User/Login",BaseUrl]
@@ -46,7 +46,7 @@
 #define Clike  [NSString stringWithFormat:@"%@/api/Log/clike",BaseUrl]
 
 // 用户上传日志图片
-#define Uploadimg  [NSString stringWithFormat:@"%@api/User/uploadimg",BaseUrl]
+#define Uploadimg  [NSString stringWithFormat:@"%@/api/User/uploadimg",BaseUrl]
 
 // 热门动态
 #define GetHotblog  [NSString stringWithFormat:@"%@/api/Log/getlog",BaseUrl]

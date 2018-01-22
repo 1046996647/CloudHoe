@@ -438,4 +438,11 @@
     
 }
 
++ (NSString *)stringDevicetoken:(NSData *)deviceToken
+{
+    NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    return token;
+}
+
 @end

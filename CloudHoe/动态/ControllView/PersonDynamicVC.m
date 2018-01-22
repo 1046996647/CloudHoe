@@ -9,12 +9,15 @@
 #import "PersonDynamicVC.h"
 #import "PersonDynamicCell1.h"
 #import "PersonDynamicCell2.h"
+#import "DynamicDetailVC.h"
 
 @interface PersonDynamicVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *dataArr;
+@property (nonatomic, strong) NSMutableArray *dataArray;
 @property(nonatomic,assign) NSInteger pageNO;
 @property (nonatomic,assign) BOOL isRefresh;
+// 原始数据
+@property(nonatomic,strong) NSMutableArray *resourceArray;
 
 @end
 
@@ -22,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     _tableView = [UITableView tableViewWithframe:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kTopHeight) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
@@ -40,9 +44,17 @@
 //    }];
     
     self.pageNO = 1;
-    self.dataArr = [NSMutableArray array];
+    self.resourceArray = [NSMutableArray array];
     [self getblog];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [_tableView reloadData];
+}
+
 // 3.6    我的订单-进行中订单
 - (void)getblog
 {
@@ -63,26 +75,59 @@
         [self.tableView.mj_footer endRefreshing];
         
         id obj = responseObject[@"data"];
-        if ([obj count]) {
-            NSMutableArray *arrM = [NSMutableArray array];
-//            for (NSDictionary *dic in obj) {
-//                PayMentModel *model = [PayMentModel yy_modelWithJSON:dic];
-//
-//                [arrM addObject:model];
-//
-//            }
-            [self.dataArr addObjectsFromArray:arrM];
-            self.pageNO++;
-        }
-        
-        else {
+        if ([obj isKindOfClass:[NSArray class]]) {
             
-            // 拿到当前的上拉刷新控件，变为没有更多数据的状态
-            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            if ([obj count]) {
+                // 添加刷新的数据，再重新分类
+                [self.resourceArray addObjectsFromArray:obj];
+                
+                NSMutableArray *arrM = [NSMutableArray array];
+                NSMutableArray *arrM1 = [NSMutableArray array];
+                
+                // 去掉一样日期（如：2013-12）
+                for (NSDictionary *dic in self.resourceArray) {
+                    DynamicStateModel *model = [DynamicStateModel yy_modelWithJSON:dic];
+                    if (![arrM containsObject:model.firstTime]) {
+                        
+                        [arrM addObject:model.firstTime];
+                        
+                        // 筛选出组头的数据
+                        TimeModel *timeModel = [[TimeModel alloc] init];
+                        timeModel.timeStr = model.firstTime;
+                        [arrM1 addObject:timeModel];
+                    }
+                }
+                
+                // 归类
+                for (TimeModel *timeModel in arrM1) {
+                    
+                    for (NSDictionary *dic in self.resourceArray) {
+                        
+                        DynamicStateModel *model = [DynamicStateModel yy_modelWithJSON:dic];
+                        
+                        // 筛选出每组的数据
+                        if ([timeModel.timeStr isEqualToString:model.firstTime]) {
+                            [timeModel.headCellArray addObject:model];
+                        }
+                    }
+                    
+                }
+                
+                [self.tableView.mj_footer endRefreshing];
+                
+                self.dataArray = arrM1;
+                [self.tableView reloadData];
+                
+                self.pageNO++;
+            }
+            
+            else {
+                
+                // 拿到当前的上拉刷新控件，变为没有更多数据的状态
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            }
         }
-        
-        [_tableView reloadData];
-        
+
     } failure:^(NSError *error) {
         self.isRefresh = YES;
         [SVProgressHUD dismiss];
@@ -94,51 +139,68 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return _dataArray.count;
+
+//    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0) {
-        return 3;
-    }
-    else {
-        return 10;
-        
-    }
+    
+    TimeModel *timeModel = _dataArray[section];
+    return timeModel.headCellArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        return 166+15;
-    }
-    else {
-        return 45+5;
-        
-    }
+    TimeModel *timeModel = _dataArray[indexPath.section];
+
+    DynamicStateModel *model = timeModel.headCellArray[indexPath.row];
+    return model.cellHeight;
+//    if (indexPath.section == 0) {
+//        return 166+15;
+//    }
+//    else {
+//        return 45+5;
+//
+//    }
     
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 55;
+    if (section == 0) {
+        return 55;
+
+    }
+    else {
+        return (55-15);
+
+    }
     
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    //    ReleaseJobModel *model = self.dataArr[section][0];
-    
+    TimeModel *timeModel = _dataArray[section];
+
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 55)];
 //    view.backgroundColor = [UIColor whiteColor];
     
-    UILabel *label = [UILabel labelWithframe:CGRectMake(5, 17, 58, 23) text:@"12/08" font:[UIFont systemFontOfSize:14] textAlignment:NSTextAlignmentCenter textColor:@"#FFFFFF"];
+    UILabel *label = [UILabel labelWithframe:CGRectMake(5, 17, 58, 23) text:timeModel.timeStr font:[UIFont systemFontOfSize:14] textAlignment:NSTextAlignmentCenter textColor:@"#FFFFFF"];
     label.layer.cornerRadius = label.height/2;
     label.layer.masksToBounds = YES;
     label.backgroundColor = [UIColor colorWithHexString:@"#10CEC0"];
 
     [view addSubview:label];
 
+    if (section == 0) {
+        view.height = 55;
+        label.top = 17;
+    }
+    else {
+        view.height = 55-15;
+        label.top = 2;
+    }
     
     return view;
 }
@@ -156,8 +218,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 0) {
-        
         static NSString *cell_id = @"PersonDynamicCell2";
         PersonDynamicCell2 *cell = [tableView dequeueReusableCellWithIdentifier:cell_id];
         if (!cell) {
@@ -166,30 +226,54 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.backgroundColor = [UIColor clearColor];
         }
-        cell.model = nil;
+    
+        TimeModel *timeModel = _dataArray[indexPath.section];
+        cell.model = timeModel.headCellArray[indexPath.row];
         return cell;
-    }
-    else {
-        static NSString *cell_id = @"PersonDynamicCell1";
-        PersonDynamicCell1 *cell = [tableView dequeueReusableCellWithIdentifier:cell_id];
-        if (!cell) {
-            cell = [[PersonDynamicCell1 alloc] initWithStyle:UITableViewCellStyleDefault
-                                            reuseIdentifier:cell_id];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.backgroundColor = [UIColor clearColor];
-        }
-        cell.model = nil;
-        return cell;
-        
-    }
+    
+//    if (indexPath.section == 0) {
+//
+//        static NSString *cell_id = @"PersonDynamicCell2";
+//        PersonDynamicCell2 *cell = [tableView dequeueReusableCellWithIdentifier:cell_id];
+//        if (!cell) {
+//            cell = [[PersonDynamicCell2 alloc] initWithStyle:UITableViewCellStyleDefault
+//                                            reuseIdentifier:cell_id];
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//            cell.backgroundColor = [UIColor clearColor];
+//        }
+//        cell.model = nil;
+//        return cell;
+//    }
+//    else {
+//        static NSString *cell_id = @"PersonDynamicCell1";
+//        PersonDynamicCell1 *cell = [tableView dequeueReusableCellWithIdentifier:cell_id];
+//        if (!cell) {
+//            cell = [[PersonDynamicCell1 alloc] initWithStyle:UITableViewCellStyleDefault
+//                                            reuseIdentifier:cell_id];
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//            cell.backgroundColor = [UIColor clearColor];
+//        }
+//        cell.model = nil;
+//        return cell;
+//
+//    }
     
     
-    return nil;
+//    return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    TimeModel *timeModel = _dataArray[indexPath.section];
+    DynamicStateModel *model = timeModel.headCellArray[indexPath.row];
+    
+    DynamicDetailVC *vc = [[DynamicDetailVC alloc] init];
+    vc.title = @"详情";
+    vc.model1 = model;
+    vc.mark = 1;
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 

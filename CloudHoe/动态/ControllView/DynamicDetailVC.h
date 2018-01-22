@@ -13,6 +13,7 @@
 @interface DynamicDetailVC : BaseViewController
 
 @property(nonatomic,strong) DynamicStateModel *model1;
+@property(nonatomic,assign) NSInteger mark;
 
 
 @end

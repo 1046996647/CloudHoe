@@ -15,9 +15,12 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - MJRefresh (3.1.15.1)
-  - SDWebImage (4.2.2):
-    - SDWebImage/Core (= 4.2.2)
-  - SDWebImage/Core (4.2.2)
+  - RongCloudIM/IMKit (2.8.26):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMLib (2.8.26)
+  - SDWebImage (4.2.3):
+    - SDWebImage/Core (= 4.2.3)
+  - SDWebImage/Core (4.2.3)
   - SVProgressHUD (2.2.2)
   - UMengUShare/Core (6.4.8):
     - UMengUShare/Network
@@ -32,6 +35,8 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - MJRefresh
+  - RongCloudIM/IMKit (~> 2.8.26)
+  - RongCloudIM/IMLib (~> 2.8.26)
   - SDWebImage
   - SVProgressHUD
   - UMengUShare/Social/WeChat
@@ -40,11 +45,12 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
-  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  RongCloudIM: 895b1f6079b231846c04487699ca85c0b881cc68
+  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
   UMengUShare: 7a0ab762ccd445ccfcf11bde8e7f81b29b9f5e1c
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 5beca19f87e079a52d9870f021ef424570642af9
+PODFILE CHECKSUM: 1d7e7382755acb97c916dba27e7674cbf826cf99
 
 COCOAPODS: 1.4.0.beta.1

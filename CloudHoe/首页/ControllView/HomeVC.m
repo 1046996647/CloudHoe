@@ -65,13 +65,17 @@
     [AFNetworking_RequestData requestMethodPOSTUrl:GetHotblog dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
         
         NSMutableArray *arrM = [NSMutableArray array];
-        for (NSDictionary *dic in responseObject[@"data"]) {
-            DynamicStateModel *model = [DynamicStateModel yy_modelWithJSON:dic];
-            [arrM addObject:model];
-        }
-        self.dataArr = arrM;
-        [_tableView reloadData];
         
+        id obj = responseObject[@"data"];
+        if ([obj isKindOfClass:[NSArray class]]) {
+            for (NSDictionary *dic in obj) {
+                DynamicStateModel *model = [DynamicStateModel yy_modelWithJSON:dic];
+                [arrM addObject:model];
+            }
+            self.dataArr = arrM;
+            [_tableView reloadData];
+        }
+
     } failure:^(NSError *error) {
         
     }];

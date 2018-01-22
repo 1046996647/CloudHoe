@@ -101,6 +101,7 @@
 
 - (void)deviceAction:(UIButton *)btn
 {
+    isPush = YES;
     if (btn.tag == 0) {
         
         InputDeviceVC *vc = [[InputDeviceVC alloc] init];

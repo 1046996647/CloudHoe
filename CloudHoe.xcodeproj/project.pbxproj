@@ -27,6 +27,9 @@
 		F73085F020034E5A00797742 /* AddBotanyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F73085EF20034E5A00797742 /* AddBotanyVC.m */; };
 		F73085F72003579D00797742 /* FSPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F73085F32003579D00797742 /* FSPageContentView.m */; };
 		F73085F82003579D00797742 /* FSSegmentTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F73085F62003579D00797742 /* FSSegmentTitleView.m */; };
+		F757686E20103DDE00AC00F7 /* HotDynamicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F757686D20103DDE00AC00F7 /* HotDynamicVC.m */; };
+		F757687120103DF600AC00F7 /* NearbyDynamicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F757687020103DF600AC00F7 /* NearbyDynamicVC.m */; };
+		F757687420103E0E00AC00F7 /* ConcernDynamicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F757687320103E0E00AC00F7 /* ConcernDynamicVC.m */; };
 		F75ADFA72006FC2300146809 /* AuthorizeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F75ADFA62006FC2300146809 /* AuthorizeVC.m */; };
 		F75ADFAA2006FCB800146809 /* AuthorizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F75ADFA92006FCB800146809 /* AuthorizeCell.m */; };
 		F75ADFB52007002C00146809 /* lightNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = F75ADFAC2007002C00146809 /* lightNormal.png */; };
@@ -206,6 +209,12 @@
 		F73085F42003579D00797742 /* FSScrollContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSScrollContentView.h; sourceTree = "<group>"; };
 		F73085F52003579D00797742 /* FSSegmentTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSegmentTitleView.h; sourceTree = "<group>"; };
 		F73085F62003579D00797742 /* FSSegmentTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSegmentTitleView.m; sourceTree = "<group>"; };
+		F757686C20103DDE00AC00F7 /* HotDynamicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotDynamicVC.h; sourceTree = "<group>"; };
+		F757686D20103DDE00AC00F7 /* HotDynamicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotDynamicVC.m; sourceTree = "<group>"; };
+		F757686F20103DF600AC00F7 /* NearbyDynamicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NearbyDynamicVC.h; sourceTree = "<group>"; };
+		F757687020103DF600AC00F7 /* NearbyDynamicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearbyDynamicVC.m; sourceTree = "<group>"; };
+		F757687220103E0E00AC00F7 /* ConcernDynamicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConcernDynamicVC.h; sourceTree = "<group>"; };
+		F757687320103E0E00AC00F7 /* ConcernDynamicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConcernDynamicVC.m; sourceTree = "<group>"; };
 		F75ADFA52006FC2300146809 /* AuthorizeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizeVC.h; sourceTree = "<group>"; };
 		F75ADFA62006FC2300146809 /* AuthorizeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizeVC.m; sourceTree = "<group>"; };
 		F75ADFA82006FCB800146809 /* AuthorizeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizeCell.h; sourceTree = "<group>"; };
@@ -1099,6 +1108,12 @@
 				F761F5781FFDD540008B3D6A /* DynamicDetailVC.m */,
 				F7646EAE1FFF2AD80067D29A /* PersonDynamicVC.h */,
 				F7646EAF1FFF2AD80067D29A /* PersonDynamicVC.m */,
+				F757687220103E0E00AC00F7 /* ConcernDynamicVC.h */,
+				F757687320103E0E00AC00F7 /* ConcernDynamicVC.m */,
+				F757686C20103DDE00AC00F7 /* HotDynamicVC.h */,
+				F757686D20103DDE00AC00F7 /* HotDynamicVC.m */,
+				F757686F20103DF600AC00F7 /* NearbyDynamicVC.h */,
+				F757687020103DF600AC00F7 /* NearbyDynamicVC.m */,
 			);
 			path = ControllView;
 			sourceTree = "<group>";
@@ -1452,6 +1467,11 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CloudHoe/Pods-CloudHoe-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
 			);
@@ -1512,6 +1532,7 @@
 				F73085E820033ED900797742 /* BRAddressPickerView.m in Sources */,
 				F75ADFF820072F5800146809 /* ChatKeyBoard.m in Sources */,
 				F75AE00520072F5800146809 /* ChatToolBar.m in Sources */,
+				F757687420103E0E00AC00F7 /* ConcernDynamicVC.m in Sources */,
 				F77253341FFB529F0016B363 /* BaseViewController.m in Sources */,
 				F75AE00220072F5800146809 /* FaceThemeView.m in Sources */,
 				F76E3DEC2005F4CC0021387E /* SexVC.m in Sources */,
@@ -1622,7 +1643,9 @@
 				F75CE410200472550006E73C /* LGPhotoPickerGroupTableViewCell.m in Sources */,
 				F77253121FFB509A0016B363 /* RegexTool.m in Sources */,
 				F75ADFC62007065A00146809 /* InputDeviceVC.m in Sources */,
+				F757686E20103DDE00AC00F7 /* HotDynamicVC.m in Sources */,
 				F761F5821FFDF143008B3D6A /* RelateBotanyVC.m in Sources */,
+				F757687120103DF600AC00F7 /* NearbyDynamicVC.m in Sources */,
 				F77253221FFB52420016B363 /* GardenVC.m in Sources */,
 				F75CE403200472540006E73C /* LGPhotoPickerBrowserPhotoImageView.m in Sources */,
 				F75CE3FF200472540006E73C /* LGPhotoPickerBrowserPhoto.m in Sources */,

@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@interface TimeModel : NSObject
+
+@property(nonatomic,copy) NSString *timeStr;
+@property(nonatomic,strong) NSMutableArray *headCellArray;
+
+@end
+
 @interface Zanuser : NSObject
 
 @property(nonatomic,strong) NSString *nikename;
@@ -30,6 +37,8 @@
 @property(nonatomic,strong) NSString *commentnum;
 @property(nonatomic,strong) NSString *logid;
 @property(nonatomic,strong) NSArray *zanuser;
+@property(nonatomic,copy) NSString *firstTime;
+@property(nonatomic,copy) NSString *lastTime;
 
 @property(nonatomic,assign) NSInteger cellHeight;
 

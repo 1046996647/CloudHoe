@@ -91,6 +91,16 @@
     _contentLab.height = size.height;
 
     _imgView2.frame = CGRectMake(_imgView1.left, _contentLab.bottom+15, kScreenWidth-_imgView1.left*2, 170);
+    
+//    if (model.logimg.length > 0) {
+//        _imgView2.hidden = NO;
+//    }
+//    else {
+//        _imgView2.height = 0;
+//        _imgView2.hidden = YES;
+//
+//    }
+    
     _timeLab.frame = CGRectMake(_imgView1.left, _imgView2.bottom+22, 120, 15);
     _likeBtn.frame = CGRectMake(kScreenWidth-15-50, _imgView2.bottom+20, 50, 20);
     _evaBtn.frame = CGRectMake(_likeBtn.left-10-_likeBtn.width, _likeBtn.top, _likeBtn.width, _likeBtn.height);

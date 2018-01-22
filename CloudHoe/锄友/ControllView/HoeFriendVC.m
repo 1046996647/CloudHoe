@@ -58,6 +58,11 @@
 
 
 #pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //    return _dataArr.count;
     return 10;
@@ -70,6 +75,60 @@
     
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 0;
+        
+    }
+    else {
+        return 50;
+        
+    }
+    
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0)];
+    view.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *label = [UILabel labelWithframe:CGRectMake(15, 0, kScreenWidth-15, 50) text:@"我的锄友" font:[UIFont boldSystemFontOfSize:16] textAlignment:NSTextAlignmentLeft textColor:@"#313131"];
+//    label.layer.cornerRadius = label.height/2;
+//    label.layer.masksToBounds = YES;
+//    label.backgroundColor = [UIColor colorWithHexString:@"#10CEC0"];
+    [view addSubview:label];
+    
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, label.height-.5, kScreenWidth, .5)];
+    line.backgroundColor = [UIColor colorWithHexString:@"#efefef"];
+    [view addSubview:line];
+
+    if (section == 0) {
+        view.height = 0;
+        label.hidden = YES;
+    }
+    else {
+        view.height = 55;
+        label.hidden = NO;
+
+    }
+    
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+//    return 0.0001;// 为0无效(group类型)
+    return 0;
+
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return nil;
+}
+
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return UITableViewCellEditingStyleDelete;
@@ -80,6 +139,10 @@
 //修改左滑的按钮的字
 -(NSString*)tableView:(UITableView*)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexpath {
     
+    if (indexpath.section == 0) {
+        return @"忽略";
+
+    }
     return @"删除";
     
 }
@@ -103,7 +166,15 @@
     }
     
     UserModel *model = [[UserModel alloc] init];
-    model.type = 1;
+    
+    if (indexPath.section == 0) {
+        model.type = 1;
+
+    }
+    else {
+        model.type = 0;
+
+    }
     cell.model = model;
     
     

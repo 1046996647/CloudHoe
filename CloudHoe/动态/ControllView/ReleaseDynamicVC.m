@@ -186,7 +186,7 @@
     NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
     NSData *data = [UIImage imageOrientation:img];
     
-        [AFNetworking_RequestData uploadImageUrl:Uploadimg dic:paramDic data:data Succed:^(id responseObject) {
+    [AFNetworking_RequestData uploadImageUrl:Uploadimg dic:paramDic data:data name:@"headimg" Succed:^(id responseObject) {
             
             [self.addBtn setImage:img forState:UIControlStateNormal];
             self.delBtn.hidden = NO;

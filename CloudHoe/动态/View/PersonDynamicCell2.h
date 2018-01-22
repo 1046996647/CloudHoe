@@ -23,6 +23,7 @@
 @property(nonatomic,strong) UIButton *evaBtn;
 @property(nonatomic,strong) UIButton *likeBtn;
 @property(nonatomic,strong) UIView *line;
+@property (nonatomic, strong) NSMutableArray *zanArr;
 
 
 @property(nonatomic,strong) DynamicStateModel *model;
