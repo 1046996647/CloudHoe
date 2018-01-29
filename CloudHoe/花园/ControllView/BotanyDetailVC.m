@@ -6,7 +6,7 @@
 //  Copyright © 2018年 ZhangWeiLiang. All rights reserved.
 //
 
-#import "GardenVC.h"
+#import "BotanyDetailVC.h"
 #import "PersonDynamicCell.h"
 #import "RelateBotanyCell1.h"
 #import "PersonDynamicVC.h"
@@ -16,7 +16,7 @@
 #import "GuanZhuView.h"
 #import "ProfileVC.h"
 
-@interface GardenVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface BotanyDetailVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) NSMutableArray *dataArr;
 @property(nonatomic,strong) UITableView *tableView;
@@ -49,7 +49,7 @@
 
 @end
 
-@implementation GardenVC
+@implementation BotanyDetailVC
 
 - (GuanZhuView *)guanZhuView
 {
@@ -170,7 +170,7 @@
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 
     
-    _tableView = [UITableView tableViewWithframe:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kTopHeight-kTabBarHeight-32) style:UITableViewStyleGrouped];
+    _tableView = [UITableView tableViewWithframe:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kTopHeight) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
