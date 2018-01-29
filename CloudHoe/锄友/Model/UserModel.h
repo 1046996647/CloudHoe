@@ -11,6 +11,8 @@
 @interface UserModel : NSObject
 
 @property(nonatomic,assign) NSInteger type;
-
+@property(nonatomic,strong) NSString *nikename;
+@property(nonatomic,strong) NSString *headimg;
+@property(nonatomic,strong) NSString *userId;
 
 @end

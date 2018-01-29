@@ -48,7 +48,7 @@
         _stateBtn = [UIButton buttonWithframe:CGRectZero text:@"关注" font:[UIFont systemFontOfSize:16] textColor:@"#999999" backgroundColor:@"" normal:@"" selected:nil];
         [_bgView addSubview:_stateBtn];
 //        _xiaDanBtn.tag = 0;
-//        [_stateBtn addTarget:self action:@selector(xiaDanAction) forControlEvents:UIControlEventTouchUpInside];
+        [_stateBtn addTarget:self action:@selector(stateAction) forControlEvents:UIControlEventTouchUpInside];
 
         
         
@@ -68,6 +68,30 @@
         
     }
     return self;
+}
+
+- (void)stateAction
+{
+    [self addfriend];
+}
+
+- (void)addfriend
+{
+    
+    NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
+    
+    [paramDic  setValue:self.model.userId forKey:@"friendId"];
+    //    [paramDic  setValue:@"7db9e4b81a16ef15e195599fc4de0eae" forKey:@"Token"];
+    
+    [AFNetworking_RequestData requestMethodPOSTUrl:Addfriend dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
+        
+        
+//        id obj = responseObject[@"data"];
+
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)setModel:(DynamicStateModel *)model

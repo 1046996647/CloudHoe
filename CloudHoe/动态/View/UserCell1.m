@@ -39,11 +39,29 @@
         _guanZhuBtn.layer.borderWidth = .5;
         _guanZhuBtn.layer.borderColor = [UIColor colorWithHexString:@"#50DBD1"].CGColor;
 
-        [_guanZhuBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_guanZhuBtn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
         
         
     }
     return self;
+}
+
+- (void)btnAction
+{
+    
+    NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
+    [paramDic setValue:_model.userId forKey:@"friendId"];
+
+    [AFNetworking_RequestData requestMethodPOSTUrl:Addfriend dic:paramDic showHUD:NO response:NO Succed:^(id responseObject) {
+        
+        if (self.block) {
+            self.block(_model);
+        }
+        
+    } failure:^(NSError *error) {
+        
+    }];
+
 }
 
 - (void)setModel:(UserModel *)model
@@ -53,6 +71,8 @@
     if (model.type == 1) {
 
         _guanZhuBtn.hidden = NO;
+        
+        
     }
     else {
 
@@ -60,8 +80,8 @@
 
     }
     
-    [_imgView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"mrtx"]];
-
+    [_imgView sd_setImageWithURL:[NSURL URLWithString:model.headimg] placeholderImage:[UIImage imageNamed:@"mrtx"]];
+    _label.text = model.nikename;
 }
 
 @end

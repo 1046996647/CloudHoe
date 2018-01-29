@@ -13,6 +13,8 @@
 
 @property(nonatomic,strong) UITextField *phone;
 @property (nonatomic,strong) NSMutableArray *dataArr;
+@property (nonatomic,strong) NSMutableArray *oneArr;
+@property (nonatomic,strong) NSMutableArray *twoArr;
 @property (nonatomic,strong) UITableView *tableView;
 
 
@@ -44,6 +46,63 @@
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     //    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    [self addlist];
+    [self myfriends];
+
+    //加好友
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addlist) name:@"kAddlistNotification" object:nil];
+    
+    //互关
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myfriends) name:@"kMyfriendsNotification" object:nil];
+}
+
+- (void)addlist
+{
+    
+    NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
+    
+    [AFNetworking_RequestData requestMethodPOSTUrl:Addlist dic:paramDic showHUD:NO response:NO Succed:^(id responseObject) {
+        
+        NSMutableArray *arrM = [NSMutableArray array];
+        
+        id obj = responseObject[@"data"];
+        if ([obj isKindOfClass:[NSArray class]]) {
+            for (NSDictionary *dic in obj) {
+                UserModel *model = [UserModel yy_modelWithJSON:dic];
+                [arrM addObject:model];
+            }
+            self.oneArr = arrM;
+            [_tableView reloadData];
+        }
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (void)myfriends
+{
+    
+    NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
+    
+    [AFNetworking_RequestData requestMethodPOSTUrl:Myfriends dic:paramDic showHUD:NO response:NO Succed:^(id responseObject) {
+        
+        NSMutableArray *arrM = [NSMutableArray array];
+        
+        id obj = responseObject[@"data"];
+        if ([obj isKindOfClass:[NSArray class]]) {
+            for (NSDictionary *dic in obj) {
+                UserModel *model = [UserModel yy_modelWithJSON:dic];
+                [arrM addObject:model];
+            }
+            self.twoArr = arrM;
+            [_tableView reloadData];
+        }
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)valueChange:(UITextField *)tf
@@ -64,8 +123,16 @@
     return 2;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    //    return _dataArr.count;
-    return 10;
+    
+    if (section == 0) {
+        return _oneArr.count;
+
+    }
+    else {
+        return _twoArr.count;
+
+    }
+//    return 10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,7 +149,15 @@
         
     }
     else {
-        return 50;
+        
+        if (_twoArr.count == 0) {
+            return 0;
+
+        }
+        else {
+            return 50;
+
+        }
         
     }
     
@@ -109,8 +184,16 @@
         label.hidden = YES;
     }
     else {
-        view.height = 55;
-        label.hidden = NO;
+        
+        if (_twoArr.count == 0) {
+            view.height = 0;
+            label.hidden = YES;
+        }
+        else {
+            view.height = 55;
+            label.hidden = NO;
+        }
+
 
     }
     
@@ -149,9 +232,46 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    [self cellctionAction:self.dataArr[indexPath.row]];
-    //    [self.dataArr removeObjectAtIndex:indexPath.row];
-    //    [_tableView reloadData];
+    
+    UserModel *model = nil;
+    if (indexPath.section == 0) {
+        model = _oneArr[indexPath.row];
+        
+        NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
+        [paramDic setValue:model.userId forKey:@"friendId"];
+        
+        [AFNetworking_RequestData requestMethodPOSTUrl:Stop dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
+            
+            [self.oneArr removeObjectAtIndex:indexPath.row];
+            [_tableView reloadData];
+
+//            id obj = responseObject[@"data"];
+
+            
+        } failure:^(NSError *error) {
+            
+        }];
+    }
+    else {
+        
+        model = _twoArr[indexPath.row];
+        NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
+        [paramDic setValue:model.userId forKey:@"friendId"];
+        
+        [AFNetworking_RequestData requestMethodPOSTUrl:Delmyfriends dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
+            
+            [self.twoArr removeObjectAtIndex:indexPath.row];
+            [_tableView reloadData];
+            
+            //            id obj = responseObject[@"data"];
+            
+            
+        } failure:^(NSError *error) {
+            
+        }];
+        
+    }
+
 }
 
 
@@ -163,20 +283,26 @@
                                 reuseIdentifier:cell_id];
 //        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         //        cell.backgroundColor = [UIColor clearColor];
+        cell.block = ^(UserModel *model) {
+            [_oneArr removeObject:model];
+            [_twoArr addObject:model];
+            [_tableView reloadData];
+        };
     }
     
-    UserModel *model = [[UserModel alloc] init];
-    
+//    UserModel *model = [[UserModel alloc] init];
+    UserModel *model = nil;
     if (indexPath.section == 0) {
+        model = _oneArr[indexPath.row];
         model.type = 1;
 
     }
     else {
+        model = _twoArr[indexPath.row];
         model.type = 0;
 
     }
     cell.model = model;
-    
     
     return cell;
 }

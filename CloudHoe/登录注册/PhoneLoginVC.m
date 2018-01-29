@@ -105,7 +105,8 @@
     [paramDic  setValue:self.phone.text forKey:@"phone"];
     [paramDic  setValue:self.password.text forKey:@"verificationCode"];
     [paramDic  setValue:@"Mail" forKey:@"LoginMode"];
-    
+    [paramDic  setValue:[InfoCache unarchiveObjectWithFile:@"clientId"] forKey:@"cid"];
+
     
     [AFNetworking_RequestData requestMethodPOSTUrl:Login dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
         

@@ -121,7 +121,7 @@
 //        [paramDic  setValue:@"测试账户1" forKey:@"nikename"];
         [paramDic  setValue:self.nickname forKey:@"nikename"];
         
-//        [paramDic  setValue:[InfoCache unarchiveObjectWithFile:@"pushToken"] forKey:@"deviceToken"];
+        [paramDic  setValue:[InfoCache unarchiveObjectWithFile:@"clientId"] forKey:@"cid"];
 //        [paramDic  setValue:@"ios" forKey:@"deviceType"];
         
         

@@ -2,11 +2,10 @@
 //  GardenVC.h
 //  CloudHoe
 //
-//  Created by ZhangWeiLiang on 2018/1/2.
+//  Created by ZhangWeiLiang on 2018/1/27.
 //  Copyright © 2018年 ZhangWeiLiang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
 @interface GardenVC : BaseViewController

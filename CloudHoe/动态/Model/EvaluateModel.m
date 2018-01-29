@@ -8,6 +8,11 @@
 
 #import "EvaluateModel.h"
 
+@implementation Comuser
+
+@end
+
+
 @implementation EvaluateModel
 
 @end

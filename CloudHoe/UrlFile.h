@@ -33,14 +33,24 @@
 // 用户发布（个人）日志
 #define Addblog  [NSString stringWithFormat:@"%@/api/User/addblog",BaseUrl]
 
+// 添加植物
+#define Add  [NSString stringWithFormat:@"%@/api/Garden/add",BaseUrl]
+
+
 // 当前用户更多日志 查询
 #define Getmylog  [NSString stringWithFormat:@"%@/api/Log/getmylog",BaseUrl]
 
 // 日志评论
 #define Comment  [NSString stringWithFormat:@"%@/api/Log/comment",BaseUrl]
 
+// 评论详情页
+#define Comdetails  [NSString stringWithFormat:@"%@/api/Log/comdetails",BaseUrl]
+
 // 日志评论 添加
 #define Addcom  [NSString stringWithFormat:@"%@/api/Log/addcom",BaseUrl]
+
+// 评论下的 评论添加（回复）
+#define Comadd  [NSString stringWithFormat:@"%@/api/Log/comadd",BaseUrl]
 
 // 日志点赞
 #define Clike  [NSString stringWithFormat:@"%@/api/Log/clike",BaseUrl]
@@ -51,15 +61,27 @@
 // 热门动态
 #define GetHotblog  [NSString stringWithFormat:@"%@/api/Log/getlog",BaseUrl]
 
+// 用户花园
+#define Plants  [NSString stringWithFormat:@"%@/api/Garden/plants",BaseUrl]
+
+// 添加（关注好友）
+#define Addfriend  [NSString stringWithFormat:@"%@/api/User/addfriend",BaseUrl]
+
+// 获取互相关注好友列表
+#define Myfriends  [NSString stringWithFormat:@"%@/api/User/myfriends",BaseUrl]
+
+// 待确认关注（未关注）用户列表
+#define Addlist  [NSString stringWithFormat:@"%@/api/User/addlist",BaseUrl]
+
+// 忽略未关注人
+#define Stop  [NSString stringWithFormat:@"%@/api/User/stop",BaseUrl]
 
 
+// 添加（关注好友）
+#define Addfriend  [NSString stringWithFormat:@"%@/api/User/addfriend",BaseUrl]
 
-
-
-
-
-
-
+// 删除互相关注好友
+#define Delmyfriends  [NSString stringWithFormat:@"%@/api/User/delmyfriends",BaseUrl]
 
 
 

@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "EvaluateModel.h"
+#import "YYLabel.h"
+#import "NSAttributedString+YYText.h"
 
+typedef void(^DynamicDetailCellBlock)(EvaluateModel *model);
 
 @interface DynamicDetailCell : UITableViewCell
 
@@ -17,5 +20,10 @@
 @property(nonatomic,strong) UILabel *nameLab;
 @property(nonatomic,strong) UILabel *timeLab;
 @property(nonatomic,strong) EvaluateModel *model;
+@property(nonatomic,copy) DynamicDetailCellBlock block;
+
+@property(nonatomic,strong) UIImageView *commentView;
+@property (nonatomic, strong) YYLabel *commentLabel;
+
 
 @end

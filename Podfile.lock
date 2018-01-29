@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - GTSDK (2.1.0.0-noidfa)
   - MJRefresh (3.1.15.1)
   - RongCloudIM/IMKit (2.8.26):
     - RongCloudIM/IMLib
@@ -34,6 +35,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - GTSDK (= 2.1.0.0-noidfa)
   - MJRefresh
   - RongCloudIM/IMKit (~> 2.8.26)
   - RongCloudIM/IMLib (~> 2.8.26)
@@ -44,6 +46,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  GTSDK: 940f6eb5191f7655499c3ec0d6c6f034b84f3f85
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   RongCloudIM: 895b1f6079b231846c04487699ca85c0b881cc68
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
@@ -51,6 +54,6 @@ SPEC CHECKSUMS:
   UMengUShare: 7a0ab762ccd445ccfcf11bde8e7f81b29b9f5e1c
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 1d7e7382755acb97c916dba27e7674cbf826cf99
+PODFILE CHECKSUM: 42bc9616b17603c227585cc6c05b96e550a6958e
 
 COCOAPODS: 1.4.0.beta.1

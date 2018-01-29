@@ -10,6 +10,7 @@
 #import "DynamicDetailCell.h"
 #import "UserCell.h"
 #import "RelateBotanyVC.h"
+#import "ReplyVC.h"
 #import "UILabel+WLAttributedString.h"
 
 #import "ChatKeyBoard.h"
@@ -21,6 +22,9 @@
 @interface DynamicDetailVC ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,ChatKeyBoardDelegate, ChatKeyBoardDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArr;
+@property(nonatomic,assign) NSInteger pageNO;
+@property (nonatomic,assign) BOOL isRefresh;
+
 @property (nonatomic, strong) NSMutableArray *zanArr;
 @property(nonatomic,strong) UIView *bgView;
 
@@ -46,6 +50,11 @@
 /** 聊天键盘 */
 @property (nonatomic, strong) ChatKeyBoard *chatKeyBoard;
 
+@property (nonatomic, strong) EvaluateModel *evaluateModel;
+@property (nonatomic, assign) NSInteger row;
+@property (nonatomic, assign) NSInteger type;
+
+
 @end
 
 @implementation DynamicDetailVC
@@ -56,18 +65,37 @@
     
     [self initSubviews];
     
-//    self.chatKeyBoard = [ChatKeyBoard keyBoard];
-    self.chatKeyBoard = [ChatKeyBoard keyBoardWithNavgationBarTranslucent:NO];
+    self.chatKeyBoard = [ChatKeyBoard keyBoard];
+//    self.chatKeyBoard = [ChatKeyBoard keyBoardWithNavgationBarTranslucent:NO];
     self.chatKeyBoard.delegate = self;
     self.chatKeyBoard.dataSource = self;
-//    self.chatKeyBoard.keyBoardStyle = KeyBoardStyleComment;
+    self.chatKeyBoard.keyBoardStyle = KeyBoardStyleComment;
 
-    self.chatKeyBoard.placeHolder = @"评论";
+//    self.chatKeyBoard.placeHolder = @"评论";
     [self.view addSubview:self.chatKeyBoard];
     
     self.chatKeyBoard.allowVoice = NO;
     self.chatKeyBoard.allowFace = NO;
     self.chatKeyBoard.allowMore = NO;
+    
+    
+    // 评论视图
+    UIView *commentView = [[UIView alloc] initWithFrame:CGRectMake(0, _tableView.bottom, kScreenWidth, 49)];
+    commentView.backgroundColor = [UIColor colorWithHexString:@"#E7E7E7"];
+    [self.view addSubview:commentView];
+    
+//    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, -0.5, kScreenWidth, .5)];
+//    line.backgroundColor = [UIColor colorWithHexString:@"#efefef"];
+//    [commentView addSubview:line];
+    
+    UIButton *commentBtn = [UIButton buttonWithframe:CGRectMake(10, 5, kScreenWidth-20, commentView.height-10) text:@"  评论" font:[UIFont systemFontOfSize:16] textColor:@"#999999" backgroundColor:@"#FFFFFF" normal:nil selected:nil];
+    [commentView addSubview:commentBtn];
+    commentBtn.layer.cornerRadius = 6;
+    commentBtn.layer.masksToBounds = YES;
+    commentBtn.layer.borderWidth = .5;
+    commentBtn.layer.borderColor = [UIColor grayColor].CGColor;
+    commentBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [commentBtn addTarget:self action:@selector(commentAction) forControlEvents:UIControlEventTouchUpInside];
     
     if (self.mark == 1) {
         UIButton *viewBtn = [UIButton buttonWithframe:CGRectMake(0, 0, 32, 32) text:@"删除" font:SystemFont(14) textColor:@"#ffffff" backgroundColor:nil normal:nil selected:nil];
@@ -75,8 +103,37 @@
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:viewBtn];
     }
     
+    // 上拉刷新
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        
+        if (self.dataArr.count > 0) {
+            
+            [self getComment];
+        }
+        
+    }];
+    
+    
+    self.pageNO = 1;
+    self.dataArr = [NSMutableArray array];
+    
     [self getComment];
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.chatKeyBoard keyboardDownForComment];
+
+}
+
+- (void)commentAction
+{
+    self.type = 0;
+    self.chatKeyBoard.placeHolder = @"评论";
+    [self.chatKeyBoard keyboardUpforComment];
 }
 
 - (void)delAction
@@ -131,25 +188,51 @@
 - (void)getComment
 {
     
+    if (!self.isRefresh) {
+        [SVProgressHUD show];
+        
+    }
+    
     NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
     
     [paramDic  setValue:self.model1.logid forKey:@"logid"];
-    
-    [AFNetworking_RequestData requestMethodPOSTUrl:Comment dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
+    [paramDic  setValue:@(self.pageNO) forKey:@"start"];
+
+    [AFNetworking_RequestData requestMethodPOSTUrl:Comment dic:paramDic showHUD:NO response:NO Succed:^(id responseObject) {
+        
+        self.isRefresh = YES;
+        [SVProgressHUD dismiss];
+        //        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        
         
         NSMutableArray *arrM = [NSMutableArray array];
         id obj = responseObject[@"data"];
-        if ([obj isKindOfClass:[NSArray class]]) {
+        if ([obj isKindOfClass:[NSArray class]] && [obj count]) {
             
             for (NSDictionary *dic in obj) {
                 EvaluateModel *model = [EvaluateModel yy_modelWithJSON:dic];
                 [arrM addObject:model];
             }
-            self.dataArr = arrM;
+            
+            [self.dataArr addObjectsFromArray:arrM];
+            self.pageNO++;
+            
             [_tableView reloadData];
+            
         }
         
+        else {
+            
+            // 拿到当前的上拉刷新控件，变为没有更多数据的状态
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
     } failure:^(NSError *error) {
+        
+        self.isRefresh = YES;
+        [SVProgressHUD dismiss];
+        //        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
         
     }];
 }
@@ -313,6 +396,8 @@
     [self.view addSubview:_tableView];
 //    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.tableHeaderView = _bgView;
+    
+
 }
 
 - (void)btnAction:(UIButton *)btn
@@ -380,11 +465,20 @@
                                        reuseIdentifier:cell_id];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
 //        cell.backgroundColor = [UIColor clearColor];
+        cell.block = ^(EvaluateModel *model) {
+          
+            ReplyVC *vc = [[ReplyVC alloc] init];
+            vc.model1 = self.model1;
+            vc.evaluateModel = model;
+            vc.title = [NSString stringWithFormat:@"%@回复",model.commentnum];
+            [self.navigationController pushViewController:vc animated:YES];
+        };
+    }
+
+    if (self.dataArr.count > 0) {
+        cell.model = self.dataArr[indexPath.row];
         
     }
-    EvaluateModel *model = self.dataArr[indexPath.row];
-
-    cell.model = model;
     
     
     return cell;
@@ -393,6 +487,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    self.row = indexPath.row;
+    EvaluateModel *model = self.dataArr[indexPath.row];
+    self.evaluateModel = model;
+
+    self.type = 1;
+    self.chatKeyBoard.placeHolder = [NSString stringWithFormat:@"回复:%@",model.nikename];
+    [self.chatKeyBoard keyboardUpforComment];
     
 }
 
@@ -443,16 +545,28 @@
     
     [paramDic  setValue:self.model1.logid forKey:@"logid"];
     [paramDic  setValue:text forKey:@"comment"];
+    
+    if (self.type == 1) {
+        [paramDic  setValue:self.evaluateModel.comid forKey:@"comid"];
+        [paramDic  setValue:self.evaluateModel.userId forKey:@"currentid"];
+    }
 
     [AFNetworking_RequestData requestMethodPOSTUrl:Addcom dic:paramDic showHUD:NO response:NO Succed:^(id responseObject) {
         
         EvaluateModel *model = [EvaluateModel yy_modelWithJSON:responseObject[@"data"]];
-        [self.dataArr addObject:model];
+        
+        if (self.type == 1) {
+            [self.dataArr replaceObjectAtIndex:self.row withObject:model];
+        }
+        else {
+            [self.dataArr insertObject:model atIndex:0];
+
+        }
         [_tableView reloadData];
         
         self.model1.commentnum = [NSString stringWithFormat:@"%ld",(self.model1.commentnum.integerValue+1)];
         
-        [self.chatKeyBoard keyboardDown];
+        [self.chatKeyBoard keyboardDownForComment];
 
 
     } failure:^(NSError *error) {

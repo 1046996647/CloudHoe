@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "UserModel.h"
 
+typedef void(^UserCell1Block)(UserModel *model);
+
 @interface UserCell1 : UITableViewCell
 
 @property(nonatomic,strong) UIImageView *imgView;
@@ -16,6 +18,7 @@
 @property(nonatomic,strong) UILabel *label;
 @property(nonatomic,strong) UIButton *guanZhuBtn;
 @property(nonatomic,strong) UserModel *model;
+@property(nonatomic,copy) UserCell1Block block;
 
 
 @end

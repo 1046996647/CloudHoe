@@ -33,9 +33,7 @@
         [self.contentView addSubview:_timeLab];
         
         
-        
-        
-        
+
     }
     return self;
 }
