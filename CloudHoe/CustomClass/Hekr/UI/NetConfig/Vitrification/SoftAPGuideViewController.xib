@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SoftAPGuideViewController">
+            <connections>
+                <outlet property="bandLabel" destination="a0l-IW-Xeo" id="Bgy-0e-lVz"/>
+                <outlet property="ensureButton" destination="PTN-Hu-npz" id="98U-2P-k7g"/>
+                <outlet property="guideImageView" destination="UYD-oe-b0Y" id="zDX-6y-bfK"/>
+                <outlet property="hintLabel" destination="bju-dg-YBu" id="SXj-cn-w4n"/>
+                <outlet property="moveTopContraint" destination="ymy-fZ-PRJ" id="VUD-on-5Ca"/>
+                <outlet property="step1Label" destination="0HT-Ua-xHX" id="e4u-VU-k4k"/>
+                <outlet property="step2Label" destination="bLH-9Y-iEA" id="QZ4-Og-Tm8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="system_wifi" translatesAutoresizingMaskIntoConstraints="NO" id="UYD-oe-b0Y">
+                    <rect key="frame" x="0.0" y="64" width="375" height="211"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. 请将手机连接到如图所示名称前缀改为：" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HT-Ua-xHX">
+                    <rect key="frame" x="24" y="299" width="327" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" （如您无法找到对应网络，请重新进行配网）" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bju-dg-YBu">
+                    <rect key="frame" x="24" y="338.5" width="327" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTN-Hu-npz" customClass="PressButton">
+                    <rect key="frame" x="28" y="597" width="319" height="40"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="selectButton:" destination="-1" eventType="touchUpInside" id="cNg-vX-gIr"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="仅支持2.4GWi-Fi网络" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0l-IW-Xeo">
+                    <rect key="frame" x="0.0" y="562" width="375" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SmartDevice-xxx热点" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLH-9Y-iEA">
+                    <rect key="frame" x="24" y="375.5" width="327" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bLH-9Y-iEA" firstAttribute="top" secondItem="bju-dg-YBu" secondAttribute="bottom" constant="20" id="0AH-fS-D15"/>
+                <constraint firstItem="bLH-9Y-iEA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="4aK-Xe-9i4"/>
+                <constraint firstItem="PTN-Hu-npz" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="40:375" id="5jL-o2-XVl"/>
+                <constraint firstItem="UYD-oe-b0Y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="87M-ED-LOl"/>
+                <constraint firstItem="bju-dg-YBu" firstAttribute="top" secondItem="0HT-Ua-xHX" secondAttribute="bottom" constant="20" id="HI8-Wk-MMT"/>
+                <constraint firstItem="UYD-oe-b0Y" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="210:375" id="KQo-0r-Bpl"/>
+                <constraint firstAttribute="trailing" secondItem="bju-dg-YBu" secondAttribute="trailing" constant="24" id="Ob3-m9-RfE"/>
+                <constraint firstItem="bju-dg-YBu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="PYX-Pn-u2f"/>
+                <constraint firstItem="PTN-Hu-npz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="28" id="ZMn-e8-Vqy"/>
+                <constraint firstAttribute="trailing" secondItem="0HT-Ua-xHX" secondAttribute="trailing" constant="24" id="aPF-Mg-KWm"/>
+                <constraint firstAttribute="trailing" secondItem="PTN-Hu-npz" secondAttribute="trailing" constant="28" id="bfq-HY-WoU"/>
+                <constraint firstItem="PTN-Hu-npz" firstAttribute="top" secondItem="a0l-IW-Xeo" secondAttribute="bottom" constant="18" id="cIb-h5-naq"/>
+                <constraint firstAttribute="trailing" secondItem="UYD-oe-b0Y" secondAttribute="trailing" id="fu9-M4-mXA"/>
+                <constraint firstAttribute="trailing" secondItem="a0l-IW-Xeo" secondAttribute="trailing" id="iP4-mS-1P6"/>
+                <constraint firstAttribute="bottom" secondItem="PTN-Hu-npz" secondAttribute="bottom" constant="30" id="jyZ-pt-gyS"/>
+                <constraint firstItem="a0l-IW-Xeo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mFC-CR-HGH"/>
+                <constraint firstAttribute="trailing" secondItem="bLH-9Y-iEA" secondAttribute="trailing" constant="24" id="pJE-cj-2GB"/>
+                <constraint firstItem="0HT-Ua-xHX" firstAttribute="top" secondItem="UYD-oe-b0Y" secondAttribute="bottom" constant="24" id="pyS-G5-k3n"/>
+                <constraint firstItem="0HT-Ua-xHX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="tMs-YD-qLB"/>
+                <constraint firstItem="UYD-oe-b0Y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="ymy-fZ-PRJ"/>
+            </constraints>
+            <point key="canvasLocation" x="29.5" y="59.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="system_wifi" width="375" height="211"/>
+    </resources>
+</document>

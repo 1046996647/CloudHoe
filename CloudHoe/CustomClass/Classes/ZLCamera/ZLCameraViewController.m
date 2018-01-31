@@ -170,9 +170,9 @@ static CGFloat BOTTOM_HEIGHT = 60;
     [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     button.backgroundColor = [UIColor clearColor];
     button.width = 80;
-    button.y = 0;
+    button.top = 0;
     button.height = self.topView.height;
-    button.x = x;
+    button.left = x;
     [self.view addSubview:button];
     return button;
 }

@@ -239,6 +239,21 @@ FOUNDATION_EXPORT NSString *const RCKitDispatchMessageReceiptRequestNotification
  */
 - (void)onRCIMMessageRecalled:(long)messageId;
 
+/*!
+ 当 Kit 收到消息回调的方法
+ 
+ @param message 接收到的消息
+ @return       YES 拦截, 不显示  NO: 不拦截, 显示此消息。
+  此处只处理实时收到消息时，在界面上是否显示此消息。
+  在重新加载会话页面时，不受此处逻辑控制。
+  若要永久不显示此消息，需要从数据库删除该消息，在回调处理中调用 deleteMessages,
+  否则在重新加载会话时会将此消息重新加载出来
+ 
+ @discussion 收到消息，会执行此方法。
+ 
+ */
+- (BOOL)interceptMessage:(RCMessage *)message;
+
 @end
 
 #pragma mark - 连接状态监听器

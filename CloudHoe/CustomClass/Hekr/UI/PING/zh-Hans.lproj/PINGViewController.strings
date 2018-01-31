@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "PING asia.app.hekr.me"; ObjectID = "1m9-by-mi1"; */
+"1m9-by-mi1.text" = "PING asia.app.hekr.me";
+
+/* Class = "UILabel"; text = "PING user.openapi.hekr.me"; ObjectID = "29t-fh-hLm"; */
+"29t-fh-hLm.text" = "PING user.openapi.hekr.me";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "3ZU-XR-TFe"; */
+"3ZU-XR-TFe.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "56d-d8-Ovb"; */
+"56d-d8-Ovb.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "IfC-fO-pku"; */
+"IfC-fO-pku.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "M4t-Ap-YBp"; */
+"M4t-Ap-YBp.text" = "-";
+
+/* Class = "UILabel"; text = "网络是否连接    ："; ObjectID = "OWU-Vk-Zq5"; */
+"OWU-Vk-Zq5.text" = "网络是否连接    ：";
+
+/* Class = "UILabel"; text = "测试完毕"; ObjectID = "Oph-OJ-dQv"; */
+"Oph-OJ-dQv.text" = "测试完毕";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "Pkg-P6-Caq"; */
+"Pkg-P6-Caq.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "Py0-Ca-cyr"; */
+"Py0-Ca-cyr.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "Q7z-Wx-aBd"; */
+"Q7z-Wx-aBd.text" = "-";
+
+/* Class = "UILabel"; text = "丛云 V1.1.1"; ObjectID = "Z3m-ua-rrW"; */
+"Z3m-ua-rrW.text" = "丛云 V1.2";
+
+/* Class = "UILabel"; text = "PING asia.dev.hekr.me"; ObjectID = "iGJ-lJ-xyw"; */
+"iGJ-lJ-xyw.text" = "PING asia.dev.hekr.me";
+
+/* Class = "UILabel"; text = "本机IP                ："; ObjectID = "nZ3-ba-RgY"; */
+"nZ3-ba-RgY.text" = "本机IP                ：";
+
+/* Class = "UILabel"; text = "网络类型            ："; ObjectID = "plk-uq-CVn"; */
+"plk-uq-CVn.text" = "网络类型            ：";
+
+/* Class = "UILabel"; text = "PING uaa.openapi.hekr.me"; ObjectID = "tdQ-jo-RKi"; */
+"tdQ-jo-RKi.text" = "PING uaa.openapi.hekr.me";

@@ -1,0 +1,11 @@
+CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/HekrSDK
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/HekrSDK" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/CocoaAsyncSocket" "${PODS_ROOT}/Headers/Public/CocoaLumberjack" "${PODS_ROOT}/Headers/Public/DYDotsView" "${PODS_ROOT}/Headers/Public/GTSDK" "${PODS_ROOT}/Headers/Public/HekrSDK" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/RongCloudIM" "${PODS_ROOT}/Headers/Public/SDWebImage" "${PODS_ROOT}/Headers/Public/SHAlertViewBlocks" "${PODS_ROOT}/Headers/Public/SVProgressHUD" "${PODS_ROOT}/Headers/Public/SocketRocket" "${PODS_ROOT}/Headers/Public/UMengAnalytics" "${PODS_ROOT}/Headers/Public/WeixinSDK" "${PODS_ROOT}/Headers/Public/YYModel" "${PODS_ROOT}/Headers/Public/ZipArchive" "${PODS_ROOT}/Headers/Public/iOS-blur"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/HekrSDK" "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/CocoaAsyncSocket" "${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack" "${PODS_CONFIGURATION_BUILD_DIR}/Masonry" "${PODS_CONFIGURATION_BUILD_DIR}/SHAlertViewBlocks" "${PODS_CONFIGURATION_BUILD_DIR}/SocketRocket" "${PODS_CONFIGURATION_BUILD_DIR}/ZipArchive"
+OTHER_LDFLAGS = -l"HekrSDKCore" -framework "WebKit"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}
+PODS_TARGET_SRCROOT = ${PODS_ROOT}/HekrSDK
+PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
+SKIP_INSTALL = YES

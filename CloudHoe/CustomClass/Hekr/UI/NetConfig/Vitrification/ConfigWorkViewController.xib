@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfigWorkViewController">
+            <connections>
+                <outlet property="aniPgsView" destination="sG2-6S-r4t" id="d0G-Kb-hVc"/>
+                <outlet property="moveStepContraint" destination="ljQ-zR-f20" id="67w-Ne-dj6"/>
+                <outlet property="moveTopContraint" destination="pH3-XU-VPw" id="twA-eW-NHs"/>
+                <outlet property="moveUnderContraint" destination="7Io-xX-cJP" id="oFg-Tn-ZwX"/>
+                <outlet property="setpView" destination="9MY-KZ-aid" id="l1D-7S-gtV"/>
+                <outlet property="table" destination="hLB-od-ehm" id="eFS-BP-fAG"/>
+                <outlet property="underView" destination="Z9o-3o-mVm" id="mI8-7S-UPe"/>
+                <outlet property="view" destination="iN0-l3-epB" id="3aO-s1-Voc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sG2-6S-r4t" customClass="ConfigAniProgressView">
+                    <rect key="frame" x="0.0" y="64" width="375" height="210"/>
+                    <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hLB-od-ehm">
+                    <rect key="frame" x="0.0" y="274" width="375" height="309"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="nX2-PB-ZEq"/>
+                        <outlet property="delegate" destination="-1" id="eFa-Wc-3pw"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9MY-KZ-aid" customClass="ConfigStepView">
+                    <rect key="frame" x="0.0" y="274" width="375" height="309"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9o-3o-mVm" customClass="ConfigUnderView">
+                    <rect key="frame" x="0.0" y="583" width="375" height="84"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Z9o-3o-mVm" firstAttribute="top" secondItem="hLB-od-ehm" secondAttribute="bottom" id="48K-zI-Nb4"/>
+                <constraint firstAttribute="bottom" secondItem="Z9o-3o-mVm" secondAttribute="bottom" id="7Io-xX-cJP"/>
+                <constraint firstItem="9MY-KZ-aid" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Dex-ZR-rmE"/>
+                <constraint firstAttribute="trailing" secondItem="Z9o-3o-mVm" secondAttribute="trailing" id="JQX-Ne-dqG"/>
+                <constraint firstItem="Z9o-3o-mVm" firstAttribute="top" secondItem="9MY-KZ-aid" secondAttribute="bottom" id="Rkf-GL-tPx"/>
+                <constraint firstAttribute="trailing" secondItem="sG2-6S-r4t" secondAttribute="trailing" id="Rph-HM-GLh"/>
+                <constraint firstAttribute="trailing" secondItem="9MY-KZ-aid" secondAttribute="trailing" id="Z9z-Xb-Ubu"/>
+                <constraint firstItem="sG2-6S-r4t" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="b9u-D5-EPP"/>
+                <constraint firstItem="sG2-6S-r4t" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="210:375" id="cxJ-V9-eGO"/>
+                <constraint firstItem="Z9o-3o-mVm" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="84:375" id="f4O-NA-7oQ"/>
+                <constraint firstItem="hLB-od-ehm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gPb-d1-2YO"/>
+                <constraint firstAttribute="trailing" secondItem="hLB-od-ehm" secondAttribute="trailing" id="jjK-hd-APf"/>
+                <constraint firstItem="9MY-KZ-aid" firstAttribute="top" secondItem="sG2-6S-r4t" secondAttribute="bottom" id="ljQ-zR-f20"/>
+                <constraint firstItem="sG2-6S-r4t" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="pH3-XU-VPw"/>
+                <constraint firstItem="Z9o-3o-mVm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pR6-p2-zs4"/>
+                <constraint firstItem="hLB-od-ehm" firstAttribute="top" secondItem="sG2-6S-r4t" secondAttribute="bottom" id="rJr-Jx-Zwb"/>
+            </constraints>
+            <point key="canvasLocation" x="29.5" y="59.5"/>
+        </view>
+    </objects>
+</document>

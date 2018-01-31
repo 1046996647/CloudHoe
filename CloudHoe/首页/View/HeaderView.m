@@ -81,7 +81,7 @@
     //        collectionView.scrollsToTop = NO;
     collectionView.showsVerticalScrollIndicator = NO;
     collectionView.showsHorizontalScrollIndicator = NO;
-    [collectionView registerClass:[UserCell class] forCellWithReuseIdentifier:@"cellID"];
+    [collectionView registerClass:[UserCell2 class] forCellWithReuseIdentifier:@"cellID"];
     collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
     [self addSubview:collectionView];
     self.collectionView = collectionView;
@@ -115,7 +115,7 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UserCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
+    UserCell2 *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
 //    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:self.model.images[indexPath.item]]];
     
     return cell;

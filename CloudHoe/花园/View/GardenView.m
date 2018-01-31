@@ -8,6 +8,7 @@
 
 #import "GardenView.h"
 #import "BotanyDetailVC.h"
+#import "PersonBotanyVC.h"
 
 @implementation GardenView
 
@@ -44,7 +45,7 @@
     
     UIButton *moreBtn = [UIButton buttonWithframe:CGRectMake(kScreenWidth-60-10, 49, 60,60) text:@"" font:[UIFont systemFontOfSize:14] textColor:@"#999999" backgroundColor:nil normal:@"Group 8" selected:nil];
     [self addSubview:moreBtn];
-//    [moreBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [moreBtn addTarget:self action:@selector(moreAction) forControlEvents:UIControlEventTouchUpInside];
     
 //    //
 //    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, collectionView.bottom+10, kScreenWidth, 44)];
@@ -63,6 +64,18 @@
     
     self.height = collectionView.bottom+10;
     
+}
+
+- (void)moreAction
+{
+    PersonBotanyVC *vc = [[PersonBotanyVC alloc] init];
+    //    vc.model1 = model;
+    vc.title = @"我的植物";
+//    vc.dataArr = self.plantsArr;
+    vc.type = 1;
+    vc.mark = 1;
+    [self.viewController.navigationController pushViewController:vc animated:YES];
+
 }
 
 #pragma mark - UICollectionViewDataSource

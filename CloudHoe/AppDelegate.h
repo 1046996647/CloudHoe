@@ -10,6 +10,9 @@
 #import "TabBarController.h"
 #import <GTSDK/GeTuiSdk.h>
 
+#import "SideViewController.h"
+#import "Tool.h"
+
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 #import <UserNotifications/UserNotifications.h>
 #endif
@@ -27,5 +30,18 @@
 + (AppDelegate *)share;
 @property (assign, nonatomic) int lastPayloadIndex;
 
+
+@property (nonatomic, assign)BOOL isPhone;
+
+@property (nonatomic,strong) NSString * ssoToken;//for background be killed;
+
+@property (nonatomic,readonly) UINavigationController * rootNav;
+
+@property (nonatomic, strong) SideMenuController * side;
+
+@property (nonatomic, assign)BOOL isBackground;
+
+
+#define TheAPPDelegate ((AppDelegate*)[[UIApplication sharedApplication] delegate])
 @end
 

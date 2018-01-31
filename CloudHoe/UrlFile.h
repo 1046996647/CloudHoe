@@ -64,6 +64,9 @@
 // 用户花园
 #define Plants  [NSString stringWithFormat:@"%@/api/Garden/plants",BaseUrl]
 
+// 获取当前用户所有植物
+#define Getplant  [NSString stringWithFormat:@"%@/api/Garden/getplant",BaseUrl]
+
 // 添加（关注好友）
 #define Addfriend  [NSString stringWithFormat:@"%@/api/User/addfriend",BaseUrl]
 

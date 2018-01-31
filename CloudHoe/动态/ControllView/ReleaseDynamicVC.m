@@ -81,13 +81,14 @@
 //保存
 - (void)saveAction
 {
+    
+    [self.view endEditing:YES];
+    
     if (_tv.text.length == 0) {
         [self.view makeToast:@"请输入内容"];
         return;
     }
     
-    //键盘收起
-    [_tv resignFirstResponder];
     
     NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
     [paramDic  setValue:_tv.text forKey:@"text"];

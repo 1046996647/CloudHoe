@@ -10,20 +10,37 @@
 #import "UILabel+WLAttributedString.h"
 #import "SetDeviceVC.h"
 #import "ScanVC.h"
+#import "ConfigurationNetController.h"
+#import <HekrSDK.h>
+#import "DevicesModel.h"
+#import "GTMBase64.h"
+#import "EasyMacro.h"
+#import "GiFHUD.h"
+#import "Tool.h"
 
-@interface MyDeviceVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface MyDeviceVC ()<UITableViewDelegate,UITableViewDataSource,ModelDelegate>
 
 @property (nonatomic,strong) NSArray *dataArr;
 @property(nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) DevicesModel * model;//数据源model
+
+@property (nonatomic ,strong) NSArray *lanDevices;
+
 
 @end
 
 @implementation MyDeviceVC
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+//    self.lanDevices = [[Hekr sharedInstance] getLanDevcies];
+
     _tableView = [UITableView tableViewWithframe:CGRectMake(0, 10, kScreenWidth, kScreenHeight-kTopHeight-10) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -38,11 +55,31 @@
     [viewBtn addTarget:self action:@selector(addAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"DevManager"];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+
+    self.model = [DevicesModel new];
+    self.model.delegate = self;
+}
+
+
 - (void)addAction
 {
-    ScanVC *vc = [[ScanVC alloc] init];
-    vc.title = @"绑定设备";
+    ConfigurationNetController *vc = [[ConfigurationNetController alloc] init];
+    //            vc.title = @"设备";
+    //    vc.model1 = model;
     [self.navigationController pushViewController:vc animated:YES];
+//    ScanVC *vc = [[ScanVC alloc] init];
+//    vc.title = @"绑定设备";
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,10 +87,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -ModelDelegate
+- (void)erroronLoad:(NSError *)error{
+//    [GiFHUD disMiss];
+    [self.view.window makeToast:NSLocalizedString(@"网络超时", nil) duration:1.0 position:@"center"];
+}
+
+// 刷新成功后调用
+- (void)onLoad{
+    
+    [SVProgressHUD dismiss];
+//    if (self.model.allDatas.count<=0) {
+//        [self createViews];
+//    }
+    [_tableView reloadData];
+//    NSNotification *notification = [NSNotification notificationWithName:@"ManagerViewReload" object:nil userInfo:@{@"model":self.model}];
+//    [[NSNotificationCenter defaultCenter]postNotification:notification];
+
+}
+
+#pragma mark -UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    return [self.dataArr count];
-    return 10;
+    return _model.allDatas.count;
+//    return 10;
 
 }
 
@@ -84,14 +141,24 @@
         [cell.contentView addSubview:setBtn];
         [setBtn addTarget:self action:@selector(setAction) forControlEvents:UIControlEventTouchUpInside];
     }
-    
+    HekrDevice *dev = self.model.allDatas[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:@"设备"];
 
     cell.textLabel.textColor = [UIColor colorWithHexString:@"#313131"];
     cell.textLabel.font = [UIFont systemFontOfSize:14];
-    cell.textLabel.text = @"设备号：12346 (在线)";
+//    cell.textLabel.text = @"设备号：12346 (在线)";
     
-    [cell.textLabel wl_changeColorWithTextColor:[UIColor colorWithHexString:@"#999999"] changeText:@"(在线)"];
+    if (dev.online == YES) {
+        cell.textLabel.text = [NSString stringWithFormat:@"设备号：%@(在线)",dev.props[@"devTid"]];
+        [cell.textLabel wl_changeColorWithTextColor:[UIColor colorWithHexString:@"#999999"] changeText:@"(在线)"];
+
+    }else{
+        cell.textLabel.text = [NSString stringWithFormat:@"设备号：%@(离线)",dev.props[@"devTid"]];
+        [cell.textLabel wl_changeColorWithTextColor:[UIColor colorWithHexString:@"#999999"] changeText:@"(离线)"];
+        
+    }
+    
+
 
     return cell;
 }

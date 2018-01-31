@@ -65,7 +65,6 @@
     self.tableView.tableFooterView = moreBtn;
     
     
-
     
 //    UIButton *viewBtn = [UIButton buttonWithframe:CGRectMake(0, 0, 80, 32) text:@"创建专题" font:SystemFont(14) textColor:@"#ffffff" backgroundColor:nil normal:nil selected:nil];
 //    //    [viewBtn addTarget:self action:@selector(releaseAction) forControlEvents:UIControlEventTouchUpInside];
@@ -76,6 +75,26 @@
 //    [viewBtn addSubview:img];
 //
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:viewBtn];
+    
+    [self getUserInfo];
+
+}
+
+// 获取用户信息
+- (void)getUserInfo
+{
+    
+    NSMutableDictionary *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
+    
+    [AFNetworking_RequestData requestMethodPOSTUrl:GetUserInfo dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
+        
+        PersonModel *model = [PersonModel yy_modelWithJSON:responseObject[@"data"]];
+        [InfoCache archiveObject:model toFile:Person];
+        
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated

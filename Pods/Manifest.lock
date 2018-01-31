@@ -14,46 +14,84 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - GTSDK (2.1.0.0-noidfa)
-  - MJRefresh (3.1.15.1)
-  - RongCloudIM/IMKit (2.8.26):
+  - CocoaAsyncSocket (7.6.2)
+  - CocoaLumberjack (2.3.0):
+    - CocoaLumberjack/Default (= 2.3.0)
+    - CocoaLumberjack/Extensions (= 2.3.0)
+  - CocoaLumberjack/Core (2.3.0)
+  - CocoaLumberjack/Default (2.3.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.3.0):
+    - CocoaLumberjack/Default
+  - DYDotsView (1.0.0)
+  - GTSDK (1.6.4.1)
+  - HekrSDK/Core (3.4):
+    - AFNetworking (~> 3.0)
+    - CocoaAsyncSocket (~> 7.4)
+    - CocoaLumberjack (~> 2.3.0)
+    - GTSDK (~> 1.6)
+    - Masonry (~> 1.0.1)
+    - SHAlertViewBlocks (~> 1.2.1)
+    - SocketRocket (~> 0.4)
+    - ZipArchive (~> 1.4)
+  - HekrSDK/socialWeixin (3.4):
+    - WeixinSDK (~> 1.4)
+  - iOS-blur (0.0.5)
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.1.0)
+  - RongCloudIM/IMKit (2.8.27):
     - RongCloudIM/IMLib
-  - RongCloudIM/IMLib (2.8.26)
+  - RongCloudIM/IMLib (2.8.27)
   - SDWebImage (4.2.3):
     - SDWebImage/Core (= 4.2.3)
   - SDWebImage/Core (4.2.3)
+  - SHAlertViewBlocks (1.2.1)
+  - SocketRocket (0.5.1)
   - SVProgressHUD (2.2.2)
-  - UMengUShare/Core (6.4.8):
-    - UMengUShare/Network
-  - UMengUShare/Network (6.4.8)
-  - UMengUShare/Social/ReducedWeChat (6.4.8):
-    - UMengUShare/Core
-  - UMengUShare/Social/WeChat (6.4.8):
-    - UMengUShare/Core
-    - UMengUShare/Social/ReducedWeChat
+  - UMengAnalytics (4.2.4)
+  - WeixinSDK (1.4.3)
   - YYModel (1.0.4)
+  - ZipArchive (1.4.0)
 
 DEPENDENCIES:
   - AFNetworking
-  - GTSDK (= 2.1.0.0-noidfa)
-  - MJRefresh
+  - DYDotsView
+  - HekrSDK/Core (from `https://raw.githubusercontent.com/HEKR-Cloud/HEKR-IOS-SDK/3.4/HekrSDK.podspec`)
+  - HekrSDK/socialWeixin (from `https://raw.githubusercontent.com/HEKR-Cloud/HEKR-IOS-SDK/3.4/HekrSDK.podspec`)
+  - iOS-blur
+  - MBProgressHUD
   - RongCloudIM/IMKit (~> 2.8.26)
   - RongCloudIM/IMLib (~> 2.8.26)
   - SDWebImage
+  - SHAlertViewBlocks
   - SVProgressHUD
-  - UMengUShare/Social/WeChat
+  - UMengAnalytics
   - YYModel
+
+EXTERNAL SOURCES:
+  HekrSDK:
+    :podspec: https://raw.githubusercontent.com/HEKR-Cloud/HEKR-IOS-SDK/3.4/HekrSDK.podspec
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  GTSDK: 940f6eb5191f7655499c3ec0d6c6f034b84f3f85
-  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
-  RongCloudIM: 895b1f6079b231846c04487699ca85c0b881cc68
+  CocoaAsyncSocket: 3541e024f48c54b251638ef72d51dd42808de932
+  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
+  DYDotsView: 02488e16f4503871a9326cb8ae72e81a3024b174
+  GTSDK: b27e433447371587c823353d37af981e4682c008
+  HekrSDK: d7b37e8ee8d1d046694b88a2187b70bebce9a9de
+  iOS-blur: 8e4a4a2202b881e940869eca0c957808cbdf0a19
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  RongCloudIM: 9993b47342d7ce2c338733470d3dfd8cecd38de1
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
+  SHAlertViewBlocks: cf5b26019efa88190e5ce1a46878a99b545c1a62
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
-  UMengUShare: 7a0ab762ccd445ccfcf11bde8e7f81b29b9f5e1c
+  UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
+  WeixinSDK: 012c72fbaf8cef68afa7b0d0bb81c67a7a5c9136
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 42bc9616b17603c227585cc6c05b96e550a6958e
+PODFILE CHECKSUM: 366bef29e13899205cf343d0dcce44e7045e6d16
 
 COCOAPODS: 1.4.0.beta.1

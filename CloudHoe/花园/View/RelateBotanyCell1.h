@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import "GardenModel.h"
+#import "BotanyModel.h"
+
+typedef void(^RelateBotanyCell1Block)(BotanyModel *model);
 
 @interface RelateBotanyCell1 : UITableViewCell
 
@@ -19,7 +21,8 @@
 @property(nonatomic,strong) UIView *line;
 @property(nonatomic,strong) UIButton *deviceBtn;
 
-@property(nonatomic,strong) GardenModel *model;
+@property(nonatomic,strong) BotanyModel *model;
+@property(nonatomic,copy) RelateBotanyCell1Block block;
 
 
 @end

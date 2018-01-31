@@ -24,8 +24,8 @@
         _deleBjView.width = 25;
         _deleBjView.height = 25;
         _deleBjView.hidden = YES;
-        _deleBjView.x = 50;
-        _deleBjView.y = 0;
+        _deleBjView.left = 50;
+        _deleBjView.top = 0;
         _deleBjView.userInteractionEnabled = YES;
         [_deleBjView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deleImage:)]];
         [self addSubview:_deleBjView];

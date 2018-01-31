@@ -12,7 +12,6 @@
 
 @interface PersonBotanyVC ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic,strong) NSMutableArray *dataArr;
 @property(nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) UIImageView *imgView;
 @property(nonatomic,strong) UILabel *titleLab;
@@ -51,6 +50,38 @@
     [viewBtn addTarget:self action:@selector(addAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self getPlants];
+}
+
+- (void)getPlants
+{
+    
+    NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
+    
+    [AFNetworking_RequestData requestMethodPOSTUrl:Getplant dic:paramDic showHUD:NO response:NO Succed:^(id responseObject) {
+        
+        NSMutableArray *arrM = [NSMutableArray array];
+        
+        id obj = responseObject[@"data"];
+        if ([obj isKindOfClass:[NSArray class]]) {
+            for (NSDictionary *dic in obj) {
+                BotanyModel *model = [BotanyModel yy_modelWithJSON:dic];
+                [arrM addObject:model];
+            }
+        }
+        self.dataArr = arrM;
+        [_tableView reloadData];
+        
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
 - (void)addAction
 {
     AddBotanyVC *vc = [[AddBotanyVC alloc] init];
@@ -65,8 +96,8 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    //    return _dataArr.count;
-    return 10;
+    return _dataArr.count;
+//    return 10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -107,11 +138,16 @@
                                        reuseIdentifier:cell_id];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         //        cell.backgroundColor = [UIColor clearColor];
+        cell.block = ^(BotanyModel *model) {
+            
+
+        };
     }
-    
-    cell.model = nil;
-    if (self.type == 1) {
-        cell.deviceBtn.hidden = NO;
+    BotanyModel *model = self.dataArr[indexPath.row];
+
+    cell.model = model;
+    if (self.mark == 1) {
+        cell.deviceBtn.hidden = YES;
     };
     
     return cell;

@@ -9,7 +9,8 @@
 #import "LoginVC.h"
 #import "PhoneLoginVC.h"
 #import "AppDelegate.h"
-#import <UMSocialCore/UMSocialCore.h>
+//#import <UMSocialCore/UMSocialCore.h>
+#import "HekrAPI.h"
 
 
 @interface LoginVC ()
@@ -53,7 +54,8 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:animated];
-    
+    [MobClick beginLogPageView:@"Login"];
+
     //带动画结果在切换tabBar的时候viewController会有闪动的效果不建议这样写
     //    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
@@ -63,7 +65,8 @@
     
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    
+    [MobClick endLogPageView:@"Login"];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,63 +89,72 @@
 //        delegate.tabVC = tabVC;
 //        delegate.window.rootViewController = tabVC;
         
-        [self getUserInfoForPlatform:UMSocialPlatformType_WechatSession];
+//        [self getUserInfoForPlatform:UMSocialPlatformType_WechatSession];
+        [self socialLoginAction];
     }
 }
 
-- (void)getUserInfoForPlatform:(UMSocialPlatformType)platformType
-{
-    [[UMSocialManager defaultManager] getUserInfoWithPlatform:platformType currentViewController:self completion:^(id result, NSError *error) {
+- (void)socialLoginAction{
+    [MobClick event:@"SSOLogin"];
+//    NSString *type=_array[index];//Weixin
+    [[Hekr sharedInstance] sso:@"Weixin" controller:self.view.window.rootViewController ssoType:HekrSSOLogin anonymous:YES callback:^(id user, id token, NSError * error) {
+        if ([[token objectForKey:@"status"] isEqualToString:@"star"]) {
+//            [GiFHUD showWithOverlay];
+            return;
+        }
         
-        UMSocialUserInfoResponse *resp = result;
-        
-        // 第三方登录数据(为空表示平台未提供)
-        // 授权数据
-        NSLog(@" uid: %@", resp.uid);
-        NSLog(@" openid: %@", resp.openid);
-        NSLog(@" accessToken: %@", resp.accessToken);
-        NSLog(@" refreshToken: %@", resp.refreshToken);
-        NSLog(@" expiration: %@", resp.expiration);
-        
-        // 用户数据
-        NSLog(@" name: %@", resp.name);
-        NSLog(@" iconurl: %@", resp.iconurl);
-        NSLog(@" gender: %@", resp.unionGender);
-        
-        // 第三方平台SDK原始数据
-        NSLog(@" originalResponse: %@", resp.originalResponse);
-        self.nickname = resp.originalResponse[@"nickname"];
-        
-        NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
-        
-        [paramDic  setValue:resp.uid forKey:@"wechat"];
-//        [paramDic  setValue:@"oq3F80qV4U9jzbAlCo0PyJBTJQ_9" forKey:@"wechat"];
-        [paramDic  setValue:@"WeChat" forKey:@"LoginMode"];
-//        [paramDic  setValue:@"测试账户1" forKey:@"nikename"];
-        [paramDic  setValue:self.nickname forKey:@"nikename"];
-        
-        [paramDic  setValue:[InfoCache unarchiveObjectWithFile:@"clientId"] forKey:@"cid"];
-//        [paramDic  setValue:@"ios" forKey:@"deviceType"];
-        
-        
-        [AFNetworking_RequestData requestMethodPOSTUrl:Login dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
+//        [GiFHUD dismiss];
+        if (user) {
             
-            [InfoCache saveValue:@1 forKey:@"LoginedState"];
-
-            [InfoCache archiveObject:responseObject[@"data"][@"Token"] toFile:@"Token"];
-            [InfoCache archiveObject:responseObject[@"data"][@"userId"] toFile:@"userId"];
-
-            AppDelegate *delegate = [AppDelegate share];
-            TabBarController *tabVC = [[TabBarController alloc] init];
-            delegate.tabVC = tabVC;
-            delegate.window.rootViewController = tabVC;
+            [self onUserChange];
+            return;
+        }
             
-            
-        } failure:^(NSError *error) {
-            
-        }];
+        [self.view.window makeToast:NSLocalizedString(@"授权失败", nil) duration:1.0 position:@"center"];
     }];
+    
 }
+
+- (void) onUserChange{
+    if ([Hekr sharedInstance].user) {
+
+        AFHTTPSessionManager *manager = [[Hekr sharedInstance] sessionWithDefaultAuthorization];
+        [manager GET:@"http://user.openapi.hekr.me/user/profile" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            DDLogInfo(@"[获取个人信息]：%@",responseObject);
+            
+            NSMutableDictionary  *paramDic=[[NSMutableDictionary  alloc]initWithCapacity:0];
+            
+            [paramDic  setValue:responseObject[@"uid"] forKey:@"wechat"];
+            [paramDic  setValue:responseObject[@"name"] forKey:@"nikename"];
+            [paramDic  setValue:@"WeChat" forKey:@"LoginMode"];
+            [paramDic  setValue:[InfoCache unarchiveObjectWithFile:@"clientId"] forKey:@"cid"];
+            //        [paramDic  setValue:@"ios" forKey:@"deviceType"];
+            
+            
+            [AFNetworking_RequestData requestMethodPOSTUrl:Login dic:paramDic showHUD:YES response:NO Succed:^(id responseObject) {
+                
+                [InfoCache saveValue:@1 forKey:@"LoginedState"];
+                
+                [InfoCache archiveObject:responseObject[@"data"][@"Token"] toFile:@"Token"];
+                [InfoCache archiveObject:responseObject[@"data"][@"userId"] toFile:@"userId"];
+                
+                AppDelegate *delegate = [AppDelegate share];
+                TabBarController *tabVC = [[TabBarController alloc] init];
+                delegate.tabVC = tabVC;
+                delegate.window.rootViewController = tabVC;
+                
+                
+            } failure:^(NSError *error) {
+                
+            }];
+            
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+
+        }];
+    }
+}
+
 
 
 

@@ -11,6 +11,8 @@
 @interface PersonBotanyVC : BaseViewController
 
 @property(nonatomic,assign) NSInteger type;
+@property(nonatomic,assign) NSInteger mark;
+@property (nonatomic,strong) NSMutableArray *dataArr;
 
 
 @end

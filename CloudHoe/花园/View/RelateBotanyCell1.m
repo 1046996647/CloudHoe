@@ -41,16 +41,22 @@
         [self.contentView addSubview:_deviceBtn];
         _deviceBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
         //        _xiaDanBtn.tag = 0;
-        //        [_stateBtn addTarget:self action:@selector(xiaDanAction) forControlEvents:UIControlEventTouchUpInside];
-        _deviceBtn.hidden = YES;
+        [_deviceBtn addTarget:self action:@selector(deviceAction) forControlEvents:UIControlEventTouchUpInside];
+//        _deviceBtn.hidden = YES;
         
     }
     return self;
 }
 
+- (void)deviceAction
+{
+    if (self.block) {
+        self.block(_model);
+    }
+}
 
 
-- (void)setModel:(GardenModel *)model
+- (void)setModel:(BotanyModel *)model
 {
     _model = model;
     
@@ -69,8 +75,9 @@
     _line.frame = CGRectMake(15, 81-0.5, kScreenWidth-15, 0.5);
 
     
-    [_imgView1 sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"img"]];
-
+    [_imgView1 sd_setImageWithURL:[NSURL URLWithString:model.plantimg] placeholderImage:[UIImage imageNamed:@"img"]];
+    _nameLab.text = model.plantname;
+    _timeLab.text = model.time;
 
 }
 

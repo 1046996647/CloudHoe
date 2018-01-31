@@ -54,6 +54,12 @@
     [self.view addSubview:addBtn];
     [addBtn addTarget:self action:@selector(headImgAction) forControlEvents:UIControlEventTouchUpInside];
     self.addBtn = addBtn;
+    
+    UIButton *delBtn = [UIButton buttonWithframe:CGRectMake(addBtn.right-15, addBtn.top-15, 30, 30) text:@"" font:[UIFont systemFontOfSize:14] textColor:@"#999999" backgroundColor:nil normal:@"Group-1" selected:nil];
+    [self.view addSubview:delBtn];
+    [delBtn addTarget:self action:@selector(delAction) forControlEvents:UIControlEventTouchUpInside];
+    delBtn.hidden = YES;
+    self.delBtn = delBtn;
 
 
     UIButton *loginBtn = [UIButton buttonWithframe:CGRectMake(20, addBtn.bottom+20, kScreenWidth-40, 44) text:@"保存" font:[UIFont systemFontOfSize:16] textColor:@"#FFFFFF" backgroundColor:@"#50DBD1" normal:nil selected:nil];
@@ -75,13 +81,15 @@
 //保存
 - (void)okAction
 {
-    if (_tv.text.length == 0) {
-        [self.view makeToast:@"植物介绍"];
+    [self.view endEditing:YES];
+
+    if (_tv.text.length == 0||
+        _tf.text.length == 0||
+        _imgurl.length == 0) {
+        [self.view makeToast:@"内容未完整"];
         return;
     }
     
-    //键盘收起
-    [_tv resignFirstResponder];
     
     NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
     [paramDic  setValue:_tf.text forKey:@"plantname"];

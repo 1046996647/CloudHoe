@@ -13,6 +13,8 @@
 @property(nonatomic,strong) NSString *plantid;
 @property(nonatomic,strong) NSString *plantimg;
 @property(nonatomic,strong) NSString *plantname;
+@property(nonatomic,strong) NSString *devicenum;
+@property(nonatomic,strong) NSString *time;
 
 
 @end

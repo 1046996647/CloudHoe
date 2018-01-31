@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SDCycleScrollView.h"
-#import "UserCell.h"
+#import "UserCell2.h"
 
 
 @interface HeaderView : UIView<SDCycleScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource>

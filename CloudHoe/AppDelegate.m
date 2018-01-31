@@ -10,15 +10,35 @@
 //#import "IQKeyboardManager.h"
 #import "LoginVC.h"
 #import "NavigationController.h"
-#import <UMSocialCore/UMSocialCore.h>
+//#import <UMSocialCore/UMSocialCore.h>
 
-#define USHARE_DEMO_APPKEY @"5a30d5b7f29d980cba000262"
+//#define USHARE_DEMO_APPKEY @"5a30d5b7f29d980cba000262"
 
+#import <HekrAPI.h>
+#import <ZipArchive.h>
+//#import "SideViewController.h"
+#import "Tool.h"
+//#import "WelcomeController.h"
+//#import "UserViewController.h"
+#import "DebugView.h"
+#import "MyCustomLoggeer.h"
+#import "MTStatusBarOverlay.h"
+#import "StatusBar.h"
+//#import "ConfigurationNetController.h"
+#import "DevicesModel.h"
+//#import "ManagerViewController.h"
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#import <HekrWebView.h>
 
+#endif
+extern NSDictionary * ApiMap;
+extern NSString * SocketMap;
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UINavigationControllerDelegate,MTStatusBarOverlayDelegate,UNUserNotificationCenterDelegate>
 
-
+@property (nonatomic, strong) StatusBar * statusBar;
+@property (nonatomic,strong) DevicesModel * model;
 
 @end
 
@@ -49,16 +69,16 @@
 //    manager.shouldToolbarUsesTextFieldTintColor = YES;
 //    manager.enableAutoToolbar = NO;
     
-    // 友盟第三方登录或分享----------------
-    /* 打开调试日志 */
-    [[UMSocialManager defaultManager] openLog:YES];
-    
-    /* 设置友盟appkey */
-    [[UMSocialManager defaultManager] setUmSocialAppkey:USHARE_DEMO_APPKEY];
-    
-    [self configUSharePlatforms];
-    
-    [self confitUShareSettings];
+//    // 友盟第三方登录或分享----------------
+//    /* 打开调试日志 */
+//    [[UMSocialManager defaultManager] openLog:YES];
+//
+//    /* 设置友盟appkey */
+//    [[UMSocialManager defaultManager] setUmSocialAppkey:USHARE_DEMO_APPKEY];
+//
+//    [self configUSharePlatforms];
+//
+//    [self confitUShareSettings];
     
     // 个推-------------------------------
     // [ GTSdk ]：是否允许APP后台运行
@@ -78,6 +98,57 @@
     
     // 判断登录状态
     [self isLoginedState];
+    
+#ifdef DEBUG
+//    self.statusBar = [StatusBar sharedInstance];
+//    self.statusBar.frame =CGRectMake(Hrange(469), 0,ScreenWidth - Hrange(469) - Hrange(117), 20);
+//    [self.window addSubview:self.statusBar];
+    
+    //进入app环境,不设置默认为正式环境 HekrEnvironmentTypeFormal:正式环境;HekrEnvironmentTypeTest:测试环境↓
+    //    [self.statusBar setEnvironmentType:HekrEnvironmentTypeTest];
+    
+    MyCustomLoggeer *logger = [MyCustomLoggeer sharedInstance];
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+    //保存周期
+    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+    [DDLog addLogger:fileLogger];
+    [DDLog addLogger:logger];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    //
+#endif
+    ApiMap = @{@"user.openapi.hekr.me":@"https://user-openapi.hekr.me",@"uaa.openapi.hekr.me":@"https://uaa-openapi.hekr.me",@"console.openapi.hekr.me":@"https://console-openapi.hekr.me"};
+    SocketMap = @"wss://asia-app.hekr.me:186";
+    if (self.statusBar) {
+        if ([[StatusBar sharedInstance] getEnvironmentType] == HekrEnvironmentTypeTest) {
+            ApiMap = @{@"user.openapi.hekr.me":@"http://test-user-openapi.hekr.me",@"uaa.openapi.hekr.me":@"http://test-uaa-openapi.hekr.me",@"console.openapi.hekr.me":@"http://test-console-openapi.hekr.me"};
+            SocketMap = @"wss://test-asia-dev.hekr.me:186";
+        }
+    }
+    
+    //UMeng统计
+    [[UMAnalyticsConfig sharedInstance] setAppKey:@"57317c4de0f55a86a4000bf6"];
+    [[UMAnalyticsConfig sharedInstance] setEPolicy:BATCH];
+    [[UMAnalyticsConfig sharedInstance] setChannelId:@"AppStore"];
+    [MobClick startWithConfigure:[UMAnalyticsConfig sharedInstance]];
+    
+    //设置主题颜色
+    NSDictionary *profile = [Tool getJsonDataFromFile:@"profile.json"];
+    NSString *Theme = [profile objectForKey:@"Theme"];
+    if (Theme&&Theme.length>0) {
+        [[NSUserDefaults standardUserDefaults] setObject:Theme forKey:@"HekrTheme"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+    NSDictionary *config = [Tool getJsonDataFromFile:@"config.json"];
+    
+    [[Hekr sharedInstance] config:config startPage:@"http://app.hekr.me/templates/home/html/index.html" launchOptions:launchOptions];
+    
+    [[Hekr sharedInstance] sso:KeyOfHekr controller:nil ssoType:HekrSSOLogin anonymous:YES callback:^(id token, id user, NSError * err) {
+        _ssoToken = token;
+    }];
+    
+    self.model = [[DevicesModel alloc] initTool];
+
     
     return YES;
 }
@@ -101,50 +172,50 @@
     }
 }
 
-// ------------登录或分享
-- (void)confitUShareSettings
-{
-    /*
-     * 打开图片水印
-     */
-    //[UMSocialGlobal shareInstance].isUsingWaterMark = YES;
-    
-    /*
-     * 关闭强制验证https，可允许http图片分享，但需要在info.plist设置安全域名
-     <key>NSAppTransportSecurity</key>
-     <dict>
-     <key>NSAllowsArbitraryLoads</key>
-     <true/>
-     </dict>
-     */
-    [UMSocialGlobal shareInstance].isUsingHttpsWhenShareContent = NO;
-    
-}
+//// ------------登录或分享
+//- (void)confitUShareSettings
+//{
+//    /*
+//     * 打开图片水印
+//     */
+//    //[UMSocialGlobal shareInstance].isUsingWaterMark = YES;
+//
+//    /*
+//     * 关闭强制验证https，可允许http图片分享，但需要在info.plist设置安全域名
+//     <key>NSAppTransportSecurity</key>
+//     <dict>
+//     <key>NSAllowsArbitraryLoads</key>
+//     <true/>
+//     </dict>
+//     */
+//    [UMSocialGlobal shareInstance].isUsingHttpsWhenShareContent = NO;
+//
+//}
+//
+//- (void)configUSharePlatforms
+//{
+//    /*
+//     设置微信的appKey和appSecret
+//     [微信平台从U-Share 4/5升级说明]http://dev.umeng.com/social/ios/%E8%BF%9B%E9%98%B6%E6%96%87%E6%A1%A3#1_1
+//     */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxf00168c852807c02" appSecret:@"8a65003b5ef2c6122ba47b3597c4ad38" redirectURL:nil];
+//
+//
+//
+//}
 
-- (void)configUSharePlatforms
-{
-    /*
-     设置微信的appKey和appSecret
-     [微信平台从U-Share 4/5升级说明]http://dev.umeng.com/social/ios/%E8%BF%9B%E9%98%B6%E6%96%87%E6%A1%A3#1_1
-     */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxf00168c852807c02" appSecret:@"8a65003b5ef2c6122ba47b3597c4ad38" redirectURL:nil];
-    
-    
-    
-}
 
-
-// 支持所有iOS系统
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
-    if (!result) {
-        // 其他如支付等SDK的回调
-        
-    }
-    return result;
-}
+//// 支持所有iOS系统
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+//{
+//    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+//    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+//    if (!result) {
+//        // 其他如支付等SDK的回调
+//        
+//    }
+//    return result;
+//}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -233,6 +304,10 @@
 
 #pragma mark - 远程通知(推送)回调
 
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    [[Hekr sharedInstance] didRegisterUserNotificationSettings:notificationSettings];
+}
+
 /** 远程通知注册成功委托 */
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
@@ -241,6 +316,18 @@
     
     // [ GTSdk ]：向个推服务器注册deviceToken
     [GeTuiSdk registerDeviceToken:token];
+    
+    [[Hekr sharedInstance] registNotificationsWithDeviceToken:deviceToken];
+
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    
+    [[Hekr sharedInstance] didReceiveRemoteNotification:userInfo];
+}
+
+- (BOOL) application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    return [[Hekr sharedInstance] openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 
 /** 远程通知注册失败委托 */
